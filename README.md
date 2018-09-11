@@ -18,5 +18,5 @@ https://github.com/pulseirasaude/POO---CARGA-PESADA/blob/master/Prototipo.pdf
 ### 4.PMC<br>
 https://github.com/pulseirasaude/POO---CARGA-PESADA/blob/master/Project%20Canvas%20-%20Carga%20Pesada.pdf
 
-### 5.PMC<br>
+### 5.DIARIO DE BORDO<br>
 https://docs.google.com/document/d/1UT7TnA4YTDuy1YdPR4pAkuqkDzXF7gPuQB8Dqummh3g/edit?ts=5b97c602
