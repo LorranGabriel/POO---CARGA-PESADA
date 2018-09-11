@@ -21,5 +21,5 @@ https://github.com/pulseirasaude/POO---CARGA-PESADA/blob/master/Project%20Canvas
 ### 5.DIARIO DE BORDO<br>
 https://docs.google.com/document/d/1UT7TnA4YTDuy1YdPR4pAkuqkDzXF7gPuQB8Dqummh3g/edit?ts=5b97c602
 
-### 6.Projeto <br>
+### 6.PROJETO <br>
 https://github.com/pulseirasaude/trab01/projects/1
