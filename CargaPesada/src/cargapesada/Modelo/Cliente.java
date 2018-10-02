@@ -17,14 +17,14 @@ public class Cliente {
     long cnpj;
     long cpf;
     Endereco endereco;
-    Contato contato;
+    Contato contatus;
 
     public Cliente(String nome, long cnpj, long cpf, Endereco endereco, Contato contato) {
         this.nome = nome;
         this.cnpj = cnpj;
         this.cpf = cpf;
         this.endereco = endereco;
-        this.contato = contato;
+        this.contatus = contato;
     }
     
 }
