@@ -24,6 +24,7 @@ public class Main {
         
         Home1 tela_inicio = new Home1();
         tela_inicio.setVisible(true);
+        
         Endereco endereco_funcionario= new Endereco("Av. Dos sem teto","Terra do nunca",666,62456375);
         Contato contato_funcionario = new Contato(998887691,995852463,"larikamanhosa@gmail.com");
         Funcionario funcionario = new Funcionario("Josevaldo araujo nanico",12345678996L,1500.45F,"Motorista",endereco_funcionario,contato_funcionario);
