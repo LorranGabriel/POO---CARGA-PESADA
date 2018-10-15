@@ -1,6 +1,7 @@
 package cargapesada.Modelo;
 
-import Telas.Home1;
+import Telas.*;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,7 +23,7 @@ public class Main {
         // TODO code application logic here
         // Cria funcionario
         
-        Home1 tela_inicio = new Home1();
+        Login tela_inicio = new Login();
         tela_inicio.setVisible(true);
         
         Endereco endereco_funcionario= new Endereco("Av. Dos sem teto","Terra do nunca",666,62456375);
