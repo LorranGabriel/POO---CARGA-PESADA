@@ -210,7 +210,7 @@ public class Home1 extends javax.swing.JFrame {
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         Label_Veiculo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -510,6 +510,11 @@ public class Home1 extends javax.swing.JFrame {
         Botao_Pesquisar_Motorista.setText("Pesquisar");
 
         Botao_Cadastro_Motorista.setText("Cadastrar");
+        Botao_Cadastro_Motorista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao_Cadastro_MotoristaMouseClicked(evt);
+            }
+        });
         Botao_Cadastro_Motorista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_Cadastro_MotoristaActionPerformed(evt);
@@ -885,11 +890,14 @@ public class Home1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void Botao_Cadastrar_EntradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_EntradaMouseClicked
-
+         CadastroFinanceiroEntrada Cadastro_Entrada = new CadastroFinanceiroEntrada();
+        Cadastro_Entrada.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_Botao_Cadastrar_EntradaMouseClicked
 
     private void Botao_Cadastro_SaidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastro_SaidaMouseClicked
+        CadastroFinanceiroSaida Cadastro_Saida = new CadastroFinanceiroSaida();
+        Cadastro_Saida.setVisible(true);
         // TODO add your handling code here:
             
     }//GEN-LAST:event_Botao_Cadastro_SaidaMouseClicked
@@ -903,6 +911,11 @@ public class Home1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Botao_Cadastro_MotoristaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastro_MotoristaMouseClicked
+        CadastroMotorista Cadatro_Motorista = new CadastroMotorista();
+        Cadatro_Motorista.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_Botao_Cadastro_MotoristaMouseClicked
 
     /**
      * @param args the command line arguments
