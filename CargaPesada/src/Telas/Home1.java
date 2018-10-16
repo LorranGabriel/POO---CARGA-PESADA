@@ -92,6 +92,8 @@ public class Home1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Home.setBackground(new java.awt.Color(255, 255, 255));
+
         Label_Home.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Home.setText("Inicio");
 
@@ -102,7 +104,7 @@ public class Home1 extends javax.swing.JFrame {
             .addGroup(HomeLayout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addComponent(Label_Home, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(562, Short.MAX_VALUE))
+                .addContainerGap(582, Short.MAX_VALUE))
         );
         HomeLayout.setVerticalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,10 +114,16 @@ public class Home1 extends javax.swing.JFrame {
                 .addContainerGap(426, Short.MAX_VALUE))
         );
 
+        Servico.setBackground(new java.awt.Color(255, 255, 255));
+
         Label_Servico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Servico.setText("Serviço");
 
-        jButton2.setText("Cadastrar");
+        jButton2.setText("Cadastrar Novo Serviço");
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+
+        jButton2.setBorderPainted(false);
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -133,7 +141,16 @@ public class Home1 extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Pesquisar");
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Buscar Serviço");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jButton1.setBorderPainted(false);
+        jButton1.setMaximumSize(new java.awt.Dimension(147, 23));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -168,18 +185,19 @@ public class Home1 extends javax.swing.JFrame {
         ServicoLayout.setHorizontalGroup(
             ServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ServicoLayout.createSequentialGroup()
-                .addGroup(ServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(ServicoLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(Label_Servico)
-                        .addGap(73, 73, 73)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(Label_Servico)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
+            .addGroup(ServicoLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         ServicoLayout.setVerticalGroup(
             ServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,11 +206,11 @@ public class Home1 extends javax.swing.JFrame {
                 .addGroup(ServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_Servico)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         Label_Veiculo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -256,9 +274,9 @@ public class Home1 extends javax.swing.JFrame {
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VeiculosLayout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         VeiculosLayout.setVerticalGroup(
             VeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,7 +411,7 @@ public class Home1 extends javax.swing.JFrame {
             .addGroup(FinanceiroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Scroll_Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FinanceiroLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(Label_Saida)
@@ -492,11 +510,6 @@ public class Home1 extends javax.swing.JFrame {
         Botao_Pesquisar_Motorista.setText("Pesquisar");
 
         Botao_Cadastro_Motorista.setText("Cadastrar");
-        Botao_Cadastro_Motorista.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Botao_Cadastro_MotoristaMouseClicked(evt);
-            }
-        });
         Botao_Cadastro_Motorista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_Cadastro_MotoristaActionPerformed(evt);
@@ -541,7 +554,7 @@ public class Home1 extends javax.swing.JFrame {
                 .addComponent(Botao_Cadastrar_Funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FuncionariosLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(FuncionariosLayout.createSequentialGroup()
@@ -636,7 +649,7 @@ public class Home1 extends javax.swing.JFrame {
             .addGroup(ClientesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(ClientesLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(Label_Clientes)
@@ -666,13 +679,14 @@ public class Home1 extends javax.swing.JFrame {
         Panel_Limpo.setLayout(Panel_LimpoLayout);
         Panel_LimpoLayout.setHorizontalGroup(
             Panel_LimpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 706, Short.MAX_VALUE)
+            .addGap(0, 726, Short.MAX_VALUE)
         );
         Panel_LimpoLayout.setVerticalGroup(
             Panel_LimpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 521, Short.MAX_VALUE)
         );
 
+        jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jMenu1.setText("Home");
@@ -886,11 +900,9 @@ public class Home1 extends javax.swing.JFrame {
         Cadastro_Funcionario.setVisible(true);
     }//GEN-LAST:event_Botao_Cadastrar_FuncionarioMouseClicked
 
-    private void Botao_Cadastro_MotoristaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastro_MotoristaMouseClicked
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        CadastroMotorista Cadastro_Motorista = new CadastroMotorista();
-           Cadastro_Motorista.setVisible(true);
-    }//GEN-LAST:event_Botao_Cadastro_MotoristaMouseClicked
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
