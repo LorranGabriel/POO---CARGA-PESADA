@@ -312,6 +312,11 @@ public class Home1 extends javax.swing.JFrame {
         Botao_Pesquisar_Saida.setText("Pesquisar");
 
         Botao_Cadastro_Saida.setText("Cadastrar");
+        Botao_Cadastro_Saida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao_Cadastro_SaidaMouseClicked(evt);
+            }
+        });
         Botao_Cadastro_Saida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_Cadastro_SaidaActionPerformed(evt);
@@ -342,6 +347,11 @@ public class Home1 extends javax.swing.JFrame {
         Scroll_Entrada.setViewportView(jTable7);
 
         Botao_Cadastrar_Entrada.setText("Cadastrar");
+        Botao_Cadastrar_Entrada.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao_Cadastrar_EntradaMouseClicked(evt);
+            }
+        });
         Botao_Cadastrar_Entrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_Cadastrar_EntradaActionPerformed(evt);
@@ -436,6 +446,11 @@ public class Home1 extends javax.swing.JFrame {
         Botao_Pesquisar_Funcionarios.setText("Pesquisar");
 
         Botao_Cadastrar_Funcionario.setText("Cadastrar");
+        Botao_Cadastrar_Funcionario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao_Cadastrar_FuncionarioMouseClicked(evt);
+            }
+        });
         Botao_Cadastrar_Funcionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_Cadastrar_FuncionarioActionPerformed(evt);
@@ -477,6 +492,11 @@ public class Home1 extends javax.swing.JFrame {
         Botao_Pesquisar_Motorista.setText("Pesquisar");
 
         Botao_Cadastro_Motorista.setText("Cadastrar");
+        Botao_Cadastro_Motorista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao_Cadastro_MotoristaMouseClicked(evt);
+            }
+        });
         Botao_Cadastro_Motorista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_Cadastro_MotoristaActionPerformed(evt);
@@ -849,6 +869,28 @@ public class Home1 extends javax.swing.JFrame {
         CadastroVeiculo Cadastro_Veiculo = new CadastroVeiculo();
         Cadastro_Veiculo.setVisible(true);
     }//GEN-LAST:event_jButton10MouseClicked
+
+    private void Botao_Cadastrar_EntradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_EntradaMouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Botao_Cadastrar_EntradaMouseClicked
+
+    private void Botao_Cadastro_SaidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastro_SaidaMouseClicked
+        // TODO add your handling code here:
+            
+    }//GEN-LAST:event_Botao_Cadastro_SaidaMouseClicked
+
+    private void Botao_Cadastrar_FuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_FuncionarioMouseClicked
+        // TODO add your handling code here:
+        CadastroFuncionario Cadastro_Funcionario = new CadastroFuncionario();
+        Cadastro_Funcionario.setVisible(true);
+    }//GEN-LAST:event_Botao_Cadastrar_FuncionarioMouseClicked
+
+    private void Botao_Cadastro_MotoristaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastro_MotoristaMouseClicked
+        // TODO add your handling code here:
+        CadastroMotorista Cadastro_Motorista = new CadastroMotorista();
+           Cadastro_Motorista.setVisible(true);
+    }//GEN-LAST:event_Botao_Cadastro_MotoristaMouseClicked
 
     /**
      * @param args the command line arguments
