@@ -23,3 +23,7 @@ Sistema que possibilita o gerenciamento frotas veicular tanto como um sistema co
 
 ### 6.PROJETO <br>
 - [Prototipos das Telas](https://github.com/pulseirasaude/trab01/projects/1)
+
+### 7.DIAGRAMA DE CLASSE <br>
+![Alt text](https://github.com/pulseirasaude/POO---CARGA-PESADA/blob/master/Diagrama_de_Classe.png)
+- [DIAGRAMA DE CLASSE](https://github.com/pulseirasaude/POO---CARGA-PESADA/blob/master/Diagrama_de_Classe.png)
