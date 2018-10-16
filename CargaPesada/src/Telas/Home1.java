@@ -207,6 +207,11 @@ public class Home1 extends javax.swing.JFrame {
         jButton9.setText("Pesquisar");
 
         jButton10.setText("Cadastrar");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -784,7 +789,7 @@ public class Home1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+                  // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void Caixa_Pesquisa_SaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_Pesquisa_SaidaActionPerformed
@@ -838,6 +843,12 @@ public class Home1 extends javax.swing.JFrame {
          CadastroCliente Cadastro_Cliente = new CadastroCliente();
         Cadastro_Cliente.setVisible(true);
     }//GEN-LAST:event_Botao_Cadastrar_ClienteMouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+        CadastroVeiculo Cadastro_Veiculo = new CadastroVeiculo();
+        Cadastro_Veiculo.setVisible(true);
+    }//GEN-LAST:event_jButton10MouseClicked
 
     /**
      * @param args the command line arguments
