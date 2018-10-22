@@ -1,5 +1,6 @@
 package cargapesada.Modelo;
 
+import ConexaoBD.CriaTabelas;
 import Telas.*;
 
 
@@ -22,7 +23,9 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         // Cria funcionario
-        
+        CriaTabelas teste = new CriaTabelas();
+        teste.insertCategoria();
+       /* 
         Login tela_inicio = new Login();
         tela_inicio.setVisible(true);
         
@@ -47,6 +50,8 @@ public class Main {
         // Cria Servico
         
         Servico servico_1 = new Servico("Progresso","Av. Dos expedicionarios","Av. Dos sem teto",54.0F,"20/05/1999","05/06/2020",cliente,funcionario,veiculo);
-    }
+        */
+       
+}
     
 }
