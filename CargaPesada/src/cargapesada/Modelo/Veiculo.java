@@ -5,15 +5,12 @@ package cargapesada.Modelo;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author 20181bsi0172
  */
 public class Veiculo {
-    
-    
+
     private int id_veiculo;
     private String chassi;
     private String placa;
@@ -41,87 +38,79 @@ public class Veiculo {
         return id_veiculo;
     }
 
-    public void setId_veiculo(int id_veiculo) {
-        this.id_veiculo = id_veiculo;
-    }
-
     public String getChassi() {
         return chassi;
-    }
-
-    public void setChassi(String chassi) {
-        this.chassi = chassi;
     }
 
     public String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
     public String getStatus() {
         return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getTipoCombustivel() {
         return tipoCombustivel;
     }
 
-    public void setTipoCombustivel(String tipoCombustivel) {
-        this.tipoCombustivel = tipoCombustivel;
-    }
-
     public String getCategoria() {
         return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
     }
 
     public Seguro getSeguro() {
         return seguro;
     }
 
-    public void setSeguro(Seguro seguro) {
-        this.seguro = seguro;
+    public Financiamento getFinanciamento() {
+        return financiamento;
     }
 
     public Modelo getModelo() {
         return modelo;
     }
 
-    public void setModelo(Modelo modelo) {
-        this.modelo = modelo;
-    }
-
     public Motorista getMotorista() {
         return motorista;
+    }
+
+    public void setModelo(Modelo modelo) {
+        this.modelo = modelo;
     }
 
     public void setMotorista(Motorista motorista) {
         this.motorista = motorista;
     }
 
-    public Financiamento getFinanciamento() {
-        return financiamento;
-    }
-
     public void setFinanciamento(Financiamento financiamento) {
         this.financiamento = financiamento;
     }
- 
-    
 
+    public void setSeguro(Seguro seguro) {
+        this.seguro = seguro;
+    }
 
-    
-    
-    
-   
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setId_veiculo(int id_veiculo) {
+        this.id_veiculo = id_veiculo;
+    }
+
+    public void setChassi(String chassi) {
+        this.chassi = chassi;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setTipoCombustivel(String tipoCombustivel) {
+        this.tipoCombustivel = tipoCombustivel;
+    }
 }
