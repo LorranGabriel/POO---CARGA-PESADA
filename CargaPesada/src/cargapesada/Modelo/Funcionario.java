@@ -11,14 +11,15 @@ package cargapesada.Modelo;
  *
  * @author 20181bsi0172
  */
-public class Funcionario {
-    int id_funcionario;
-    String nome;
-    long cpf;
-    float salario;
-    String cargo;
-    Endereco endereco;
-    Contato contato;
+public class Funcionario 
+{   
+    private int id_funcionario;
+    private String nome;
+    private long cpf;
+    private float salario;
+    private String cargo;
+    private Endereco endereco;
+    private Contato contato;
 
     public Funcionario(String nome, long cpf, float salario, String cargo, Endereco endereco, Contato contato) {
         this.nome = nome;
@@ -28,7 +29,62 @@ public class Funcionario {
         this.endereco = endereco;
         this.contato = contato;
     }
-
     
+    public int getId_funcionario() {
+        return id_funcionario;
+    }
+
+    public void setId_funcionario(int id_funcionario) {
+        this.id_funcionario = id_funcionario;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public long getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(long cpf) {
+        this.cpf = cpf;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Contato getContato() {
+        return contato;
+    }
+
+    public void setContato(Contato contato) {
+        this.contato = contato;
+    }
+       
     
 }

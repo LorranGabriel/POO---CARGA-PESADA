@@ -9,12 +9,13 @@ package cargapesada.Modelo;
  *
  * @author 20181bsi0172
  */
-public class Financiamento {
-    int id_financiamento;
-    float valorParcela;
-    int parcelasTotais;
-    int parcelasPagas;
-    String bancoFinanciador;
+public class Financiamento 
+{
+    private int id_financiamento;
+    private float valorParcela;
+    private int parcelasTotais;
+    private int parcelasPagas;
+    private String bancoFinanciador;
 
     public Financiamento(float valorParcela, int parcelasTotais, int parcelasPagas, String financiador) {
         this.valorParcela = valorParcela;
@@ -22,6 +23,47 @@ public class Financiamento {
         this.parcelasPagas = parcelasPagas;
         this.bancoFinanciador = bancoFinanciador;
     }
+    
+    public int getId_financiamento() {
+        return id_financiamento;
+    }
+
+    public void setId_financiamento(int id_financiamento) {
+        this.id_financiamento = id_financiamento;
+    }
+
+    public float getValorParcela() {
+        return valorParcela;
+    }
+
+    public void setValorParcela(float valorParcela) {
+        this.valorParcela = valorParcela;
+    }
+
+    public int getParcelasTotais() {
+        return parcelasTotais;
+    }
+
+    public void setParcelasTotais(int parcelasTotais) {
+        this.parcelasTotais = parcelasTotais;
+    }
+
+    public int getParcelasPagas() {
+        return parcelasPagas;
+    }
+
+    public void setParcelasPagas(int parcelasPagas) {
+        this.parcelasPagas = parcelasPagas;
+    }
+
+    public String getBancoFinanciador() {
+        return bancoFinanciador;
+    }
+
+    public void setBancoFinanciador(String bancoFinanciador) {
+        this.bancoFinanciador = bancoFinanciador;
+    }
+    
     
     
 }

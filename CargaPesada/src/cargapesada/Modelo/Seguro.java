@@ -10,15 +10,48 @@ package cargapesada.Modelo;
  * @author 20181bsi0172
  */
 public class Seguro {
-    int id_seguro;
-    String status;
-    String data_vencimento;
-    String fim_contrato;
+    
+    private int id_seguro;
+    private String status;
+    private String data_vencimento;
+    private String fim_contrato;
     
     public Seguro(String status, String data_vencimento, String fim_contrato) {
         this.status = status;
         this.data_vencimento = data_vencimento;
         this.fim_contrato = fim_contrato;
     }
+    public int getId_seguro() {
+        return id_seguro;
+    }
+
+    public void setId_seguro(int id_seguro) {
+        this.id_seguro = id_seguro;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getData_vencimento() {
+        return data_vencimento;
+    }
+
+    public void setData_vencimento(String data_vencimento) {
+        this.data_vencimento = data_vencimento;
+    }
+
+    public String getFim_contrato() {
+        return fim_contrato;
+    }
+
+    public void setFim_contrato(String fim_contrato) {
+        this.fim_contrato = fim_contrato;
+    }
+    
     
 }
