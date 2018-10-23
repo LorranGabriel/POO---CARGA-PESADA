@@ -1,6 +1,8 @@
 package cargapesada.Modelo;
 
+import ConexaoBD.*;
 import Telas.*;
+import java.sql.SQLException;
 
 
 /*
@@ -19,7 +21,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // TODO code application logic here
         // Cria funcionario
         /*
@@ -48,6 +50,14 @@ public class Main {
         
         Servico servico_1 = new Servico("Progresso","Av. Dos expedicionarios","Av. Dos sem teto",54.0F,"20/05/1999","05/06/2020",cliente,funcionario,veiculo);
         */
+        
+        
+       CriacaoBanco b1 = new CriacaoBanco();
+       b1.createTable();
+        CategoriaBDtest b2 = new CategoriaBDtest();
+       
+       
+       
 }
     
 }

@@ -11,8 +11,10 @@ import java.sql.*;
  *
  * @author 20171BSI0367
  */
-public class CriacaoBanco {
-    public synchronized void  createTable() {
+public class CriacaoBanco 
+{
+    public synchronized void  createTable()
+    {
         Connection c = null;
         Statement stmt = null;
         try {
@@ -109,7 +111,7 @@ public class CriacaoBanco {
                             ");\n" +
                             "\n" +
                             "CREATE TABLE CATEGORIA (\n" +
-                            "  ID INT NOT NULL,\n" +
+                            "  ID SERIAL,\n" +
                             "  NOME VARCHAR(45),\n" +
                             "  PRIMARY KEY (ID)\n" +
                             ");\n" +
