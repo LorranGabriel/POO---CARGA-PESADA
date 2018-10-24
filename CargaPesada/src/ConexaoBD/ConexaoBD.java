@@ -23,15 +23,15 @@ public class ConexaoBD {
                 Connection c = null;
                 
                  String USUARIO = "postgres";
-                 String SENHA = "serra";
-                 String URL = "jdbc:postgresql://localhost:5432/CargaPesada";
+                 String SENHA = "root";
+                 String URL = "jdbc:postgresql://localhost:5432/CARGAPESADA_4";
                  String DRIVER = "com.postgresql.jdbc.Driver";
                 
              
                 c =  DriverManager.getConnection(URL, USUARIO, SENHA);
                 c.setAutoCommit(true);
-                
                 instance = c;
+                System.out.println("Banco Conectado!");
             } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
             }

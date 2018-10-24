@@ -20,7 +20,6 @@ public class CriacaoBanco
         try {
             
             c = ConexaoBD.getInstance();
-            System.out.println("Base de dados aberta");
             stmt = c.createStatement();
             String sql = "DROP TABLE IF EXISTS ENDERECO_CLIENTE;\n" +
                             "\n" +
@@ -255,11 +254,12 @@ public class CriacaoBanco
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();
+            System.out.println("Table created successfully");
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + 
                     e.getMessage());            
         }
-        System.out.println("Table created successfully");
+        
     }
     
 }

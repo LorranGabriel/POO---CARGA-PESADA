@@ -19,23 +19,24 @@ public class CategoriaBDtest {
     {
         Connection c = null;
         c = ConexaoBD.getInstance();
-        System.out.println("Base de dados aberta ");   
-        String insere;
-        insere = "INSERT INTO CATEGORIA(nome) values('moretto') RETURNING id ";
+         
+       /* String insere = "INSERT INTO CATEGORIA(nome) values('INFERNO');";
         
+        PreparedStatement sta = c.prepareStatement(insere);
         
+        sta.executeQuery();
+        */
+        PreparedStatement consulta = null;
         
+        //insere = "select max(id) as ID from categoria";
+        consulta = c.prepareStatement("INSERT INTO CATEGORIA(nome) values('ID RETU') RETURNING id");
+   
         
-        PreparedStatement sta;    //  PrepareStatement sta = c.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
-        sta = c.prepareStatement(insere);
-        
-       // sta.executeUpdate();
-       // ResultSet rsID = sta.getGeneratedKeys();
-        ResultSet rsID = sta.executeQuery();
-        if(rsID.next())
+        ResultSet rs = consulta.executeQuery();
+        if(rs.next())
         {
-            int id =  rsID.getInt("id");
-            System.out.println("id = " + id);
+            int id =  rs.getInt("id");
+            System.out.println("Ultimo Id = " + id);
         }
        
         c.close();        
