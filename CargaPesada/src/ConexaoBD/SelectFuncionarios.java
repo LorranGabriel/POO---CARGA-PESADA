@@ -22,8 +22,7 @@ public class SelectFuncionarios {
         Connection c = null;
         Statement stmt = null;
         try {
-            Class.forName("com.postgresql.jdbc.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CargaPesada");
+            c = ConexaoBD.getInstance();
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM VEICULO;");
             while (rs.next()) {

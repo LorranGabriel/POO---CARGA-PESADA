@@ -5,6 +5,8 @@
  */
 package cargapesada.Modelo;
 
+import javax.swing.JComboBox;
+
 /**
  *
  * @author 20181bsi0172
@@ -15,12 +17,20 @@ public class Seguro {
     private String status;
     private String data_vencimento;
     private String fim_contrato;
-    
-    public Seguro(String status, String data_vencimento, String fim_contrato) {
-        this.status = status;
-        this.data_vencimento = data_vencimento;
-        this.fim_contrato = fim_contrato;
+    float Valor;
+    //String status, String data_vencimento, String fim_contrato
+    public Seguro() {
     }
+
+    public float getValor() {
+        return Valor;
+    }
+
+    public void setValor(float Valor) {
+        this.Valor = Valor;
+    }
+
+    
     public int getId_seguro() {
         return id_seguro;
     }

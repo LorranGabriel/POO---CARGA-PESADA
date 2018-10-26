@@ -22,13 +22,13 @@ public class Veiculo {
     private Motorista motorista;
     private Financiamento financiamento;
 
-    public Veiculo(String chassi, String placa, String status, String tipoCombustivel, String categoria, Seguro seguro, Modelo modelo, Motorista motorista, Financiamento financiamento) {
+    public Veiculo(String chassi, String placa, String status, String tipoCombustivel, String categoria, Modelo modelo, Motorista motorista, Financiamento financiamento) {
         this.chassi = chassi;
         this.placa = placa;
         this.status = status;
         this.tipoCombustivel = tipoCombustivel;
         this.categoria = categoria;
-        this.seguro = seguro;
+        //this.seguro = seguro;
         this.modelo = modelo;
         this.motorista = motorista;
         this.financiamento = financiamento;

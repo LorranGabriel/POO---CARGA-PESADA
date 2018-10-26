@@ -139,10 +139,13 @@ public class CriacaoBanco
                             "  COMBUSTIVEL VARCHAR(15),\n" +
                             "  ID_CATEGORIA INT NOT NULL,\n" +
                             "  ID_MODELO INT NOT NULL,\n" +
-                            "  ID_MOTORISTA INT NOT NULL,\n" +
+                            "  ID_MOTORISTA INT,\n" +
+                            "  ID_VEICULO INT,\n" +
                             "  PRIMARY KEY (ID),\n" +
                             "  FOREIGN KEY (ID_CATEGORIA)\n" +
                             "  REFERENCES CATEGORIA (ID),\n" +
+                            "  FOREIGN KEY (ID_VEICULO)\n" +
+                            "  REFERENCES CATEGORIA (ID),\n" +                            
                             "  FOREIGN KEY (ID_MODELO)\n" +
                             "  REFERENCES MODELO (ID),\n" +
                             "  FOREIGN KEY (ID_MOTORISTA)\n" +
@@ -153,12 +156,9 @@ public class CriacaoBanco
                             "  ID SERIAL,\n" +
                             "  STATUS VARCHAR(20),\n" +
                             "  DATA_VENCIMENTO DATE,\n" +
-                            "  FIM_CONTRATO DATE,\n" +
-                            "  ID_VEICULO INT NOT NULL,\n" +
+                            "  FIM_CONTRATO DATE,\n" +                           
                             "  VALOR FLOAT,\n" +
-                            "  PRIMARY KEY (ID),\n" +
-                            "  FOREIGN KEY (ID_VEICULO)\n" +
-                            "  REFERENCES VEICULO (ID)\n" +
+                            "  PRIMARY KEY (ID)\n" +
                             ");\n" +
                             "\n" +
                             "\n" +

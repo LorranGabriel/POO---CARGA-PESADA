@@ -22,10 +22,11 @@ public class ConexaoBD {
             try {
                 Connection c = null;
                 
-                 String USUARIO = "postgres";
-                 String SENHA = "root";
-                 String URL = "jdbc:postgresql://localhost:5432/CARGAPESADA_4";
-                 String DRIVER = "com.postgresql.jdbc.Driver";
+                 String USUARIO = "nqygzcvg";
+                 String SENHA = "Mr6i5_qmB1mEiJRKTbiQPDB1qXaHGqZ1";
+                 //String URL = "jdbc:postgresql://localhost:5432/CARGAPESADA_4";
+                 String URL = "jdbc:postgresql://stampy.db.elephantsql.com:5432/nqygzcvg";
+              
                 
              
                 c =  DriverManager.getConnection(URL, USUARIO, SENHA);
