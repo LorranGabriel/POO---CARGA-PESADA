@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BDInsert;
+package Seguro;
 
 import ConexaoBD.ConexaoBD;
 import cargapesada.Modelo.Seguro;
