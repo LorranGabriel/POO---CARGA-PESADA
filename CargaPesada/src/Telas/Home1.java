@@ -6,6 +6,9 @@
 package Telas;
 
 import java.net.URL;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 
 /**
@@ -20,6 +23,12 @@ public class Home1 extends javax.swing.JFrame {
     public Home1() {
         initComponents();
         setContentPane(Home); 
+        Date dataHoraAtual = new Date();
+        String data1 = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
+        String hora1 = new SimpleDateFormat("EEEE, HH:mm zzzz").format(dataHoraAtual);
+        data.setText(data1);
+        hora.setText(hora1);
+        
     }
 
     /**
@@ -33,62 +42,64 @@ public class Home1 extends javax.swing.JFrame {
 
         Home = new javax.swing.JPanel();
         Label_Home = new javax.swing.JLabel();
+        data = new javax.swing.JLabel();
+        hora = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         Servico = new javax.swing.JPanel();
         Label_Servico = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        botaoCadastrarServico = new javax.swing.JButton();
+        buscarServico = new javax.swing.JTextField();
+        botaoBuscarServico = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaServico = new javax.swing.JTable();
         Veiculos = new javax.swing.JPanel();
         Label_Veiculo = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        pesquisarVeiculos = new javax.swing.JTextField();
+        botaoPesquisarVeiculos = new javax.swing.JButton();
+        botaoCadastrarVeiculos = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tabelaVeiculos = new javax.swing.JTable();
         Financeiro = new javax.swing.JPanel();
         Label_Financeiro = new javax.swing.JLabel();
         Scroll_Saida = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        tabelaSaidaFinanceiro = new javax.swing.JTable();
         Label_Saida = new javax.swing.JLabel();
-        Caixa_Pesquisa_Saida = new javax.swing.JTextField();
-        Botao_Pesquisar_Saida = new javax.swing.JButton();
-        Botao_Cadastro_Saida = new javax.swing.JButton();
+        pesquisarSaidaFinanceiro = new javax.swing.JTextField();
+        botaopesquisarSaidaFinanceiro = new javax.swing.JButton();
+        botaoCadastroSaida = new javax.swing.JButton();
         Scroll_Entrada = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
-        Botao_Cadastrar_Entrada = new javax.swing.JButton();
-        Botao_Pesquisar_Funcionarios1 = new javax.swing.JButton();
-        Caixa_Pesquisa_Entrada = new javax.swing.JTextField();
+        tabelaEntradaFinanceiro = new javax.swing.JTable();
+        botaoCadastrarEntradaFinanceiro = new javax.swing.JButton();
+        botaoPesquisaEntradaFinanceiro = new javax.swing.JButton();
+        pesquisaEntradaFinanceiro = new javax.swing.JTextField();
         Label_Entrada = new javax.swing.JLabel();
         Funcionarios = new javax.swing.JPanel();
         Label_Funcionarios = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        Botao_Pesquisar_Funcionarios = new javax.swing.JButton();
-        Botao_Cadastrar_Funcionario = new javax.swing.JButton();
+        pesquisarFuncionarios = new javax.swing.JTextField();
+        botaoPesquisarFuncionarios = new javax.swing.JButton();
+        botaoCadastrarFuncionario = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tabelaFuncionarios = new javax.swing.JTable();
         Label_Principal3 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        Botao_Pesquisar_Motorista = new javax.swing.JButton();
-        Botao_Cadastro_Motorista = new javax.swing.JButton();
+        pesquisarMotorista = new javax.swing.JTextField();
+        botaopesquisarMotorista = new javax.swing.JButton();
+        botaoCadastroMotorista = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tabelaMotorista = new javax.swing.JTable();
         Clientes = new javax.swing.JPanel();
         Label_Clientes = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
-        Botao_Pesquisar_Cliente = new javax.swing.JButton();
-        Botao_Cadastrar_Cliente = new javax.swing.JButton();
-        Panel_Limpo = new javax.swing.JPanel();
+        tabelaClientes = new javax.swing.JTable();
+        pesquisarCliente = new javax.swing.JTextField();
+        botaoPesquisarCliente = new javax.swing.JButton();
+        botaoCadastrarCliente = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
+        homeMenu = new javax.swing.JMenu();
+        servicosMenu = new javax.swing.JMenu();
+        veiculosMenu = new javax.swing.JMenu();
+        financeiroMenu = new javax.swing.JMenu();
+        funcionariosMenu = new javax.swing.JMenu();
+        clientesMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,21 +108,42 @@ public class Home1 extends javax.swing.JFrame {
         Label_Home.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Home.setText("Inicio");
 
+        data.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        data.setText("data");
+
+        hora.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        hora.setText("hora");
+
+        jLabel1.setText("Versão 1.1");
+
         javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
         Home.setLayout(HomeLayout);
         HomeLayout.setHorizontalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HomeLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
                 .addComponent(Label_Home, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(582, Short.MAX_VALUE))
+                .addContainerGap(589, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(data)
+                    .addComponent(jLabel1)
+                    .addComponent(hora))
+                .addGap(59, 59, 59))
         );
         HomeLayout.setVerticalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomeLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(67, 67, 67)
                 .addComponent(Label_Home)
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 325, Short.MAX_VALUE)
+                .addComponent(data, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hora)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(21, 21, 21))
         );
 
         Servico.setBackground(new java.awt.Color(255, 255, 255));
@@ -119,40 +151,40 @@ public class Home1 extends javax.swing.JFrame {
         Label_Servico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Servico.setText("Serviço");
 
-        jButton2.setText("Cadastrar Novo Serviço");
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        botaoCadastrarServico.setText("Cadastrar Novo Serviço");
+        botaoCadastrarServico.setBackground(new java.awt.Color(255, 255, 255));
+        botaoCadastrarServico.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
-        jButton2.setBorderPainted(false);
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCadastrarServico.setBorderPainted(false);
+        botaoCadastrarServico.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                botaoCadastrarServicoMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrarServico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botaoCadastrarServicoActionPerformed(evt);
             }
         });
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        buscarServico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                buscarServicoActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Buscar Serviço");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jButton1.setBorderPainted(false);
-        jButton1.setMaximumSize(new java.awt.Dimension(147, 23));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoBuscarServico.setBackground(new java.awt.Color(255, 255, 255));
+        botaoBuscarServico.setText("Buscar Serviço");
+        botaoBuscarServico.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        botaoBuscarServico.setBorderPainted(false);
+        botaoBuscarServico.setMaximumSize(new java.awt.Dimension(147, 23));
+        botaoBuscarServico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botaoBuscarServicoActionPerformed(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaServico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -173,11 +205,11 @@ public class Home1 extends javax.swing.JFrame {
                 "n°", "Veiculos", "Origem", "Destino", "Data Inicio", "Data Fim", "Cliente", "Status", "Detalhes"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(6).setHeaderValue("Cliente");
-            jTable1.getColumnModel().getColumn(7).setHeaderValue("Status");
-            jTable1.getColumnModel().getColumn(8).setHeaderValue("Detalhes");
+        jScrollPane1.setViewportView(tabelaServico);
+        if (tabelaServico.getColumnModel().getColumnCount() > 0) {
+            tabelaServico.getColumnModel().getColumn(6).setHeaderValue("Cliente");
+            tabelaServico.getColumnModel().getColumn(7).setHeaderValue("Status");
+            tabelaServico.getColumnModel().getColumn(8).setHeaderValue("Detalhes");
         }
 
         javax.swing.GroupLayout ServicoLayout = new javax.swing.GroupLayout(Servico);
@@ -188,11 +220,11 @@ public class Home1 extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(Label_Servico)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoBuscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoCadastrarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addGroup(ServicoLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
@@ -205,9 +237,9 @@ public class Home1 extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addGroup(ServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_Servico)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoBuscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoCadastrarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(172, Short.MAX_VALUE))
@@ -216,27 +248,27 @@ public class Home1 extends javax.swing.JFrame {
         Label_Veiculo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Veiculo.setText("Veiculos");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        pesquisarVeiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                pesquisarVeiculosActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Pesquisar");
+        botaoPesquisarVeiculos.setText("Pesquisar");
 
-        jButton10.setText("Cadastrar");
-        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCadastrarVeiculos.setText("Cadastrar");
+        botaoCadastrarVeiculos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton10MouseClicked(evt);
+                botaoCadastrarVeiculosMouseClicked(evt);
             }
         });
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrarVeiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                botaoCadastrarVeiculosActionPerformed(evt);
             }
         });
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaVeiculos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -257,7 +289,7 @@ public class Home1 extends javax.swing.JFrame {
                 "n°", "Marca", "Modelo", "Ano", "RENAVAM", "Placa", "Cor", "Motorista", "Status", "Detalhes"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(tabelaVeiculos);
 
         javax.swing.GroupLayout VeiculosLayout = new javax.swing.GroupLayout(Veiculos);
         Veiculos.setLayout(VeiculosLayout);
@@ -267,11 +299,11 @@ public class Home1 extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(Label_Veiculo)
                 .addGap(101, 101, 101)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pesquisarVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton9)
+                .addComponent(botaoPesquisarVeiculos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoCadastrarVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VeiculosLayout.createSequentialGroup()
                 .addContainerGap(25, Short.MAX_VALUE)
@@ -284,9 +316,9 @@ public class Home1 extends javax.swing.JFrame {
                 .addContainerGap(76, Short.MAX_VALUE)
                 .addGroup(VeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_Veiculo)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10))
+                    .addComponent(pesquisarVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoPesquisarVeiculos)
+                    .addComponent(botaoCadastrarVeiculos))
                 .addGap(54, 54, 54)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(153, 153, 153))
@@ -295,7 +327,7 @@ public class Home1 extends javax.swing.JFrame {
         Label_Financeiro.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Financeiro.setText("Financeiro");
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaSaidaFinanceiro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -316,32 +348,32 @@ public class Home1 extends javax.swing.JFrame {
                 "n°", "Nome", "Endereço", "CPF", "Email", "CNH", "Categoria", "Validade", "Detalhes"
             }
         ));
-        Scroll_Saida.setViewportView(jTable6);
+        Scroll_Saida.setViewportView(tabelaSaidaFinanceiro);
 
         Label_Saida.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Label_Saida.setText("Tabela de Saida");
 
-        Caixa_Pesquisa_Saida.addActionListener(new java.awt.event.ActionListener() {
+        pesquisarSaidaFinanceiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_Pesquisa_SaidaActionPerformed(evt);
+                pesquisarSaidaFinanceiroActionPerformed(evt);
             }
         });
 
-        Botao_Pesquisar_Saida.setText("Pesquisar");
+        botaopesquisarSaidaFinanceiro.setText("Pesquisar");
 
-        Botao_Cadastro_Saida.setText("Cadastrar");
-        Botao_Cadastro_Saida.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCadastroSaida.setText("Cadastrar");
+        botaoCadastroSaida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Botao_Cadastro_SaidaMouseClicked(evt);
+                botaoCadastroSaidaMouseClicked(evt);
             }
         });
-        Botao_Cadastro_Saida.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastroSaida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botao_Cadastro_SaidaActionPerformed(evt);
+                botaoCadastroSaidaActionPerformed(evt);
             }
         });
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaEntradaFinanceiro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -362,30 +394,30 @@ public class Home1 extends javax.swing.JFrame {
                 "n°", "Nome", "Endereço", "CPF", "Email", "Detalhes"
             }
         ));
-        Scroll_Entrada.setViewportView(jTable7);
+        Scroll_Entrada.setViewportView(tabelaEntradaFinanceiro);
 
-        Botao_Cadastrar_Entrada.setText("Cadastrar");
-        Botao_Cadastrar_Entrada.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCadastrarEntradaFinanceiro.setText("Cadastrar");
+        botaoCadastrarEntradaFinanceiro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Botao_Cadastrar_EntradaMouseClicked(evt);
+                botaoCadastrarEntradaFinanceiroMouseClicked(evt);
             }
         });
-        Botao_Cadastrar_Entrada.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrarEntradaFinanceiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botao_Cadastrar_EntradaActionPerformed(evt);
-            }
-        });
-
-        Botao_Pesquisar_Funcionarios1.setText("Pesquisar");
-        Botao_Pesquisar_Funcionarios1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botao_Pesquisar_Funcionarios1ActionPerformed(evt);
+                botaoCadastrarEntradaFinanceiroActionPerformed(evt);
             }
         });
 
-        Caixa_Pesquisa_Entrada.addActionListener(new java.awt.event.ActionListener() {
+        botaoPesquisaEntradaFinanceiro.setText("Pesquisar");
+        botaoPesquisaEntradaFinanceiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Caixa_Pesquisa_EntradaActionPerformed(evt);
+                botaoPesquisaEntradaFinanceiroActionPerformed(evt);
+            }
+        });
+
+        pesquisaEntradaFinanceiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisaEntradaFinanceiroActionPerformed(evt);
             }
         });
 
@@ -402,30 +434,31 @@ public class Home1 extends javax.swing.JFrame {
                     .addComponent(Label_Entrada)
                     .addComponent(Label_Financeiro))
                 .addGap(74, 74, 74)
-                .addComponent(Caixa_Pesquisa_Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pesquisaEntradaFinanceiro, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Botao_Pesquisar_Funcionarios1)
+                .addComponent(botaoPesquisaEntradaFinanceiro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Botao_Cadastrar_Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoCadastrarEntradaFinanceiro, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72))
-            .addGroup(FinanceiroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Scroll_Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FinanceiroLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(Label_Saida)
                 .addGap(99, 99, 99)
-                .addComponent(Caixa_Pesquisa_Saida, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pesquisarSaidaFinanceiro, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Botao_Pesquisar_Saida)
+                .addComponent(botaopesquisarSaidaFinanceiro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Botao_Cadastro_Saida, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoCadastroSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FinanceiroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Scroll_Saida, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(FinanceiroLayout.createSequentialGroup()
+                .addGroup(FinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FinanceiroLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Scroll_Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FinanceiroLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(Scroll_Saida, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         FinanceiroLayout.setVerticalGroup(
             FinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,48 +467,48 @@ public class Home1 extends javax.swing.JFrame {
                 .addGroup(FinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Label_Financeiro, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Caixa_Pesquisa_Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Botao_Pesquisar_Funcionarios1)
-                        .addComponent(Botao_Cadastrar_Entrada)))
+                        .addComponent(pesquisaEntradaFinanceiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoPesquisaEntradaFinanceiro)
+                        .addComponent(botaoCadastrarEntradaFinanceiro)))
                 .addGap(18, 18, 18)
                 .addComponent(Label_Entrada)
                 .addGap(14, 14, 14)
                 .addComponent(Scroll_Entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(FinanceiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Caixa_Pesquisa_Saida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Botao_Pesquisar_Saida)
-                    .addComponent(Botao_Cadastro_Saida)
+                    .addComponent(pesquisarSaidaFinanceiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaopesquisarSaidaFinanceiro)
+                    .addComponent(botaoCadastroSaida)
                     .addComponent(Label_Saida))
-                .addGap(40, 40, 40)
+                .addGap(38, 38, 38)
                 .addComponent(Scroll_Saida, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
+                .addGap(59, 59, 59))
         );
 
         Label_Funcionarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Funcionarios.setText("Funcionarios");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        pesquisarFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                pesquisarFuncionariosActionPerformed(evt);
             }
         });
 
-        Botao_Pesquisar_Funcionarios.setText("Pesquisar");
+        botaoPesquisarFuncionarios.setText("Pesquisar");
 
-        Botao_Cadastrar_Funcionario.setText("Cadastrar");
-        Botao_Cadastrar_Funcionario.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCadastrarFuncionario.setText("Cadastrar");
+        botaoCadastrarFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Botao_Cadastrar_FuncionarioMouseClicked(evt);
+                botaoCadastrarFuncionarioMouseClicked(evt);
             }
         });
-        Botao_Cadastrar_Funcionario.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botao_Cadastrar_FuncionarioActionPerformed(evt);
+                botaoCadastrarFuncionarioActionPerformed(evt);
             }
         });
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -496,32 +529,32 @@ public class Home1 extends javax.swing.JFrame {
                 "n°", "Nome", "Endereço", "CPF", "Email", "Detalhes"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tabelaFuncionarios);
 
         Label_Principal3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Principal3.setText("Motorista");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        pesquisarMotorista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                pesquisarMotoristaActionPerformed(evt);
             }
         });
 
-        Botao_Pesquisar_Motorista.setText("Pesquisar");
+        botaopesquisarMotorista.setText("Pesquisar");
 
-        Botao_Cadastro_Motorista.setText("Cadastrar");
-        Botao_Cadastro_Motorista.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCadastroMotorista.setText("Cadastrar");
+        botaoCadastroMotorista.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Botao_Cadastro_MotoristaMouseClicked(evt);
+                botaoCadastroMotoristaMouseClicked(evt);
             }
         });
-        Botao_Cadastro_Motorista.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastroMotorista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botao_Cadastro_MotoristaActionPerformed(evt);
+                botaoCadastroMotoristaActionPerformed(evt);
             }
         });
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaMotorista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -542,7 +575,7 @@ public class Home1 extends javax.swing.JFrame {
                 "n°", "Nome", "Endereço", "CPF", "Email", "CNH", "Categoria", "Validade", "Detalhes"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(tabelaMotorista);
 
         javax.swing.GroupLayout FuncionariosLayout = new javax.swing.GroupLayout(Funcionarios);
         Funcionarios.setLayout(FuncionariosLayout);
@@ -552,11 +585,11 @@ public class Home1 extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(Label_Funcionarios)
                 .addGap(74, 74, 74)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pesquisarFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Botao_Pesquisar_Funcionarios)
+                .addComponent(botaoPesquisarFuncionarios)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Botao_Cadastrar_Funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FuncionariosLayout.createSequentialGroup()
                 .addContainerGap(40, Short.MAX_VALUE)
@@ -571,11 +604,11 @@ public class Home1 extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addComponent(Label_Principal3)
                         .addGap(99, 99, 99)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pesquisarMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Botao_Pesquisar_Motorista)
+                        .addComponent(botaopesquisarMotorista)
                         .addGap(53, 53, 53)
-                        .addComponent(Botao_Cadastro_Motorista, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botaoCadastroMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         FuncionariosLayout.setVerticalGroup(
@@ -585,16 +618,16 @@ public class Home1 extends javax.swing.JFrame {
                 .addGroup(FuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Label_Funcionarios, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Botao_Pesquisar_Funcionarios)
-                        .addComponent(Botao_Cadastrar_Funcionario)))
+                        .addComponent(pesquisarFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoPesquisarFuncionarios)
+                        .addComponent(botaoCadastrarFuncionario)))
                 .addGap(49, 49, 49)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(FuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Botao_Pesquisar_Motorista)
-                    .addComponent(Botao_Cadastro_Motorista)
+                    .addComponent(pesquisarMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaopesquisarMotorista)
+                    .addComponent(botaoCadastroMotorista)
                     .addComponent(Label_Principal3))
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -604,7 +637,7 @@ public class Home1 extends javax.swing.JFrame {
         Label_Clientes.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Clientes.setText("Cliente");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -625,25 +658,25 @@ public class Home1 extends javax.swing.JFrame {
                 "n°", "Nome", "CPF", "CNPJ", "Contato", "Endereço"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tabelaClientes);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        pesquisarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                pesquisarClienteActionPerformed(evt);
             }
         });
 
-        Botao_Pesquisar_Cliente.setText("Pesquisar");
+        botaoPesquisarCliente.setText("Pesquisar");
 
-        Botao_Cadastrar_Cliente.setText("Cadastrar");
-        Botao_Cadastrar_Cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+        botaoCadastrarCliente.setText("Cadastrar");
+        botaoCadastrarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Botao_Cadastrar_ClienteMouseClicked(evt);
+                botaoCadastrarClienteMouseClicked(evt);
             }
         });
-        Botao_Cadastrar_Cliente.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botao_Cadastrar_ClienteActionPerformed(evt);
+                botaoCadastrarClienteActionPerformed(evt);
             }
         });
 
@@ -652,95 +685,84 @@ public class Home1 extends javax.swing.JFrame {
         ClientesLayout.setHorizontalGroup(
             ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ClientesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-            .addGroup(ClientesLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(Label_Clientes)
                 .addGap(101, 101, 101)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pesquisarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Botao_Pesquisar_Cliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Botao_Cadastrar_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoPesquisarCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addComponent(botaoCadastrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71))
+            .addGroup(ClientesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ClientesLayout.setVerticalGroup(
             ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ClientesLayout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
+                .addContainerGap(77, Short.MAX_VALUE)
                 .addGroup(ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_Clientes)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Botao_Pesquisar_Cliente)
-                    .addComponent(Botao_Cadastrar_Cliente))
-                .addGap(66, 66, 66)
+                    .addComponent(pesquisarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoPesquisarCliente)
+                    .addComponent(botaoCadastrarCliente))
+                .addGap(65, 65, 65)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(141, 141, 141))
-        );
-
-        javax.swing.GroupLayout Panel_LimpoLayout = new javax.swing.GroupLayout(Panel_Limpo);
-        Panel_Limpo.setLayout(Panel_LimpoLayout);
-        Panel_LimpoLayout.setHorizontalGroup(
-            Panel_LimpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
-        );
-        Panel_LimpoLayout.setVerticalGroup(
-            Panel_LimpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 521, Short.MAX_VALUE)
+                .addGap(142, 142, 142))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jMenu1.setText("Home");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        homeMenu.setText("Home");
+        homeMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
+                homeMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(homeMenu);
 
-        jMenu2.setText("Serviços");
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+        servicosMenu.setText("Serviços");
+        servicosMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu2MouseClicked(evt);
+                servicosMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(servicosMenu);
 
-        jMenu4.setText("Veiculos");
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+        veiculosMenu.setText("Veiculos");
+        veiculosMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
+                veiculosMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(veiculosMenu);
 
-        jMenu5.setText("Financeiro");
-        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+        financeiroMenu.setText("Financeiro");
+        financeiroMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu5MouseClicked(evt);
+                financeiroMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu5);
+        jMenuBar1.add(financeiroMenu);
 
-        jMenu6.setText("Funcionarios");
-        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+        funcionariosMenu.setText("Funcionarios");
+        funcionariosMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu6MouseClicked(evt);
+                funcionariosMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu6);
+        jMenuBar1.add(funcionariosMenu);
 
-        jMenu7.setText("Clientes");
-        jMenu7.addMouseListener(new java.awt.event.MouseAdapter() {
+        clientesMenu.setText("Clientes");
+        clientesMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu7MouseClicked(evt);
+                clientesMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu7);
+        jMenuBar1.add(clientesMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -759,8 +781,6 @@ public class Home1 extends javax.swing.JFrame {
                 .addComponent(Funcionarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(Clientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(Panel_Limpo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -775,147 +795,145 @@ public class Home1 extends javax.swing.JFrame {
                 .addComponent(Funcionarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(Clientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(Panel_Limpo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+    private void servicosMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicosMenuMouseClicked
         setContentPane(Servico); 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu2MouseClicked
+    }//GEN-LAST:event_servicosMenuMouseClicked
 
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+    private void homeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMenuMouseClicked
         setContentPane(Home);
-    }//GEN-LAST:event_jMenu1MouseClicked
+    }//GEN-LAST:event_homeMenuMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botaoCadastrarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarServicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botaoCadastrarServicoActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void buscarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarServicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_buscarServicoActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void pesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_pesquisarClienteActionPerformed
 
-    private void Botao_Cadastrar_ClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_ClienteActionPerformed
+    private void botaoCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Botao_Cadastrar_ClienteActionPerformed
+    }//GEN-LAST:event_botaoCadastrarClienteActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void pesquisarFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarFuncionariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_pesquisarFuncionariosActionPerformed
 
-    private void Botao_Cadastrar_FuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_FuncionarioActionPerformed
+    private void botaoCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Botao_Cadastrar_FuncionarioActionPerformed
+    }//GEN-LAST:event_botaoCadastrarFuncionarioActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void pesquisarMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarMotoristaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_pesquisarMotoristaActionPerformed
 
-    private void Botao_Cadastro_MotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_Cadastro_MotoristaActionPerformed
+    private void botaoCadastroMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastroMotoristaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Botao_Cadastro_MotoristaActionPerformed
+    }//GEN-LAST:event_botaoCadastroMotoristaActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void pesquisarVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarVeiculosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_pesquisarVeiculosActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void botaoCadastrarVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarVeiculosActionPerformed
                   // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_botaoCadastrarVeiculosActionPerformed
 
-    private void Caixa_Pesquisa_SaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_Pesquisa_SaidaActionPerformed
+    private void pesquisarSaidaFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarSaidaFinanceiroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Caixa_Pesquisa_SaidaActionPerformed
+    }//GEN-LAST:event_pesquisarSaidaFinanceiroActionPerformed
 
-    private void Botao_Cadastro_SaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_Cadastro_SaidaActionPerformed
+    private void botaoCadastroSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastroSaidaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Botao_Cadastro_SaidaActionPerformed
+    }//GEN-LAST:event_botaoCadastroSaidaActionPerformed
 
-    private void Botao_Cadastrar_EntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_EntradaActionPerformed
+    private void botaoCadastrarEntradaFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarEntradaFinanceiroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Botao_Cadastrar_EntradaActionPerformed
+    }//GEN-LAST:event_botaoCadastrarEntradaFinanceiroActionPerformed
 
-    private void Caixa_Pesquisa_EntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caixa_Pesquisa_EntradaActionPerformed
+    private void pesquisaEntradaFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisaEntradaFinanceiroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Caixa_Pesquisa_EntradaActionPerformed
+    }//GEN-LAST:event_pesquisaEntradaFinanceiroActionPerformed
 
-    private void Botao_Pesquisar_Funcionarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_Pesquisar_Funcionarios1ActionPerformed
+    private void botaoPesquisaEntradaFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPesquisaEntradaFinanceiroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Botao_Pesquisar_Funcionarios1ActionPerformed
+    }//GEN-LAST:event_botaoPesquisaEntradaFinanceiroActionPerformed
 
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+    private void veiculosMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_veiculosMenuMouseClicked
         // TODO add your handling code here:
         setContentPane(Veiculos);         
-    }//GEN-LAST:event_jMenu4MouseClicked
+    }//GEN-LAST:event_veiculosMenuMouseClicked
 
-    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+    private void financeiroMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_financeiroMenuMouseClicked
         // TODO add your handling code here:
         setContentPane(Financeiro);         
-    }//GEN-LAST:event_jMenu5MouseClicked
+    }//GEN-LAST:event_financeiroMenuMouseClicked
 
-    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+    private void funcionariosMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_funcionariosMenuMouseClicked
         // TODO add your handling code here:
         setContentPane(Funcionarios); 
-    }//GEN-LAST:event_jMenu6MouseClicked
+    }//GEN-LAST:event_funcionariosMenuMouseClicked
 
-    private void jMenu7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu7MouseClicked
+    private void clientesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientesMenuMouseClicked
         // TODO add your handling code here:
         setContentPane(Clientes); 
-    }//GEN-LAST:event_jMenu7MouseClicked
+    }//GEN-LAST:event_clientesMenuMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void botaoCadastrarServicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarServicoMouseClicked
         // TODO add your handling code here:
         CadastroServico cadastro_Servico = new CadastroServico();
         cadastro_Servico.setVisible(true);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_botaoCadastrarServicoMouseClicked
 
-    private void Botao_Cadastrar_ClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_ClienteMouseClicked
+    private void botaoCadastrarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarClienteMouseClicked
         // TODO add your handling code here:
          CadastroCliente Cadastro_Cliente = new CadastroCliente();
         Cadastro_Cliente.setVisible(true);
-    }//GEN-LAST:event_Botao_Cadastrar_ClienteMouseClicked
+    }//GEN-LAST:event_botaoCadastrarClienteMouseClicked
 
-    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+    private void botaoCadastrarVeiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarVeiculosMouseClicked
         // TODO add your handling code here:
         CadastroVeiculo Cadastro_Veiculo = new CadastroVeiculo();
         Cadastro_Veiculo.setVisible(true);
-    }//GEN-LAST:event_jButton10MouseClicked
+    }//GEN-LAST:event_botaoCadastrarVeiculosMouseClicked
 
-    private void Botao_Cadastrar_EntradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_EntradaMouseClicked
+    private void botaoCadastrarEntradaFinanceiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarEntradaFinanceiroMouseClicked
          CadastroFinanceiroEntrada Cadastro_Entrada = new CadastroFinanceiroEntrada();
         Cadastro_Entrada.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_Botao_Cadastrar_EntradaMouseClicked
+    }//GEN-LAST:event_botaoCadastrarEntradaFinanceiroMouseClicked
 
-    private void Botao_Cadastro_SaidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastro_SaidaMouseClicked
+    private void botaoCadastroSaidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastroSaidaMouseClicked
         CadastroFinanceiroSaida Cadastro_Saida = new CadastroFinanceiroSaida();
         Cadastro_Saida.setVisible(true);
         // TODO add your handling code here:
             
-    }//GEN-LAST:event_Botao_Cadastro_SaidaMouseClicked
+    }//GEN-LAST:event_botaoCadastroSaidaMouseClicked
 
-    private void Botao_Cadastrar_FuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastrar_FuncionarioMouseClicked
+    private void botaoCadastrarFuncionarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarFuncionarioMouseClicked
         // TODO add your handling code here:
         CadastroFuncionario Cadastro_Funcionario = new CadastroFuncionario();
         Cadastro_Funcionario.setVisible(true);
-    }//GEN-LAST:event_Botao_Cadastrar_FuncionarioMouseClicked
+    }//GEN-LAST:event_botaoCadastrarFuncionarioMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoBuscarServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoBuscarServicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botaoBuscarServicoActionPerformed
 
-    private void Botao_Cadastro_MotoristaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_Cadastro_MotoristaMouseClicked
+    private void botaoCadastroMotoristaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastroMotoristaMouseClicked
         CadastroMotorista Cadatro_Motorista = new CadastroMotorista();
         Cadatro_Motorista.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_Botao_Cadastro_MotoristaMouseClicked
+    }//GEN-LAST:event_botaoCadastroMotoristaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -954,18 +972,6 @@ public class Home1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Botao_Cadastrar_Cliente;
-    private javax.swing.JButton Botao_Cadastrar_Entrada;
-    private javax.swing.JButton Botao_Cadastrar_Funcionario;
-    private javax.swing.JButton Botao_Cadastro_Motorista;
-    private javax.swing.JButton Botao_Cadastro_Saida;
-    private javax.swing.JButton Botao_Pesquisar_Cliente;
-    private javax.swing.JButton Botao_Pesquisar_Funcionarios;
-    private javax.swing.JButton Botao_Pesquisar_Funcionarios1;
-    private javax.swing.JButton Botao_Pesquisar_Motorista;
-    private javax.swing.JButton Botao_Pesquisar_Saida;
-    private javax.swing.JTextField Caixa_Pesquisa_Entrada;
-    private javax.swing.JTextField Caixa_Pesquisa_Saida;
     private javax.swing.JPanel Clientes;
     private javax.swing.JPanel Financeiro;
     private javax.swing.JPanel Funcionarios;
@@ -979,39 +985,53 @@ public class Home1 extends javax.swing.JFrame {
     private javax.swing.JLabel Label_Saida;
     private javax.swing.JLabel Label_Servico;
     private javax.swing.JLabel Label_Veiculo;
-    private javax.swing.JPanel Panel_Limpo;
     private javax.swing.JScrollPane Scroll_Entrada;
     private javax.swing.JScrollPane Scroll_Saida;
     private javax.swing.JPanel Servico;
     private javax.swing.JPanel Veiculos;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
+    private javax.swing.JButton botaoBuscarServico;
+    private javax.swing.JButton botaoCadastrarCliente;
+    private javax.swing.JButton botaoCadastrarEntradaFinanceiro;
+    private javax.swing.JButton botaoCadastrarFuncionario;
+    private javax.swing.JButton botaoCadastrarServico;
+    private javax.swing.JButton botaoCadastrarVeiculos;
+    private javax.swing.JButton botaoCadastroMotorista;
+    private javax.swing.JButton botaoCadastroSaida;
+    private javax.swing.JButton botaoPesquisaEntradaFinanceiro;
+    private javax.swing.JButton botaoPesquisarCliente;
+    private javax.swing.JButton botaoPesquisarFuncionarios;
+    private javax.swing.JButton botaoPesquisarVeiculos;
+    private javax.swing.JButton botaopesquisarMotorista;
+    private javax.swing.JButton botaopesquisarSaidaFinanceiro;
+    private javax.swing.JTextField buscarServico;
+    private javax.swing.JMenu clientesMenu;
+    private javax.swing.JLabel data;
+    private javax.swing.JMenu financeiroMenu;
+    private javax.swing.JMenu funcionariosMenu;
+    private javax.swing.JMenu homeMenu;
+    private javax.swing.JLabel hora;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField pesquisaEntradaFinanceiro;
+    private javax.swing.JTextField pesquisarCliente;
+    private javax.swing.JTextField pesquisarFuncionarios;
+    private javax.swing.JTextField pesquisarMotorista;
+    private javax.swing.JTextField pesquisarSaidaFinanceiro;
+    private javax.swing.JTextField pesquisarVeiculos;
+    private javax.swing.JMenu servicosMenu;
+    private javax.swing.JTable tabelaClientes;
+    private javax.swing.JTable tabelaEntradaFinanceiro;
+    private javax.swing.JTable tabelaFuncionarios;
+    private javax.swing.JTable tabelaMotorista;
+    private javax.swing.JTable tabelaSaidaFinanceiro;
+    private javax.swing.JTable tabelaServico;
+    private javax.swing.JTable tabelaVeiculos;
+    private javax.swing.JMenu veiculosMenu;
     // End of variables declaration//GEN-END:variables
 
 }

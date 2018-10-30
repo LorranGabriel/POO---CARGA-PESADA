@@ -69,8 +69,8 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         parcelasPagas = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cadastrar = new javax.swing.JButton();
+        voltar = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
@@ -252,17 +252,17 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Cadastrar");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        cadastrar.setText("Cadastrar");
+        cadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                cadastrarMouseClicked(evt);
             }
         });
 
-        jButton2.setText("Voltar");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        voltar.setText("Voltar");
+        voltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                voltarMouseClicked(evt);
             }
         });
 
@@ -396,23 +396,19 @@ public class CadastroVeiculo extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(parcelasTotais, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(parcelasTotais, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(21, 21, 21)
                                         .addComponent(financiador, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
-                                        .addComponent(jButton2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton1))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jButton3))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
+                                        .addGap(37, 37, 37)
+                                        .addComponent(voltar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cadastrar))))
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel22)
+                            .addComponent(jButton3))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -480,8 +476,8 @@ public class CadastroVeiculo extends javax.swing.JFrame {
                     .addComponent(financiador, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27)
                     .addComponent(parcelasPagas, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(cadastrar)
+                    .addComponent(voltar))
                 .addContainerGap())
         );
 
@@ -560,15 +556,15 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_parcelasPagasActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voltarMouseClicked
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_voltarMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_cadastrarMouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -618,13 +614,12 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField altura;
     private javax.swing.JTextField ano;
+    private javax.swing.JButton cadastrar;
     private javax.swing.JTextField categoria;
     private javax.swing.JTextField chassi;
     private javax.swing.JTextField comprimento;
     private javax.swing.JTextField eixos;
     private javax.swing.JTextField financiador;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
@@ -661,6 +656,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     private javax.swing.JTextField status;
     private javax.swing.JTextField tipoCombustivel;
     private javax.swing.JTextField valorParcela;
+    private javax.swing.JButton voltar;
     private javax.swing.JTextField volume;
     // End of variables declaration//GEN-END:variables
 }
