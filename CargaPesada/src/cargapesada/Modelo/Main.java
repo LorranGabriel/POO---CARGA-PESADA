@@ -26,12 +26,14 @@ public class Main {
         // Cria funcionario
        //CriacaoBanco b1 = new CriacaoBanco();
        //b1.createTable();
-       CategoriaBDtest b2 = new CategoriaBDtest();
+       //CategoriaBDtest b2 = new CategoriaBDtest();
        
-        /*
-        Login tela_inicio = new Login();
-        tela_inicio.setVisible(true);
         
+        CadastroSeguro seg = new CadastroSeguro();
+        seg.setVisible(true);
+        
+        System.out.print("TESTE TESTE");
+        /*
         Endereco endereco_funcionario= new Endereco("Av. Dos sem teto","Terra do nunca",666,62456375);
         Contato contato_funcionario = new Contato(998887691,995852463,"larikamanhosa@gmail.com");
         Funcionario funcionario = new Funcionario("Josevaldo araujo nanico",12345678996L,1500.45F,"Motorista",endereco_funcionario,contato_funcionario);

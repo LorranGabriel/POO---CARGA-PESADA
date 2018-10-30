@@ -18,7 +18,7 @@ import java.sql.Statement;
  */
 public class InsereSeguro {
     
-    public void InsereNovo(Seguro novo) throws SQLException{
+    public void insereNovo(Seguro novo) throws SQLException{
         Connection c = null;
         c = ConexaoBD.getInstance();
         Statement stmt = null;
