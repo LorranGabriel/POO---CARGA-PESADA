@@ -14,6 +14,10 @@ public class Endereco
 
     private int id_endereco;
     private String endereco;
+    private String estado;
+    private String cidade;
+    private String bairro ;
+    private String referencia;
     private String logradouro;
     private int numero;
     private int cep;

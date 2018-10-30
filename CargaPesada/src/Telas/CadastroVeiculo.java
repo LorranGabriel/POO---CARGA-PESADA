@@ -575,7 +575,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
        CadastroSeguro novo = new CadastroSeguro();
-        novo.setVisible(true);
+       novo.setVisible(true);
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**

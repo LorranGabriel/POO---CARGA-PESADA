@@ -5,7 +5,7 @@
  */
 package Telas;
 
-import BDInsert.InsereSeguro;
+import Seguro.InsereSeguro;
 import cargapesada.Modelo.Seguro;
 import static com.sun.corba.se.impl.orbutil.CorbaResourceUtil.getText;
 import java.sql.SQLException;
@@ -53,7 +53,9 @@ public class CadastroSeguro extends javax.swing.JFrame {
         Data_Fim = new javax.swing.JFormattedTextField();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Status.addActionListener(new java.awt.event.ActionListener() {
