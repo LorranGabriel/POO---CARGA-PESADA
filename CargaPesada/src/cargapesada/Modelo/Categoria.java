@@ -10,22 +10,9 @@ package cargapesada.Modelo;
  * @author 20171BSI0367
  */
 public class Categoria {
-   private String classe = "CATEGORIA";
-   private int id_categoria;
-   private String nome;
-    
-   
-   public Categoria(int id_categoria,String nome)
-   {
-       
-       this.id_categoria = id_categoria;
-       this.nome = nome;
-   }
-   
-    public String getclasse(){
-        return classe;
-    }
-    
+    private int id_categoria;
+    private String nome;
+           
     public int getId_categoria() {
         return id_categoria;
     }

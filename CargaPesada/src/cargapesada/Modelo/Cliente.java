@@ -20,14 +20,6 @@ public class Cliente
         private Endereco endereco;
         private Contato contato;
     
-    public Cliente(String nome, long cnpj, long cpf, Endereco endereco, Contato contato) 
-    {
-        this.nome = nome;
-        this.cnpj = cnpj;
-        this.cpf = cpf;
-        this.endereco = endereco;
-        this.contato = contato;
-    }
     public int getId_cliente() {
         return id_cliente;
     }
