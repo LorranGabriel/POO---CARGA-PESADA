@@ -53,7 +53,7 @@ public class CategoriaBD implements InterfaceBD{
     }
 
     @Override
-    public void insert() {
+    public void insert(Object updateObj) {
        
     }
 

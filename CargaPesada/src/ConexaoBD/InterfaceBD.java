@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public interface InterfaceBD {
     public ArrayList select();
-    public void insert();
+    public void insert(Object updateObj);
     public void delet(int id);
     public void update(Object updateObj);
 }

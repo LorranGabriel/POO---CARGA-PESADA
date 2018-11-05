@@ -19,7 +19,7 @@ public class FinanciamentoBD implements InterfaceBD{
     }
 
     @Override
-    public void insert() {
+    public void insert(Object updateObj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

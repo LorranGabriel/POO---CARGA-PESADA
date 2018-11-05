@@ -5,7 +5,7 @@
  */
 package Telas;
 
-import Seguro.InsereSeguro;
+import ConexaoBD.SeguroBD;
 import cargapesada.Modelo.Seguro;
 import static com.sun.corba.se.impl.orbutil.CorbaResourceUtil.getText;
 import java.sql.SQLException;
@@ -219,14 +219,10 @@ public class CadastroSeguro extends javax.swing.JFrame {
             novo.setStatus(Status.getSelectedItem().toString());
             novo.setFim_contrato(Data_Fim.getText());
             novo.setValor(Integer.parseInt(valor.getText()));
-            InsereSeguro i = new InsereSeguro();
-        try {            
-            i.insereNovo(novo);
+            SeguroBD i = new SeguroBD();
+            i.insert(novo);
             JOptionPane.showMessageDialog(null,"SEGURO CADASTRADO!");
-            dispose();              
-        } catch (SQLException ex) {
-            Logger.getLogger(CadastroSeguro.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            dispose();
     }//GEN-LAST:event_cadastraMouseClicked
 
     private void valorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valorActionPerformed
