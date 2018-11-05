@@ -5,6 +5,8 @@
  */
 package view;
 
+import cargapesada.Modelo.Seguro;
+
 /**
  *
  * @author MATRIX
@@ -574,6 +576,8 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
        CadastroSeguro novo = new CadastroSeguro();
        novo.setVisible(true);
+       int id_seguro;
+       id_seguro = Seguro.getId_seguro();
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
