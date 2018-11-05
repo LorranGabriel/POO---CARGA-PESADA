@@ -5,7 +5,7 @@
  */
 package view;
 
-import cargapesada.Modelo.Seguro;
+import modelo.Seguro;
 
 /**
  *
