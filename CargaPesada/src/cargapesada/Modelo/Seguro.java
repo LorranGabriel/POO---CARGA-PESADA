@@ -13,7 +13,7 @@ import javax.swing.JComboBox;
  */
 public class Seguro {
     
-    private int id_seguro;
+    public static int id_seguro;
     private String status;
     private String data_vencimento;
     private String fim_contrato;
