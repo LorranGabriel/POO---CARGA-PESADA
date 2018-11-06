@@ -5,12 +5,16 @@
  */
 package ConexaoBD;
 
+import cargapesada.Modelo.Seguro;
 import cargapesada.Modelo.Veiculo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,7 +33,7 @@ public class VeiculoBD implements InterfaceBD{
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM VEICULO;");
             while (rs.next()) {
-                Veiculo veiculo = new Veiculo(null, null, null, null, null, null, null, null);
+                Veiculo veiculo = new Veiculo();
                 veiculo.setId_veiculo(rs.getInt("id"));
                 veiculo.setPlaca(rs.getString("PLACA"));
                 veiculo.setChassi(rs.getString("CHASSI"));
@@ -56,7 +60,29 @@ public class VeiculoBD implements InterfaceBD{
 
     @Override
     public void insert(Object updateObj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c = null;
+        c = ConexaoBD.getInstance();
+        Statement stmt = null;
+        Veiculo novo = (Veiculo)updateObj;
+        ResultSet rs = null;
+        try {
+            stmt = c.createStatement();
+            rs = stmt.executeQuery("INSERT INTO VEICULO(NOME, CHASSI, PLACA,STATUS,COMBUSTIVEL,) values('"+ novo.getStatus() + 
+                "','"+ novo.getData_vencimento() +"','"+ novo.getFim_contrato() +"'," +novo.getValor()+ ") RETURNING id");
+            
+            while (rs.next()){
+                novo.setId_seguro(rs.getShort("id"));
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SeguroBD.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+        
+        }
+      
+    
     }
 
     @Override

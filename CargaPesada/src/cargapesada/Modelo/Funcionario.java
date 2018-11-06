@@ -16,17 +16,12 @@ public class Funcionario {
     private long cpf;
     private float salario;
     private String cargo;
-    private Endereco endereco;
-    private Contato contato;
+    private int id_endereco;
+    private int id_contato;
 
-    public Funcionario(String nome, long cpf, float salario, String cargo, Endereco endereco, Contato contato) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.salario = salario;
-        this.cargo = cargo;
-        this.endereco = endereco;
-        this.contato = contato;
-    }
+    //private Endereco endereco;
+    //private Contato contato;
+
 
     public int getId_funcionario() {
         return id_funcionario;
@@ -47,26 +42,12 @@ public class Funcionario {
     public String getCargo() {
         return cargo;
     }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public Contato getContato() {
-        return contato;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
+ 
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
-
-    public void setContato(Contato contato) {
-        this.contato = contato;
-    }
+ 
 
     public void setSalario(float salario) {
         this.salario = salario;

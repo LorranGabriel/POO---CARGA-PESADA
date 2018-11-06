@@ -36,7 +36,10 @@ public class SeguroBD implements InterfaceBD{
             stmt = c.createStatement();
             rs = stmt.executeQuery("INSERT INTO SEGURO(status, DATA_VENCIMENTO, FIM_CONTRATO, VALOR) values('"+ novo.getStatus() + 
                 "','"+ novo.getData_vencimento() +"','"+ novo.getFim_contrato() +"'," +novo.getValor()+ ") RETURNING id");
-            novo.setId_seguro(5);
+            
+            while (rs.next()){
+                novo.setId_seguro(rs.getShort("id"));
+            }
             rs.close();
             stmt.close();
             c.close();

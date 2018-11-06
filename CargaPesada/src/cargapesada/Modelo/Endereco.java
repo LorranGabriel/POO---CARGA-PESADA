@@ -22,6 +22,8 @@ public class Endereco
     private String complemento;
     private int numero;
     private int cep;
+   
+    
     public String getComplemento() {
         return complemento;
     }

@@ -17,23 +17,35 @@ public class Veiculo {
     private String status;
     private String tipoCombustivel;
     private String categoria;
-    private Seguro seguro;
-    private Modelo modelo;
-    private Motorista motorista;
-    private Financiamento financiamento;
+    private int id_seguro;
+    private int id_modelo;
+    private int id_motorista;
 
-    public Veiculo(String chassi, String placa, String status, String tipoCombustivel, String categoria, Modelo modelo, Motorista motorista, Financiamento financiamento) {
-        this.chassi = chassi;
-        this.placa = placa;
-        this.status = status;
-        this.tipoCombustivel = tipoCombustivel;
-        this.categoria = categoria;
-        //this.seguro = seguro;
-        this.modelo = modelo;
-        this.motorista = motorista;
-        this.financiamento = financiamento;
+    public int getId_motorista() {
+        return id_motorista;
     }
 
+    public void setId_motorista(int id_motorista) {
+        this.id_motorista = id_motorista;
+    }
+    private int id_financiamento;
+
+    public int getId_modelo() {
+        return id_modelo;
+    }
+
+    public void setId_modelo(int id_modelo) {
+        this.id_modelo = id_modelo;
+    }
+
+    public int getId_financiamento() {
+        return id_financiamento;
+    }
+
+    public void setId_financiamento(int id_financiamento) {
+        this.id_financiamento = id_financiamento;
+    }
+   
     public int getId_veiculo() {
         return id_veiculo;
     }
@@ -58,36 +70,12 @@ public class Veiculo {
         return categoria;
     }
 
-    public Seguro getSeguro() {
-        return seguro;
+    public int getId_seguro() {
+        return id_seguro;
     }
 
-    public Financiamento getFinanciamento() {
-        return financiamento;
-    }
-
-    public Modelo getModelo() {
-        return modelo;
-    }
-
-    public Motorista getMotorista() {
-        return motorista;
-    }
-
-    public void setModelo(Modelo modelo) {
-        this.modelo = modelo;
-    }
-
-    public void setMotorista(Motorista motorista) {
-        this.motorista = motorista;
-    }
-
-    public void setFinanciamento(Financiamento financiamento) {
-        this.financiamento = financiamento;
-    }
-
-    public void setSeguro(Seguro seguro) {
-        this.seguro = seguro;
+    public void setId_seguro(int id_seguro) {
+        this.id_seguro = id_seguro;
     }
 
     public void setCategoria(String categoria) {

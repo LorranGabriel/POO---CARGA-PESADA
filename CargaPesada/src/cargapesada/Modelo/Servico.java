@@ -18,28 +18,41 @@ public class Servico
     private float valor_contrato;
     private String data_inicio;
     private String data_fim;
-    private Cliente cliente;
-    private Funcionario funcionario;
-    private Veiculo veiculo;
+    private int id_cliente;
+    private int id_funcionario;
+    private int id_veiculo;
 
-    public Servico(String status, String destino, String origem, float valor_contrato, String data_inicio, String data_fim, Cliente cliente, Funcionario funcionario, Veiculo veiculo) {
-        this.status = status;
-        this.destino = destino;
-        this.origem = origem;
-        this.valor_contrato = valor_contrato;
-        this.data_inicio = data_inicio;
-        this.data_fim = data_fim;
-        this.cliente = cliente;
-        this.funcionario = funcionario;
-        this.veiculo = veiculo;
-    }
-    
+ 
     public int getId_servico() {
         return id_servico;
     }
 
     public void setId_servico(int id_servico) {
         this.id_servico = id_servico;
+    }
+
+    public int getId_cliente() {
+        return id_cliente;
+    }
+
+    public void setId_cliente(int id_cliente) {
+        this.id_cliente = id_cliente;
+    }
+
+    public int getId_funcionario() {
+        return id_funcionario;
+    }
+
+    public void setId_funcionario(int id_funcionario) {
+        this.id_funcionario = id_funcionario;
+    }
+
+    public int getId_veiculo() {
+        return id_veiculo;
+    }
+
+    public void setId_veiculo(int id_veiculo) {
+        this.id_veiculo = id_veiculo;
     }
 
     public String getStatus() {
@@ -90,29 +103,5 @@ public class Servico
         this.data_fim = data_fim;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
-    }
-
-    public Veiculo getVeiculo() {
-        return veiculo;
-    }
-
-    public void setVeiculo(Veiculo veiculo) {
-        this.veiculo = veiculo;
-    }
-    
     
 }

@@ -565,7 +565,10 @@ public class CadastroVeiculo extends javax.swing.JFrame {
 
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         // TODO add your handling code here:
-        dispose();
+       int id_seguro;
+       id_seguro = Seguro.getId_seguro();
+       System.out.println(id_seguro);
+        //dispose();
     }//GEN-LAST:event_cadastrarMouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -575,9 +578,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
        CadastroSeguro novo = new CadastroSeguro();
-       novo.setVisible(true);
-       int id_seguro;
-       id_seguro = Seguro.getId_seguro();
+       novo.setVisible(true);       
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
