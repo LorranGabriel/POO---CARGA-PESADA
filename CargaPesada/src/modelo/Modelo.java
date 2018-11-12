@@ -13,7 +13,7 @@ public class Modelo
 {
     private int id_modelo;
     private String marca;
-    private int ano;
+    private String ano;
     private String nome;
     private int quantEixos;
     private float peso;
@@ -21,18 +21,7 @@ public class Modelo
     private float largura;
     private float comprimento;
     private float volume;
-    
-    public Modelo(String marca, int ano, String nome, int quantEixos, float peso, float altura, float largura, float comprimento, float volume) {
-        this.marca = marca;
-        this.ano = ano;
-        this.nome = nome;
-        this.quantEixos = quantEixos;
-        this.peso = peso;
-        this.altura = altura;
-        this.largura = largura;
-        this.comprimento = comprimento;
-        this.volume = volume;
-    }
+        
 
     public int getId_modelo() {
         return id_modelo;
@@ -50,11 +39,11 @@ public class Modelo
         this.marca = marca;
     }
 
-    public int getAno() {
+    public String getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
+    public void setAno(String ano) {
         this.ano = ano;
     }
 

@@ -5,7 +5,8 @@
  */
 package view;
 
-import modelo.Seguro;
+import java.util.HashSet;
+import modelo.*;
 
 /**
  *
@@ -565,6 +566,19 @@ public class CadastroVeiculo extends javax.swing.JFrame {
 
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         // TODO add your handling code here:
+       Veiculo novoV = new Veiculo();
+       // novo.setData_vencimento(Data_Vencimento.getText()); 
+        novoV.setNome_veiculo(nomeVeiculo.getText());
+        novoV.setCategoria(categoria.getText());
+        novoV.setPlaca(placa.getText());
+        novoV.setTipoCombustivel(tipoCombustivel.getText());     
+        novoV.setChassi(chassi.getText());
+        novoV.setStatus(status.getText());
+        Modelo novoM = new Modelo();
+        novoM.setAno(ano.getText());
+                
+        
+        
         dispose();
     }//GEN-LAST:event_cadastrarMouseClicked
 
@@ -577,7 +591,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
        CadastroSeguro novo = new CadastroSeguro();
        novo.setVisible(true);
        int id_seguro;
-       //id_seguro = Seguro.getId_seguro();
+       id_seguro = Seguro.getId_seguro();
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**

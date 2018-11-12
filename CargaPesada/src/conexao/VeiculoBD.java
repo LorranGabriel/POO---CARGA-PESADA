@@ -30,7 +30,7 @@ public class VeiculoBD implements InterfaceBD{
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM VEICULO;");
             while (rs.next()) {
-                Veiculo veiculo = new Veiculo(null, null, null, null, null, null, null, null);
+                Veiculo veiculo = new Veiculo();
                 veiculo.setId_veiculo(rs.getInt("id"));
                 veiculo.setPlaca(rs.getString("PLACA"));
                 veiculo.setChassi(rs.getString("CHASSI"));
