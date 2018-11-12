@@ -11,8 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -21,41 +20,33 @@ import java.util.logging.Logger;
 public class SeguroBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() {
+    public ArrayList select() throws SQLException{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void insert(Object updateObj) {
-       Connection c = null;
+    public void insert(Object updateObj) throws SQLException {
+       Connection c;
         c = ConexaoBD.getInstance();
-        Statement stmt = null;
+        Statement stmt;
         Seguro novo = (Seguro)updateObj;
-        ResultSet rs = null;
-        try {
-            stmt = c.createStatement();
-            rs = stmt.executeQuery("INSERT INTO SEGURO(status, DATA_VENCIMENTO, FIM_CONTRATO, VALOR) values('"+ novo.getStatus() + 
-                "','"+ novo.getData_vencimento() +"','"+ novo.getFim_contrato() +"'," +novo.getValor()+ ") RETURNING id");
-            novo.setId_seguro(5);
-            rs.close();
-            stmt.close();
-            c.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(SeguroBD.class.getName()).log(Level.SEVERE, null, ex);
-        } finally{
-        
-        }
-        
-        
+        ResultSet rs;
+        stmt = c.createStatement();
+        rs = stmt.executeQuery("INSERT INTO SEGURO(status, DATA_VENCIMENTO, FIM_CONTRATO, VALOR) values('"+ novo.getStatus() + 
+            "','"+ novo.getData_vencimento() +"','"+ novo.getFim_contrato() +"'," +novo.getValor()+ ") RETURNING id");
+        novo.setId_seguro(5);
+        rs.close();
+        stmt.close();
+        c.close();
     }
 
     @Override
-    public void delet(int id) {
+    public void delet(int id) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(Object updateObj) {
+    public void update(Object obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

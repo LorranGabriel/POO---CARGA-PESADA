@@ -7,6 +7,7 @@ package conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -15,12 +16,10 @@ import java.sql.DriverManager;
 public class ConexaoBD {
     private static Connection instance = null;        
     
-    private ConexaoBD() {
-    }
     public static synchronized Connection getInstance() {
         if (instance == null) {
             try {
-                Connection c = null;
+                Connection c;
                 
                  String USUARIO = "nqygzcvg";
                  String SENHA = "Mr6i5_qmB1mEiJRKTbiQPDB1qXaHGqZ1";
@@ -33,7 +32,7 @@ public class ConexaoBD {
                 c.setAutoCommit(true);
                 instance = c;
                 System.out.println("Banco Conectado!");
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
             }
         }

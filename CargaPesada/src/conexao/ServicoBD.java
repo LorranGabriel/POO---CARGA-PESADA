@@ -7,6 +7,7 @@ package conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -17,35 +18,29 @@ import java.util.ArrayList;
 public class ServicoBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() {
+    public ArrayList select() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void insert(Object updateObj) {
+    public void insert(Object obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delet(int id) {
-         Connection c = null;
-        Statement stmt = null;
-        try {
-            Class.forName("com.postgresql.jdbc.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CargaPesada");
-            stmt = c.createStatement();
-            String sql = "DELETE from SERVICO where ID=" + id + ";";
-            stmt.executeUpdate(sql);
-            stmt.close();
-            c.close();
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": "
-                    + e.getMessage());
-        }
+    public void delet(int id) throws SQLException {
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        String sql = "DELETE from SERVICO where ID=" + id + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
 
     @Override
-    public void update(Object updateObj) {
+    public void update(Object obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

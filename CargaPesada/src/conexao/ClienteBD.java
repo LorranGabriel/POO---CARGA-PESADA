@@ -7,8 +7,8 @@ package conexao;
 
 import modelo.Cliente;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -19,59 +19,52 @@ import java.util.ArrayList;
 public class ClienteBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() {
+    public ArrayList select() throws SQLException{
         ArrayList listCliente = new ArrayList();
-        Connection c = null;
-        Statement stmt = null;
-        try {
-            c = ConexaoBD.getInstance();
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM CATEGORIA;");
-            while (rs.next()) {
-                
-                //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
-                Cliente cliente = new Cliente();
-                cliente.setId_cliente(rs.getInt("id"));
-                cliente.setNome(rs.getString("nome"));
-                cliente.setCnpj(rs.getLong("CNPJ"));
-                cliente.setCpf(rs.getLong("CPF"));
-                
-                listCliente.add(cliente);
-            }
-            rs.close();
-            stmt.close();
-            c.close();
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM CATEGORIA;");
+        while (rs.next()) {
+
+            //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
+            Cliente cliente = new Cliente();
+            cliente.setId_cliente(rs.getInt("id"));
+            cliente.setNome(rs.getString("nome"));
+            cliente.setCnpj(rs.getLong("CNPJ"));
+            cliente.setCpf(rs.getLong("CPF"));
+
+            listCliente.add(cliente);
         }
+        
+        rs.close();
+        stmt.close();
+        c.close();
+        
         return listCliente;
     }
 
     @Override
-    public void insert(Object updateObj) {
+    public void insert(Object obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delet(int id) {
-        Connection c = null;
-        Statement stmt = null;
-        try {
-            Class.forName("com.postgresql.jdbc.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CargaPesada");
-            stmt = c.createStatement();
-            String sql = "DELETE from CLIENTE where ID=" + id + ";";
-            stmt.executeUpdate(sql);
-            stmt.close();
-            c.close();
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": "
-                    + e.getMessage());
-        }
+    public void delet(int id) throws SQLException {
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        String sql = "DELETE from CLIENTE where ID=" + id + ";";
+        
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
 
     @Override
-    public void update(Object updateObj) {
+    public void update(Object obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

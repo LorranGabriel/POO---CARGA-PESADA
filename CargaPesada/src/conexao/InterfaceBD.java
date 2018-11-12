@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public interface InterfaceBD {
     public ArrayList select() throws SQLException;
-    public void insert(Object updateObj) throws SQLException;
+    public void insert(Object obj) throws SQLException;
     public void delet(int id) throws SQLException;
-    public void update(Object updateObj) throws SQLException;
+    public void update(Object obj) throws SQLException;
 }

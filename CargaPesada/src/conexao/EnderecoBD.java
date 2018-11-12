@@ -5,6 +5,7 @@
  */
 package conexao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -14,22 +15,22 @@ import java.util.ArrayList;
 public class EnderecoBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() {
+    public ArrayList select() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void insert(Object updateObj) {
+    public void insert(Object obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delet(int id) {
+    public void delet(int id) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(Object updateObj) {
+    public void update(Object obj) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
