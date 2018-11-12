@@ -31,7 +31,7 @@ public class FuncionarioBD implements InterfaceBD{
                 
                 //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
                 
-                Funcionario funcionario = new Funcionario(null, 12345678996L, 1500.45F, null, null, null);
+                Funcionario funcionario = new Funcionario();
                 funcionario.setId_funcionario(rs.getInt("id"));
                 funcionario.setNome(rs.getString("NOME"));
                 funcionario.setSalario(rs.getFloat("SALARIO"));

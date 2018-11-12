@@ -13,11 +13,11 @@ import javax.swing.JComboBox;
  */
 public class Seguro {
     
-    public static int id_seguro;
+    public static int id_seguro = 50; //test
     private String status;
     private String data_vencimento;
     private String fim_contrato;
-    float Valor;
+    private float Valor;
     //String status, String data_vencimento, String fim_contrato
     public Seguro() {
     }
@@ -31,7 +31,7 @@ public class Seguro {
     }
 
     
-    public int getId_seguro() {
+    public static int getId_seguro() {
         return id_seguro;
     }
 

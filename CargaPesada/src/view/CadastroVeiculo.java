@@ -577,7 +577,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
        CadastroSeguro novo = new CadastroSeguro();
        novo.setVisible(true);
        int id_seguro;
-       id_seguro = Seguro.getId_seguro();
+       //id_seguro = Seguro.getId_seguro();
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**

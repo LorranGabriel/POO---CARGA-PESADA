@@ -17,8 +17,24 @@ public class Cliente
         private String nome;
         private long cnpj;
         private long cpf;
-        private Endereco endereco;
-        private Contato contato;
+        private int id_endereco;
+
+    public int getId_endereco() {
+        return id_endereco;
+    }
+
+    public void setId_endereco(int id_endereco) {
+        this.id_endereco = id_endereco;
+    }
+
+    public int getId_contato() {
+        return id_contato;
+    }
+
+    public void setId_contato(int id_contato) {
+        this.id_contato = id_contato;
+    }
+        private int id_contato;
     
     public int getId_cliente() {
         return id_cliente;
@@ -52,20 +68,4 @@ public class Cliente
         this.cpf = cpf;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public Contato getContato() {
-        return contato;
-    }
-
-    public void setContato(Contato contato) {
-        this.contato = contato;
-    }
-      
 }
