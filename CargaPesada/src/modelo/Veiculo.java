@@ -12,15 +12,24 @@ package modelo;
 public class Veiculo {
 
     private int id_veiculo;
+    private String nome_veiculo;
+
+    public String getNome_veiculo() {
+        return nome_veiculo;
+    }
+
+    public void setNome_veiculo(String nome_veiculo) {
+        this.nome_veiculo = nome_veiculo;
+    }
     private String chassi;
     private String placa;
     private String status;
     private String tipoCombustivel;
     private String categoria;
-    private Seguro seguro;
-    private Modelo modelo;
-    private Motorista motorista;
-    private Financiamento financiamento;
+    private int id_seguro;
+    private int id_modelo;   //referente ao ID
+    private int id_motorista;
+    private int id_financiamento;
 
     public int getId_veiculo() {
         return id_veiculo;
@@ -46,36 +55,36 @@ public class Veiculo {
         return categoria;
     }
 
-    public Seguro getSeguro() {
-        return seguro;
+    public int getId_seguro() {
+        return id_seguro;
     }
 
-    public Financiamento getFinanciamento() {
-        return financiamento;
+    public void setId_seguro(int id_seguro) {
+        this.id_seguro = id_seguro;
     }
 
-    public Modelo getModelo() {
-        return modelo;
+    public int getId_modelo() {
+        return id_modelo;
     }
 
-    public Motorista getMotorista() {
-        return motorista;
+    public void setId_modelo(int id_modelo) {
+        this.id_modelo = id_modelo;
     }
 
-    public void setModelo(Modelo modelo) {
-        this.modelo = modelo;
+    public int getId_motorista() {
+        return id_motorista;
     }
 
-    public void setMotorista(Motorista motorista) {
-        this.motorista = motorista;
+    public void setId_motorista(int id_motorista) {
+        this.id_motorista = id_motorista;
     }
 
-    public void setFinanciamento(Financiamento financiamento) {
-        this.financiamento = financiamento;
+    public int getId_financiamento() {
+        return id_financiamento;
     }
 
-    public void setSeguro(Seguro seguro) {
-        this.seguro = seguro;
+    public void setId_financiamento(int id_financiamento) {
+        this.id_financiamento = id_financiamento;
     }
 
     public void setCategoria(String categoria) {
