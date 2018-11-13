@@ -5,8 +5,12 @@
  */
 package conexao;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import modelo.Contato;
 
 /**
  *
@@ -21,7 +25,19 @@ public class ContatoBD implements InterfaceBD{
 
     @Override
     public void insert(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        c = ConexaoBD.getInstance();
+        Statement stmt;
+        Contato novo = (Contato)obj;
+        ResultSet rs;
+        stmt = c.createStatement();
+        rs = stmt.executeQuery("INSERT INTO CLIENTE(TELEFONE_01, TELEFONE_02, TELEFONE_03, EMAIL) values('"
+                + ""+ novo.getTelefone1() +"','" + novo.getTelefone2() + "','" + novo.getTelefone3()+ "','"
+                + novo.getEmail() + "')");
+        rs.close();
+        stmt.close();
+        c.close();
+
     }
 
     @Override

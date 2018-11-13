@@ -25,11 +25,11 @@ public class SeguroBD implements InterfaceBD{
     }
 
     @Override
-    public void insert(Object updateObj) throws SQLException {
+    public void insert(Object obj) throws SQLException {
        Connection c;
         c = ConexaoBD.getInstance();
         Statement stmt;
-        Seguro novo = (Seguro)updateObj;
+        Seguro novo = (Seguro)obj;
         ResultSet rs;
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO SEGURO(status, DATA_VENCIMENTO, FIM_CONTRATO, VALOR) values('"+ novo.getStatus() + 

@@ -52,7 +52,16 @@ public class CategoriaBD implements InterfaceBD{
 
     @Override
     public void insert(Object obj) throws SQLException {
-       
+        Connection c;
+        c = ConexaoBD.getInstance();
+        Statement stmt;
+        Categoria novo = (Categoria)obj;
+        ResultSet rs;
+        stmt = c.createStatement();
+        rs = stmt.executeQuery("INSERT INTO CATEGORIA(NOME) values('"+ novo.getNome() +"')");
+        rs.close();
+        stmt.close();
+        c.close();
     }
 
     @Override

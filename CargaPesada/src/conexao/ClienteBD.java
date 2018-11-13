@@ -47,7 +47,18 @@ public class ClienteBD implements InterfaceBD{
 
     @Override
     public void insert(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        c = ConexaoBD.getInstance();
+        Statement stmt;
+        Cliente novo = (Cliente)obj;
+        ResultSet rs;
+        stmt = c.createStatement();
+        rs = stmt.executeQuery("INSERT INTO CLIENTE(NOME, TIPO_CLIENTE, CNPJ, CPF, DATA_CADASTRO) values('"
+                + ""+ novo.getNome() +"','" + novo.getTipoCliente() + "','" + novo.getCnpj()+ "','"
+                + novo.getCpf() + "','"+ novo.getDataCadastro() + "')");
+        rs.close();
+        stmt.close();
+        c.close();
     }
 
     @Override
