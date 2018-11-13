@@ -140,12 +140,12 @@ public class CriacaoBanco
                             "  ID_CATEGORIA INT NOT NULL,\n" +
                             "  ID_MODELO INT NOT NULL,\n" +
                             "  ID_MOTORISTA INT,\n" +
-                            "  ID_VEICULO INT,\n" +
+                            "  ID_SERVICO INT,\n" +
                             "  PRIMARY KEY (ID),\n" +
                             "  FOREIGN KEY (ID_CATEGORIA)\n" +
                             "  REFERENCES CATEGORIA (ID),\n" +
-                            "  FOREIGN KEY (ID_VEICULO)\n" +
-                            "  REFERENCES CATEGORIA (ID),\n" +                            
+                            "  FOREIGN KEY (ID_SERVICO)\n" +
+                            "  REFERENCES SERVICO (ID),\n" +                            
                             "  FOREIGN KEY (ID_MODELO)\n" +
                             "  REFERENCES MODELO (ID),\n" +
                             "  FOREIGN KEY (ID_MOTORISTA)\n" +

@@ -5,9 +5,12 @@
  */
 package conexao;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
-
+import modelo.Endereco;
 /**
  *
  * @author 20181bsi0172
@@ -21,7 +24,18 @@ public class EnderecoBD implements InterfaceBD{
 
     @Override
     public void insert(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        c = ConexaoBD.getInstance();
+        Statement stmt;
+        Endereco novo = (Endereco)obj;
+        ResultSet rs;
+        stmt = c.createStatement();
+        rs = stmt.executeQuery("INSERT INTO ENDERECO(ENDERECO, LOGRADOURO, NUMERO, CEP, COMPLEMENTO, CIDADE, ESTADO) values('"
+                +"'"+ novo.getEndereco()+"','" + novo.getLogradouro()+ "'," + novo.getNumero()+ ",'"
+                + novo.getCep()+ "','" + novo.getCidade() +"','"+novo.getEstado()+"')");
+        rs.close();
+        stmt.close();
+        c.close();
     }
 
     @Override

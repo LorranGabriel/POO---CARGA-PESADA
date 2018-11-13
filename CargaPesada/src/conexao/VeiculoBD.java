@@ -7,7 +7,6 @@ package conexao;
 
 import modelo.Veiculo;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -53,7 +52,26 @@ public class VeiculoBD implements InterfaceBD{
 
     @Override
     public void insert(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                Connection c;
+        c = ConexaoBD.getInstance();
+        Statement stmt;
+        Veiculo novo = (Veiculo)obj;
+        ResultSet rs;
+        stmt = c.createStatement();
+        rs = stmt.executeQuery("INSERT INTO SERVICO(NOME, CHASSI, PLACA, STATUS, "
+                + "COMBUSTIVEL, ID_CATEGORIA, ID_MODELO, ID_MOTORISTA, ID_SERVICO) values("
+                +"'"+ novo.getNome_veiculo()+
+                "','"+ novo.getChassi()+ 
+                "','"+ novo.getPlaca()+ 
+                "','"+ novo.getStatus()+ 
+                "','"+ novo.getTipoCombustivel()+
+                "','"+ novo.getCategoria()+
+                "',"+ novo.getId_modelo()+
+                ","+ novo.getId_motorista()+
+                ","+ novo.getIdServico +")");
+        rs.close();
+        stmt.close();
+        c.close();  
     }
 
     @Override

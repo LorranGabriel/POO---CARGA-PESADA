@@ -31,7 +31,7 @@ public class ContatoBD implements InterfaceBD{
         Contato novo = (Contato)obj;
         ResultSet rs;
         stmt = c.createStatement();
-        rs = stmt.executeQuery("INSERT INTO CLIENTE(TELEFONE_01, TELEFONE_02, TELEFONE_03, EMAIL) values('"
+        rs = stmt.executeQuery("INSERT INTO CONTATO(TELEFONE_01, TELEFONE_02, TELEFONE_03, EMAIL) values('"
                 + ""+ novo.getTelefone1() +"','" + novo.getTelefone2() + "','" + novo.getTelefone3()+ "','"
                 + novo.getEmail() + "')");
         rs.close();

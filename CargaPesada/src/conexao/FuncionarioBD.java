@@ -54,7 +54,18 @@ public class FuncionarioBD implements InterfaceBD{
 
     @Override
     public void insert(Object obj) throws SQLException {
-        
+        Connection c;
+        c = ConexaoBD.getInstance();
+        Statement stmt;
+        Funcionario novo = (Funcionario)obj;
+        ResultSet rs;
+        stmt = c.createStatement();
+        rs = stmt.executeQuery("INSERT INTO FUNCIONARIO(NOME, CPF, CARGO, SALARIO, SEXO, DATA_CADASTRO, DATA_NASCIMENTO) values('"
+                + novo.getNome()+"','" + novo.getCpf()+ "','" + novo.getCargo()+ "',"
+                + novo.getSalario()+ ",'" + novo.getSexo() +"','" + novo.getDataCadastro() +"','"+ novo.getDataNascimento() +"')");
+        rs.close();
+        stmt.close();
+        c.close();  
     }
 
     @Override
