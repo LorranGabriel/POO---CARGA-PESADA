@@ -16,13 +16,6 @@ public class Financiamento
     private int parcelasTotais;
     private int parcelasPagas;
     private String bancoFinanciador;
-
-    public Financiamento(float valorParcela, int parcelasTotais, int parcelasPagas, String financiador) {
-        this.valorParcela = valorParcela;
-        this.parcelasTotais = parcelasTotais;
-        this.parcelasPagas = parcelasPagas;
-        this.bancoFinanciador = bancoFinanciador;
-    }
     
     public int getId_financiamento() {
         return id_financiamento;

@@ -566,7 +566,12 @@ public class CadastroVeiculo extends javax.swing.JFrame {
 
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         // TODO add your handling code here:
-       Veiculo novoV = new Veiculo();
+        
+        int id_seguro;
+        id_seguro = Seguro.getId_seguro();
+        System.out.print(id_seguro);
+
+       /*Veiculo novoV = new Veiculo();
        // novo.setData_vencimento(Data_Vencimento.getText()); 
         novoV.setNome_veiculo(nomeVeiculo.getText());
         novoV.setCategoria(categoria.getText());
@@ -574,10 +579,30 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         novoV.setTipoCombustivel(tipoCombustivel.getText());     
         novoV.setChassi(chassi.getText());
         novoV.setStatus(status.getText());
-        Modelo novoM = new Modelo();
-        novoM.setAno(ano.getText());
-                
         
+        Modelo novoM = new Modelo();
+        novoM.setAno(ano.getText());        
+        novoM.setNome(nomeModelo.getText());
+        novoM.setMarca(marca.getText());
+        novoM.setAltura(Float.parseFloat(altura.getText()));
+        novoM.setComprimento(Float.parseFloat(comprimento.getText()));
+        novoM.setLargura(Float.parseFloat(largura.getText()));
+        novoM.setPeso(Float.parseFloat(peso.getText()));
+        novoM.setQuantEixos(Integer.parseInt(eixos.getText()));
+        novoM.setVolume(Float.parseFloat(volume.getText()));
+        
+        
+        Financiamento novoFinanciamento = new Financiamento();
+        novoFinanciamento.setBancoFinanciador(financiador.getText());
+        novoFinanciamento.setParcelasPagas(Integer.parseInt(parcelasPagas.getText()));
+        novoFinanciamento.setParcelasTotais(Integer.parseInt(parcelasTotais.getText()));
+        novoFinanciamento.setValorParcela(Integer.parseInt(valorParcela.getText()));
+        */
+       
+        
+        
+        
+
         
         dispose();
     }//GEN-LAST:event_cadastrarMouseClicked
@@ -590,8 +615,6 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
        CadastroSeguro novo = new CadastroSeguro();
        novo.setVisible(true);
-       int id_seguro;
-       id_seguro = Seguro.getId_seguro();
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**

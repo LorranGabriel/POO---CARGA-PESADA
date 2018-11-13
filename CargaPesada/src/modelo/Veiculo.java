@@ -12,15 +12,7 @@ package modelo;
 public class Veiculo {
 
     private int id_veiculo;
-    private String nome_veiculo;
-
-    public String getNome_veiculo() {
-        return nome_veiculo;
-    }
-
-    public void setNome_veiculo(String nome_veiculo) {
-        this.nome_veiculo = nome_veiculo;
-    }
+   
     private String chassi;
     private String placa;
     private String status;
@@ -30,7 +22,16 @@ public class Veiculo {
     private int id_modelo;   //referente ao ID
     private int id_motorista;
     private int id_financiamento;
+    private String nome_veiculo;
 
+    public String getNome_veiculo() {
+        return nome_veiculo;
+    }
+
+    public void setNome_veiculo(String nome_veiculo) {
+        this.nome_veiculo = nome_veiculo;
+    }
+    
     public int getId_veiculo() {
         return id_veiculo;
     }

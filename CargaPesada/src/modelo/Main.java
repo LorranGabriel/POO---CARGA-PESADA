@@ -2,6 +2,7 @@
 
 import view.CadastroSeguro;
 import java.sql.SQLException;
+import view.Home1;
 
 
 /*
@@ -28,7 +29,7 @@ public class Main {
        //CategoriaBDtest b2 = new CategoriaBDtest();
        
         
-        CadastroSeguro seg = new CadastroSeguro();
+        Home1 seg = new Home1();
         seg.setVisible(true);
         
         System.out.print("TESTE TESTE");

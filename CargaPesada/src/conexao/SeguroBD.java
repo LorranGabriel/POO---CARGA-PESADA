@@ -26,7 +26,8 @@ public class SeguroBD implements InterfaceBD{
 
     @Override
     public void insert(Object obj) throws SQLException {
-       Connection c;
+        System.out.print("DEU CERTO INSERT");
+        Connection c;
         c = ConexaoBD.getInstance();
         Statement stmt;
         Seguro novo = (Seguro)obj;
@@ -34,7 +35,12 @@ public class SeguroBD implements InterfaceBD{
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO SEGURO(status, DATA_VENCIMENTO, FIM_CONTRATO, VALOR) values('"+ novo.getStatus() + 
             "','"+ novo.getData_vencimento() +"','"+ novo.getFim_contrato() +"'," +novo.getValor()+ ") RETURNING id");
-        novo.setId_seguro(5);
+        
+        if (rs.next()) {
+            System.out.print("DEU CERTO A TE AQ");
+            novo.setId_seguro(rs.getInt(1));
+        }
+        System.out.print("DEU CERTO A TE AQ");
         rs.close();
         stmt.close();
         c.close();

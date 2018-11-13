@@ -219,9 +219,16 @@ public class CadastroSeguro extends javax.swing.JFrame {
             novo.setStatus(Status.getSelectedItem().toString());
             novo.setFim_contrato(Data_Fim.getText());
             novo.setValor(Integer.parseInt(valor.getText()));
+            
             SeguroBD i = new SeguroBD();
+        try {
             i.insert(novo);
             JOptionPane.showMessageDialog(null,"SEGURO CADASTRADO!");
+        } catch (SQLException ex) {
+            
+            JOptionPane.showMessageDialog(null,"SEGURO NÃO CADASTRADO!");
+            Logger.getLogger(CadastroSeguro.class.getName()).log(Level.SEVERE, null, ex);
+        }            
             dispose();
     }//GEN-LAST:event_cadastraMouseClicked
 
