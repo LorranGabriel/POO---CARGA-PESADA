@@ -140,12 +140,9 @@ public class CriacaoBanco
                             "  ID_CATEGORIA INT NOT NULL,\n" +
                             "  ID_MODELO INT NOT NULL,\n" +
                             "  ID_MOTORISTA INT,\n" +
-                            "  ID_SERVICO INT,\n" +
                             "  PRIMARY KEY (ID),\n" +
                             "  FOREIGN KEY (ID_CATEGORIA)\n" +
-                            "  REFERENCES CATEGORIA (ID),\n" +
-                            "  FOREIGN KEY (ID_SERVICO)\n" +
-                            "  REFERENCES SERVICO (ID),\n" +                            
+                            "  REFERENCES CATEGORIA (ID),\n" +                                             
                             "  FOREIGN KEY (ID_MODELO)\n" +
                             "  REFERENCES MODELO (ID),\n" +
                             "  FOREIGN KEY (ID_MOTORISTA)\n" +
@@ -175,15 +172,7 @@ public class CriacaoBanco
                             ");\n" +
                             "\n" +
                             "\n" +
-                            "CREATE TABLE ENDERECO_SERVICO (\n" +
-                            "  ID SERIAL,\n" +
-                            "  TIPO CHAR,\n" +
-                            "  ID_ENDERECO INT NOT NULL,\n" +
-                            "  PRIMARY KEY (ID),\n" +
-                            "  FOREIGN KEY (ID_ENDERECO)\n" +
-                            "  REFERENCES ENDERECO (ID)\n" +
-                            ");\n" +
-                            "\n" +
+                    
                             "CREATE TABLE SERVICO (\n" +
                             "  ID SERIAL,\n" +
                             "  STATUS VARCHAR(15),\n" +
@@ -192,20 +181,26 @@ public class CriacaoBanco
                             "  DATA_FIM DATE,\n" +
                             "  ID_CLIENTE INT NOT NULL,\n" +
                             "  ID_FUNCIONARIO INT NOT NULL,\n" +
-                            "  ID_VEICULO INT NOT NULL,\n" +
-                            "  ID_ENDERECO_ORIGEM INT NOT NULL,\n" +
-                            "  ID_ENDERECO_DESTINO INT NOT NULL,\n" +
-                            "  PRIMARY KEY (ID),\n" +
-                            "  FOREIGN KEY (ID_ENDERECO_ORIGEM)\n" +
-                            "  REFERENCES ENDERECO_SERVICO (ID),\n" +
-                            "  FOREIGN KEY (ID_ENDERECO_DESTINO)\n" +
-                            "  REFERENCES ENDERECO_SERVICO (ID),\n" +
+                            "  ID_VEICULO INT NOT NULL,\n" +                           
+                            "  PRIMARY KEY (ID),\n" +                           
                             "  FOREIGN KEY (ID_CLIENTE)\n" +
                             "  REFERENCES CLIENTE (ID),\n" +
                             "  FOREIGN KEY (ID_FUNCIONARIO)\n" +
                             "  REFERENCES FUNCIONARIO (ID),\n" +
                             "  FOREIGN KEY (ID_VEICULO)\n" +
                             "  REFERENCES VEICULO (ID)\n" +
+                            ");\n" +
+                            "\n" +
+                            "CREATE TABLE ENDERECO_SERVICO (\n" +
+                            "  ID SERIAL,\n" +
+                            "  TIPO CHAR,\n" +
+                            "  ID_ENDERECO INT NOT NULL,\n" +
+                             "  ID_SERVICO INT NOT NULL,\n" +
+                            "  PRIMARY KEY (ID),\n" +
+                            "  FOREIGN KEY (ID_SERVICO)\n" +
+                            "  REFERENCES SERVICO (ID),\n" +
+                            "  FOREIGN KEY (ID_ENDERECO)\n" +
+                            "  REFERENCES ENDERECO (ID)\n" +
                             ");\n" +
                             "\n" +
                             "CREATE TABLE ENDERECO_CLIENTE (\n" +

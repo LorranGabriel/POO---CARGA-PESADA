@@ -17,15 +17,18 @@ public class ConexaoBD {
     private static Connection instance = null;        
     
     public static synchronized Connection getInstance() {
-        if (instance == null) {
             try {
                 Connection c;
-                
+                /*
                  String USUARIO = "nqygzcvg";
                  String SENHA = "Mr6i5_qmB1mEiJRKTbiQPDB1qXaHGqZ1";
                  //String URL = "jdbc:postgresql://localhost:5432/CARGAPESADA_4";
                  String URL = "jdbc:postgresql://stampy.db.elephantsql.com:5432/nqygzcvg";
-              
+              */
+                 String USUARIO = "postgres";
+                 String SENHA = "serra";
+                 //String URL = "jdbc:postgresql://localhost:5432/CARGAPESADA_4";
+                 String URL = "jdbc:postgresql://localhost:5432/CARGAPESADA";
                 
              
                 c =  DriverManager.getConnection(URL, USUARIO, SENHA);
@@ -35,7 +38,7 @@ public class ConexaoBD {
             } catch (SQLException e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
             }
-        }
+        
         return instance;
     }
     
