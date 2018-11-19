@@ -40,7 +40,15 @@ public class FinanciamentoBD implements InterfaceBD{
 
     @Override
     public void delet(int id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        String sql = "DELETE from FINANCIAMENTO where ID=" + id + ";";
+        
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
 
     @Override
