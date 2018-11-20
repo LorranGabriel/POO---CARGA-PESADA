@@ -20,7 +20,31 @@ public class ContatoBD implements InterfaceBD{
 
     @Override
     public ArrayList select() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList listContato = new ArrayList();
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM CONTATO;");
+        while (rs.next()) {
+
+            //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
+            Contato contato = new Contato();
+            contato.setId_contato(rs.getInt("id"));
+            contato.setTelefone1(rs.getInt("TELEFONE_01"));
+            contato.setTelefone2(rs.getInt("TELEFONE_02"));
+            contato.setTelefone3(rs.getInt("TELEFONE_03"));
+            contato.setEmail(rs.getString("EMAIL"));
+
+
+            listContato.add(contato);
+        }
+        
+        rs.close();
+        stmt.close();
+        c.close();
+        
+        return listContato;
     }
 
     @Override
@@ -55,7 +79,20 @@ public class ContatoBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Contato novo = (Contato)obj;
+        String sql = "UPDATE CONTATO "
+                + "SET TELEFONE_01 ="+ novo.getTelefone1() + ", "
+                + "TELEFONE_02="+ novo.getTelefone2()+ ", "
+                + "TELEFONE_03="+ novo.getTelefone3()+ ", "
+                + "EMAIL="+ novo.getEmail()+ " "
+                + "WHERE id ="+ novo.getId_contato()+ ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
     
 }

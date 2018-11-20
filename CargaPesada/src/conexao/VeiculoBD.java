@@ -68,7 +68,7 @@ public class VeiculoBD implements InterfaceBD{
                 "','"+ novo.getCategoria()+
                 "',"+ novo.getId_modelo()+
                 ","+ novo.getId_motorista()+
-                ","+ novo.getIdServico +")");
+                ","+ novo.getIdServico() +")");
         rs.close();
         stmt.close();
         c.close();  
@@ -88,7 +88,24 @@ public class VeiculoBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Veiculo novo = (Veiculo)obj;
+        String sql = "UPDATE VEICULO "
+                + "SET NOME ="+ novo.getNome_veiculo() + ", "
+                + "CHASSI="+ novo.getChassi() + ", "
+                + "PLACA="+ novo.getPlaca() + ", "
+                + "COMBUSTIVEL="+ novo.getTipoCombustivel() + ", "
+                + "ID_CATEGORIA="+ novo.getCategoria() + ", "
+                + "ID_MODELO="+ novo.getId_modelo() + ", "
+                + "ID_MOTORISTA="+ novo.getId_motorista() + ", "
+                + "ID_SERVICO="+ novo.getIdServico() + " "
+                + "WHERE id ="+ novo.getId_modelo() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();    
     }
     
 }

@@ -79,7 +79,15 @@ public class CategoriaBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException{
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Categoria novo = (Categoria)obj;
+        String sql = "UPDATE CATEGORIA SET NOME ="+ novo.getNome() +" WHERE id ="+ novo.getId_categoria() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
     
 }

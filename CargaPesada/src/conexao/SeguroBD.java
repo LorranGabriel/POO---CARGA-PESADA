@@ -26,21 +26,14 @@ public class SeguroBD implements InterfaceBD{
 
     @Override
     public void insert(Object obj) throws SQLException {
-        System.out.print("DEU CERTO INSERT");
         Connection c;
         c = ConexaoBD.getInstance();
         Statement stmt;
         Seguro novo = (Seguro)obj;
         ResultSet rs;
         stmt = c.createStatement();
-        rs = stmt.executeQuery("INSERT INTO SEGURO(status, DATA_VENCIMENTO, FIM_CONTRATO, VALOR) values('"+ novo.getStatus() + 
+        rs = stmt.executeQuery("INSERT INTO SEGURO(STATUS, DATA_VENCIMENTO, FIM_CONTRATO, VALOR) values('"+ novo.getStatus() + 
             "','"+ novo.getData_vencimento() +"','"+ novo.getFim_contrato() +"'," +novo.getValor()+ ") RETURNING id");
-        
-        if (rs.next()) {
-            System.out.print("DEU CERTO A TE AQ");
-            novo.setId_seguro(rs.getInt(1));
-        }
-        System.out.print("DEU CERTO A TE AQ");
         rs.close();
         stmt.close();
         c.close();
@@ -60,7 +53,20 @@ public class SeguroBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Seguro novo = (Seguro)obj;
+        String sql = "UPDATE SEGURO "
+                + "SET STATUS ="+ novo.getStatus() + ", "
+                + "DATA_VENCIMENTO="+ novo.getData_vencimento() + ", "
+                + "FIM_CONTRATO="+ novo.getFim_contrato() + ", "
+                + "VALOR="+ novo.getValor() + " "
+                + "WHERE id ="+ novo.getId_seguro() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();      
     }
     
 }

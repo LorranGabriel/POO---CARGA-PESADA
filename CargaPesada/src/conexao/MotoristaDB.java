@@ -49,8 +49,21 @@ public class MotoristaDB implements InterfaceBD{
     }
 
     @Override
-    public void update(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(Object obj) throws SQLException{
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Motorista novo = (Motorista)obj;
+        String sql = "UPDATE MOTORISTA "
+                + "SET CNH ="+ novo.getCnh() + ", "
+                + "DATA_VENCIMENTO="+ novo.getDataVencimento() + ", "
+                + "CATEGORIA_CNH="+ novo.getCategoriaCnh() + ", "
+                + "ID_FUNCIONARIO="+ novo.getIdFuncionario() + " "
+                + "WHERE id ="+ novo.getId_motorista() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();  
     }
     
 }

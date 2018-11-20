@@ -19,7 +19,37 @@ public class ModeloBD implements InterfaceBD{
 
     @Override
     public ArrayList select() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList listModelo = new ArrayList();
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM MODELO;");
+        while (rs.next()) {
+
+            //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
+            Modelo modelo = new Modelo();
+            modelo.setId_modelo(rs.getInt("id"));
+            modelo.setModelo(rs.getString("MODELO"));
+            modelo.setMarca(rs.getString("MARCA"));
+            modelo.setAno(rs.getString("ANO"));
+            modelo.setQuantEixos(rs.getInt("EIXO"));
+            modelo.setPeso(rs.getFloat("PESO"));
+            modelo.setAltura(rs.getFloat("ALTURA"));
+            modelo.setLargura(rs.getFloat("LARGURA"));
+            modelo.setComprimento(rs.getFloat("COMPRIMENTO"));
+            modelo.setCor(rs.getString("COR"));
+
+
+
+            listModelo.add(modelo);
+        }
+        
+        rs.close();
+        stmt.close();
+        c.close();
+        
+        return listModelo;
     }
 
     @Override
@@ -57,7 +87,25 @@ public class ModeloBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Modelo novo = (Modelo)obj;
+        String sql = "UPDATE MODELO "
+                + "SET MODELO ="+ novo.getModelo() + ", "
+                + "MARCA="+ novo.getMarca() + ", "
+                + "ANO="+ novo.getAno() + ", "
+                + "EIXO="+ novo.getQuantEixos() + ", "
+                + "PESO="+ novo.getPeso() + ", "
+                + "ALTURA="+ novo.getAltura() + ", "
+                + "LARGURA="+ novo.getLargura() + ", "
+                + "COMPRIMENTO="+ novo.getComprimento() + ", "
+                + "COR="+ novo.getCor() + " "
+                + "WHERE id ="+ novo.getId_modelo() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();    
     }
     
 }
