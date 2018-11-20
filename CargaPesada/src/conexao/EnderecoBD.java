@@ -19,7 +19,34 @@ public class EnderecoBD implements InterfaceBD{
 
     @Override
     public ArrayList select() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList listEndereco = new ArrayList();
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM ENDERECO;");
+        while (rs.next()) {
+
+            //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
+            Endereco endereco = new Endereco();
+            endereco.setId_endereco(rs.getInt("id"));
+            endereco.setEndereco(rs.getString("ENDERECO"));
+            endereco.setLogradouro(rs.getString("LOGRADOURO"));
+            endereco.setNumero(rs.getInt("NUMERO"));
+            endereco.setCep(rs.getInt("CEP"));
+            endereco.setComplemento(rs.getString("COMPLEMENTO"));
+            endereco.setCidade(rs.getString("CIDADE"));
+            endereco.setEstado(rs.getString("ESTADO"));
+
+
+            listEndereco.add(endereco);
+        }
+        
+        rs.close();
+        stmt.close();
+        c.close();
+        
+        return listEndereco;
     }
 
     @Override
