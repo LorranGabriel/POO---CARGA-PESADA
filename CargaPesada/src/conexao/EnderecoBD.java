@@ -40,12 +40,36 @@ public class EnderecoBD implements InterfaceBD{
 
     @Override
     public void delet(int id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        String sql = "DELETE from ENDERECO where ID=" + id + ";";
+        
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Endereco novo = (Endereco)obj;
+        String sql = "UPDATE ENDERECO "
+                + "SET ENDERECO ="+ novo.getEndereco() + ", "
+                + "LOGRADOURO="+ novo.getLogradouro() + ", "
+                + "NUMERO="+ novo.getNumero() + ", "
+                + "CEP="+ novo.getCep() + ", "
+                + "COMPLEMENTO="+ novo.getComplemento() + ", "
+                + "CIDADE="+ novo.getCidade() + ", "
+                + "ESTADO="+ novo.getEstado() + " "
+                + "WHERE id ="+ novo.getId_endereco() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
     
 }

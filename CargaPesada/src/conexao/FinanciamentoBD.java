@@ -53,7 +53,20 @@ public class FinanciamentoBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Financiamento novo = (Financiamento)obj;
+        String sql = "UPDATE FINANCIAMENTO "
+                + "SET VALOR_PARCELA ="+ novo.getValorParcela() + ", "
+                + "PARCELAS_TOTAIS="+ novo.getParcelasTotais() + ", "
+                + "FINANCIADOR="+ novo.getBancoFinanciador() + ", "
+                + "ID_VEICULO="+ novo.getIdVeiculo() + " "
+                + "WHERE id ="+ novo.getId_financiamento() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
     
 }

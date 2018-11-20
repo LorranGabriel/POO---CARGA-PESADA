@@ -57,7 +57,25 @@ public class ModeloBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Modelo novo = (Modelo)obj;
+        String sql = "UPDATE MODELO "
+                + "SET MODELO ="+ novo.getModelo() + ", "
+                + "MARCA="+ novo.getMarca() + ", "
+                + "ANO="+ novo.getAno() + ", "
+                + "EIXO="+ novo.getQuantEixos() + ", "
+                + "PESO="+ novo.getPeso() + ", "
+                + "ALTURA="+ novo.getAltura() + ", "
+                + "LARGURA="+ novo.getLargura() + ", "
+                + "COMPRIMENTO="+ novo.getComprimento() + ", "
+                + "COR="+ novo.getCor() + " "
+                + "WHERE id ="+ novo.getId_modelo() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();    
     }
     
 }

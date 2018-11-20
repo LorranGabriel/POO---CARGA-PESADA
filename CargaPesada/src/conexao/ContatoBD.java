@@ -55,7 +55,20 @@ public class ContatoBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Contato novo = (Contato)obj;
+        String sql = "UPDATE CONTATO "
+                + "SET TELEFONE_01 ="+ novo.getTelefone1() + ", "
+                + "TELEFONE_02="+ novo.getTelefone2()+ ", "
+                + "TELEFONE_03="+ novo.getTelefone3()+ ", "
+                + "EMAIL="+ novo.getEmail()+ " "
+                + "WHERE id ="+ novo.getId_contato()+ ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
     
 }

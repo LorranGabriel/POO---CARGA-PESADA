@@ -61,7 +61,25 @@ public class ServicoBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Servico novo = (Servico)obj;
+        String sql = "UPDATE SERVICO "
+                + "SET STATUS ="+ novo.getStatus() + ", "
+                + "VALOR_CONTRATO="+ novo.getValor_contrato() + ", "
+                + "DATA_INICIO="+ novo.getData_inicio() + ", "
+                + "DATA_FIM="+ novo.getData_fim() + ", "
+                + "ID_CLIENTE="+ novo.getId_cliente() + ", "
+                + "ID_FUNCIONARIO="+ novo.getId_funcionario() + ", "
+                + "ID_VEICULO="+ novo.getId_veiculo() + ", "
+                + "ID_ENDERECO_DESTINO="+ novo.getDestino() + ", "
+                + "ID_ENDERECO_ORIGEM="+ novo.getOrigem() + " "
+                + "WHERE id ="+ novo.getId_servico() + ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();   
     }
     
 }

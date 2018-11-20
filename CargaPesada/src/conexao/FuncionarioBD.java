@@ -83,9 +83,23 @@ public class FuncionarioBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-        Funcionario updateFuncionario = (Funcionario)obj;
-        
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        Funcionario novo = (Funcionario)obj;
+        String sql = "UPDATE FUNCIONARIO "
+                + "SET NOME ="+ novo.getNome() + ", "
+                + "CPF="+ novo.getCpf()+ ", "
+                + "CARGO="+ novo.getCargo()+ ", "
+                + "SALARIO="+ novo.getSalario()+ ", "
+                + "SEXO="+ novo.getSexo()+ ", "
+                + "DATA_CADASTRO="+ novo.getDataCadastro()+ ", "
+                + "DATA_NASCIMENTO="+ novo.getDataNascimento()+ " "
+                + "WHERE id ="+ novo.getId_funcionario()+ ";";
+        stmt.executeUpdate(sql);
+        stmt.close();
+        c.close();
     }
 
 }
