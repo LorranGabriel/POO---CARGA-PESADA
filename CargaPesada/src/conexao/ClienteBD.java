@@ -10,7 +10,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -55,7 +57,7 @@ public class ClienteBD implements InterfaceBD{
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO CLIENTE(NOME, TIPO_CLIENTE, CNPJ, CPF, DATA_CADASTRO) values('"
                 + ""+ novo.getNome() +"','" + novo.getTipoCliente() + "','" + novo.getCnpj()+ "','"
-                + novo.getCpf() + "','"+ novo.getDataCadastro() + "')");
+                + novo.getCpf() + "','"+ novo.getDataAtual() + "')");
         rs.close();
         stmt.close();
         c.close();

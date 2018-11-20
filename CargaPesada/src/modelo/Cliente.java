@@ -1,5 +1,8 @@
 package modelo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,7 +21,37 @@ public class Cliente
         private long cnpj;
         private long cpf;
         private int id_endereco;
+        private String data_atual;
+        private String tipo_cliente;
+        private String email;
+    public String getDataAtual(){
+        return data_atual;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public void setData_atual(String data_atual) {
+        Date dataHoraAtual = new Date();
+        this.data_atual = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);        
+    }
+
+    public String getTipo_cliente() {
+        return tipo_cliente;
+    }
+
+    public void setTipo_cliente(String tipo_cliente) {
+        this.tipo_cliente = tipo_cliente;
+    }
+    
+    
+           
     public int getId_endereco() {
         return id_endereco;
     }
@@ -67,5 +100,6 @@ public class Cliente
     public void setCpf(long cpf) {
         this.cpf = cpf;
     }
+    
 
 }

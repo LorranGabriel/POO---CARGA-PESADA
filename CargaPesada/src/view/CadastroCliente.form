@@ -101,7 +101,7 @@
                           <Group type="102" attributes="0">
                               <Component id="nomeCliente" min="-2" pref="147" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cpf" min="-2" pref="199" max="-2" attributes="0"/>
+                              <Component id="tipo_cliente" min="-2" pref="199" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel20" min="-2" pref="77" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
@@ -143,7 +143,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nomeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tipo_cliente" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Component id="jLabel20" min="-2" pref="24" max="-2" attributes="0"/>
@@ -206,9 +206,9 @@
         <Property name="text" type="java.lang.String" value="Contato "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="cpf">
+    <Component class="javax.swing.JTextField" name="tipo_cliente">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpfActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipo_clienteActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="nomeCliente">

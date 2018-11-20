@@ -15,15 +15,19 @@ public class Contato
     private int id_contato;
     private int telefone1;
     private int telefone2;
+    private int telefone3;
     private String email;
 
-    public Contato(int telefone1, int telefone2, String email) 
-    {
-        this.telefone1 = telefone1;
-        this.telefone2 = telefone2;
-        this.email = email;
+
+
+    public int getTelefone3() {
+        return telefone3;
     }
 
+    public void setTelefone3(int telefone3) {
+        this.telefone3 = telefone3;
+    }
+    
     public int getId_contato() {
         return id_contato;
     }

@@ -5,6 +5,10 @@
  */
 package view;
 
+import modelo.Cliente;
+import modelo.Contato;
+import modelo.Endereco;
+
 /**
  *
  * @author larse
@@ -39,7 +43,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        cpf = new javax.swing.JTextField();
+        tipo_cliente = new javax.swing.JTextField();
         nomeCliente = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         telefone1 = new javax.swing.JTextField();
@@ -90,9 +94,9 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel20.setText("Contato ");
 
-        cpf.addActionListener(new java.awt.event.ActionListener() {
+        tipo_cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cpfActionPerformed(evt);
+                tipo_clienteActionPerformed(evt);
             }
         });
 
@@ -209,7 +213,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(nomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tipo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel13)
@@ -240,7 +244,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tipo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -281,9 +285,9 @@ public class CadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfActionPerformed
+    private void tipo_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_clienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cpfActionPerformed
+    }//GEN-LAST:event_tipo_clienteActionPerformed
 
     private void nomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeClienteActionPerformed
         // TODO add your handling code here:
@@ -314,6 +318,26 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroActionPerformed
 
     private void cadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroMouseClicked
+        Cliente novoV = new Cliente();
+       // novo.setData_vencimento(Data_Vencimento.getText()); 
+        String tipo=  "";
+        novoV.setNome(nomeCliente.getText());
+        novoV.setTipo_cliente((tipo_cliente.getText()));
+        if (((novoV.getTipo_cliente()).length()) == 11){
+            tipo=  "CPF";
+            novoV.setCpf((novoV.getTipo_cliente()));
+            novoV.setTipo_cliente(tipo);
+        }else{
+            novoV.setCnpj((novoV.getTipo_cliente()));
+            tipo=  "CNPJ";
+            novoV.setTipo_cliente(tipo);
+        }
+        
+        Contato novoC = new Contato();
+        novoC.setEmail(email.getText());
+        novoC.setTelefone1(Integer.parseInt(telefone1.getText()));
+        novoC.setTelefone2(Integer.parseInt(telefone2.getText()));
+        novoC.setTelefone3(Integer.parseInt(telefone3.getText()));
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroMouseClicked
 
@@ -322,8 +346,10 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_voltarMouseClicked
 
     private void cadastro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastro1MouseClicked
-        CadastroEndereco novo = new CadastroEndereco();
+        CadastroEndereco novo = new CadastroEndereco();     
         novo.setVisible(true);
+        Endereco endereco_cliente = new Endereco();
+        //endereco_cliente = getNovoEndereco();
 // TODO add your handling code here:
     }//GEN-LAST:event_cadastro1MouseClicked
 
@@ -372,7 +398,6 @@ public class CadastroCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastro;
     private javax.swing.JButton cadastro1;
-    private javax.swing.JTextField cpf;
     private javax.swing.JTextField email;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -396,6 +421,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField telefone1;
     private javax.swing.JTextField telefone2;
     private javax.swing.JTextField telefone3;
+    private javax.swing.JTextField tipo_cliente;
     private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 }
