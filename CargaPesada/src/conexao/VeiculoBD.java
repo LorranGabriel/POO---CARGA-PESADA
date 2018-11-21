@@ -33,7 +33,8 @@ public class VeiculoBD implements InterfaceBD{
             veiculo.setChassi(rs.getString("CHASSI"));
             veiculo.setStatus(rs.getString("STATUS"));
             veiculo.setTipoCombustivel(rs.getString("TIPO_COMBUSTIVEL"));
-            veiculo.setCategoria(rs.getString("TIPO_COMBUSTIVEL"));
+            veiculo.setId_categoria(rs.getInt("ID_CATEGORIA"));
+            
 
             //Classes que compõe um motorista
 
@@ -56,20 +57,20 @@ public class VeiculoBD implements InterfaceBD{
         c = ConexaoBD.getInstance();
         Statement stmt;
         Veiculo novo = (Veiculo)obj;
-        ResultSet rs;
         stmt = c.createStatement();
-        rs = stmt.executeQuery("INSERT INTO SERVICO(NOME, CHASSI, PLACA, STATUS, "
-                + "COMBUSTIVEL, ID_CATEGORIA, ID_MODELO, ID_MOTORISTA, ID_SERVICO) values("
+        stmt.executeQuery("INSERT INTO VEICULO(NOME, CHASSI, PLACA, STATUS, "
+                + "COMBUSTIVEL, ID_CATEGORIA, ID_FINANCIAMENTO, ID_SEGURO, ID_MODELO, ID_MOTORISTA) values("
                 +"'"+ novo.getNome_veiculo()+
                 "','"+ novo.getChassi()+ 
                 "','"+ novo.getPlaca()+ 
                 "','"+ novo.getStatus()+ 
                 "','"+ novo.getTipoCombustivel()+
-                "','"+ novo.getCategoria()+
+                "','"+ novo.getId_categoria()+
+                "','"+ novo.getId_financiamento()+
+                "','"+ novo.getId_seguro()+
                 "',"+ novo.getId_modelo()+
-                ","+ novo.getId_motorista()+
-                ","+ novo.getIdServico() +")");
-        rs.close();
+                ",NULL) RETURNING id");
+        
         stmt.close();
         c.close();  
     }
@@ -98,10 +99,9 @@ public class VeiculoBD implements InterfaceBD{
                 + "CHASSI="+ novo.getChassi() + ", "
                 + "PLACA="+ novo.getPlaca() + ", "
                 + "COMBUSTIVEL="+ novo.getTipoCombustivel() + ", "
-                + "ID_CATEGORIA="+ novo.getCategoria() + ", "
+                + "ID_CATEGORIA="+ novo.getId_categoria() + ", "
                 + "ID_MODELO="+ novo.getId_modelo() + ", "
-                + "ID_MOTORISTA="+ novo.getId_motorista() + ", "
-                + "ID_SERVICO="+ novo.getIdServico() + " "
+                + "ID_MOTORISTA="+ novo.getId_motorista() + " "
                 + "WHERE id ="+ novo.getId_modelo() + ";";
         stmt.executeUpdate(sql);
         stmt.close();

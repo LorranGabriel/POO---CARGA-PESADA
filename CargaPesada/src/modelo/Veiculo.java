@@ -17,7 +17,7 @@ public class Veiculo {
     private String placa;
     private String status;
     private String tipoCombustivel;
-    private String categoria;
+    private int id_categoria = 1;
     private int id_seguro;
     private int id_modelo;   //referente ao ID
     private int id_motorista;
@@ -52,8 +52,8 @@ public class Veiculo {
         return tipoCombustivel;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public int getId_categoria() {
+        return id_categoria;
     }
 
     public int getId_seguro() {
@@ -88,8 +88,8 @@ public class Veiculo {
         this.id_financiamento = id_financiamento;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setId_categoria(int categoria) {
+        this.id_categoria = categoria;
     }
 
     public void setId_veiculo(int id_veiculo) {

@@ -1,5 +1,6 @@
     package modelo;
 
+import conexao.CriacaoBanco;
 import view.CadastroSeguro;
 import java.sql.SQLException;
 import view.Home1;

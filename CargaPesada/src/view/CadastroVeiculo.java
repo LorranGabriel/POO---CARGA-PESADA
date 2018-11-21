@@ -5,19 +5,28 @@
  */
 package view;
 
+import conexao.FinanciamentoBD;
+import conexao.ModeloBD;
+import conexao.VeiculoBD;
+import java.sql.SQLException;
 import java.util.HashSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modelo.*;
 
 /**
  *
  * @author MATRIX
  */
-public class CadastroVeiculo extends javax.swing.JFrame {
-
+public class CadastroVeiculo extends javax.swing.JFrame  {
+        
     /**
      * Creates new form CadastroVeiculo
      */
-    public CadastroVeiculo() {
+    CadastroSeguro telaSeguro = new CadastroSeguro();
+    
+    public CadastroVeiculo()  {
         initComponents();
     }
 
@@ -567,14 +576,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         // TODO add your handling code here:
         
-        int id_seguro;
-        id_seguro = Seguro.getId_seguro();
-        System.out.print(id_seguro);
+        int id_seguro = telaSeguro.getNovo().getId_seguro();
+        
 
-       /*Veiculo novoV = new Veiculo();
-       // novo.setData_vencimento(Data_Vencimento.getText()); 
+       Veiculo novoV = new Veiculo();      
         novoV.setNome_veiculo(nomeVeiculo.getText());
-        novoV.setCategoria(categoria.getText());
         novoV.setPlaca(placa.getText());
         novoV.setTipoCombustivel(tipoCombustivel.getText());     
         novoV.setChassi(chassi.getText());
@@ -591,16 +597,39 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         novoM.setQuantEixos(Integer.parseInt(eixos.getText()));
         novoM.setVolume(Float.parseFloat(volume.getText()));
         
-        
-        Financiamento novoFinanciamento = new Financiamento();
-        novoFinanciamento.setBancoFinanciador(financiador.getText());
-        novoFinanciamento.setParcelasPagas(Integer.parseInt(parcelasPagas.getText()));
-        novoFinanciamento.setParcelasTotais(Integer.parseInt(parcelasTotais.getText()));
-        novoFinanciamento.setValorParcela(Integer.parseInt(valorParcela.getText()));
-        */
-       
+        ModeloBD m = new ModeloBD();
+        try {
+            m.insert(novoM);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroVeiculo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         
+        
+        Financiamento novoF = new Financiamento();
+        novoF.setBancoFinanciador(financiador.getText());
+        novoF.setParcelasPagas(Integer.parseInt(parcelasPagas.getText()));
+        novoF.setParcelasTotais(Integer.parseInt(parcelasTotais.getText()));
+        novoF.setValorParcela(Integer.parseInt(valorParcela.getText()));
+        
+        FinanciamentoBD f = new FinanciamentoBD();        
+        try {
+            f.insert(novoF);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroVeiculo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        novoV.setId_seguro(id_seguro);
+        novoV.setId_modelo(novoM.getId_modelo());
+        novoV.setId_financiamento(novoF.getId_financiamento());
+        
+        VeiculoBD v = new VeiculoBD();
+        try {
+            v.insert(novoV);
+            JOptionPane.showMessageDialog(null,"VEICULO CADASTRADO!");
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroVeiculo.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
 
         
@@ -613,8 +642,8 @@ public class CadastroVeiculo extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-       CadastroSeguro novo = new CadastroSeguro();
-       novo.setVisible(true);
+   
+       telaSeguro.setVisible(true);
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**

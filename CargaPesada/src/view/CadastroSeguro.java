@@ -26,6 +26,15 @@ public class CadastroSeguro extends javax.swing.JFrame {
     /**
      * Creates new form NovoSeguro
      */
+    
+    Seguro novo = new Seguro();
+    SeguroBD i = new SeguroBD();
+
+    public Seguro getNovo() {
+        return novo;
+    }
+    
+    
     public CadastroSeguro(){
      
      
@@ -213,14 +222,12 @@ public class CadastroSeguro extends javax.swing.JFrame {
     }//GEN-LAST:event_Data_VencimentoActionPerformed
 
     private void cadastraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastraMouseClicked
-            Seguro novo;
-            novo = new Seguro();
+          
             novo.setData_vencimento(Data_Vencimento.getText());
             novo.setStatus(Status.getSelectedItem().toString());
             novo.setFim_contrato(Data_Fim.getText());
-            novo.setValor(Integer.parseInt(valor.getText()));
+            novo.setValor(Integer.parseInt(valor.getText()));           
             
-            SeguroBD i = new SeguroBD();
         try {
             i.insert(novo);
             JOptionPane.showMessageDialog(null,"SEGURO CADASTRADO!");

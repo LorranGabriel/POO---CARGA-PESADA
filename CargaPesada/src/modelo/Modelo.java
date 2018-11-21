@@ -15,14 +15,23 @@ public class Modelo
     private String marca;
     private String ano;
     private String nome;
+    private String cor;
     private int quantEixos;
     private float peso;
     private float altura;
     private float largura;
     private float comprimento;
     private float volume;
-        
 
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+        
+    
     public int getId_modelo() {
         return id_modelo;
     }

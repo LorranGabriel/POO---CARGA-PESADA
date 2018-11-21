@@ -30,7 +30,7 @@ public class ModeloBD implements InterfaceBD{
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
             Modelo modelo = new Modelo();
             modelo.setId_modelo(rs.getInt("id"));
-            modelo.setModelo(rs.getString("MODELO"));
+            modelo.setNome(rs.getString("MODELO"));
             modelo.setMarca(rs.getString("MARCA"));
             modelo.setAno(rs.getString("ANO"));
             modelo.setQuantEixos(rs.getInt("EIXO"));
@@ -61,13 +61,17 @@ public class ModeloBD implements InterfaceBD{
         ResultSet rs;
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO MODELO(MODELO, MARCA, ANO, EIXO, PESO, ALTURA, LARGURA, COMPRIMENTO, COR) values('"
-                + novo.getModelo()+"','" + novo.getMarca()+ "','" + novo.getAno()+ 
+                + novo.getNome()+"','" + novo.getMarca()+ "','" + novo.getAno()+ 
                 "',"+ novo.getQuantEixos() + 
                 "," + novo.getPeso() +
                 "," + novo.getAltura() +
                 ","+ novo.getLargura() +
                 ","+ novo.getComprimento() +
-                ",'"+ novo.getCor() +"')");
+                ",'"+ novo.getCor() +"') RETURNING id");
+         if(rs.next()){
+            novo.setId_modelo(rs.getInt(1));
+            
+        }
         rs.close();
         stmt.close();
         c.close();  
@@ -93,7 +97,7 @@ public class ModeloBD implements InterfaceBD{
         stmt = c.createStatement();
         Modelo novo = (Modelo)obj;
         String sql = "UPDATE MODELO "
-                + "SET MODELO ="+ novo.getModelo() + ", "
+                + "SET MODELO ="+ novo.getNome() + ", "
                 + "MARCA="+ novo.getMarca() + ", "
                 + "ANO="+ novo.getAno() + ", "
                 + "EIXO="+ novo.getQuantEixos() + ", "

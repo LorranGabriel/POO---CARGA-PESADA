@@ -33,8 +33,8 @@ public class FinanciamentoBD implements InterfaceBD{
             financiamento.setValorParcela(rs.getFloat("VALOR_PARCELA"));
             financiamento.setParcelasTotais(rs.getInt("PARCELAS_TOTAIS"));
             financiamento.setParcelasPagas(rs.getInt("PARCELAS_PAGAS"));
-            financiamento.setId_financiamento(rs.getInt("FINANCIADOR"));
-            financiamento.setidVeiculo(rs.getString("ID_VEICULO"));
+            financiamento.setId_financiamento(rs.getInt("FINANCIADOR"));     
+        
 
 
 
@@ -56,9 +56,14 @@ public class FinanciamentoBD implements InterfaceBD{
         Financiamento novo = (Financiamento)obj;
         ResultSet rs;
         stmt = c.createStatement();
-        rs = stmt.executeQuery("INSERT INTO FINANCIAMENTO(VALOR_PARCELA, PARCELAS_TOTAIS, PARCELAS_PAGAS, FINANCIADOR, ID_VEICULO) values('"
+        rs = stmt.executeQuery("INSERT INTO FINANCIAMENTO(VALOR_PARCELA, PARCELAS_TOTAIS, PARCELAS_PAGAS, FINANCIADOR) values("
                 + novo.getValorParcela()+"," + novo.getParcelasTotais()+ "," + novo.getParcelasPagas()+ ",'"
-                + novo.getBancoFinanciador()+ "','" + novo.getIdVeiculo() +"')");
+                + novo.getBancoFinanciador()+ "') RETURNING id");
+        
+        if(rs.next()){
+            novo.setId_financiamento(rs.getInt(1));
+            
+        }
         rs.close();
         stmt.close();
         c.close();
@@ -87,8 +92,7 @@ public class FinanciamentoBD implements InterfaceBD{
         String sql = "UPDATE FINANCIAMENTO "
                 + "SET VALOR_PARCELA ="+ novo.getValorParcela() + ", "
                 + "PARCELAS_TOTAIS="+ novo.getParcelasTotais() + ", "
-                + "FINANCIADOR="+ novo.getBancoFinanciador() + ", "
-                + "ID_VEICULO="+ novo.getIdVeiculo() + " "
+                + "FINANCIADOR="+ novo.getBancoFinanciador() + " "             
                 + "WHERE id ="+ novo.getId_financiamento() + ";";
         stmt.executeUpdate(sql);
         stmt.close();

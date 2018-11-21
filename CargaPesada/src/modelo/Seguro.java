@@ -13,7 +13,7 @@ import javax.swing.JComboBox;
  */
 public class Seguro {
     
-    public static int id_seguro = 50; //test
+    private int id_seguro; //test
     private String status;
     private String data_vencimento;
     private String fim_contrato;
@@ -31,7 +31,7 @@ public class Seguro {
     }
 
     
-    public static int getId_seguro() {
+    public int getId_seguro() {
         return id_seguro;
     }
 
