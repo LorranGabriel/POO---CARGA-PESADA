@@ -34,8 +34,8 @@ public class ClienteBD implements InterfaceBD{
             Cliente cliente = new Cliente();
             cliente.setId_cliente(rs.getInt("id"));
             cliente.setNome(rs.getString("nome"));
-            cliente.setCnpj(rs.getLong("CNPJ"));
-            cliente.setCpf(rs.getLong("CPF"));
+            cliente.setCnpj(rs.getString("CNPJ"));
+            cliente.setCpf(rs.getString("CPF"));
 
             listCliente.add(cliente);
         }
@@ -56,7 +56,7 @@ public class ClienteBD implements InterfaceBD{
         ResultSet rs;
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO CLIENTE(NOME, TIPO_CLIENTE, CNPJ, CPF, DATA_CADASTRO) values('"
-                + ""+ novo.getNome() +"','" + novo.getTipoCliente() + "','" + novo.getCnpj()+ "','"
+                + ""+ novo.getNome() +"','" + novo.getTipo_cliente()+ "','" + novo.getCnpj()+ "','"
                 + novo.getCpf() + "','"+ novo.getDataAtual() + "')");
         rs.close();
         stmt.close();
@@ -84,11 +84,10 @@ public class ClienteBD implements InterfaceBD{
         stmt = c.createStatement();
         Cliente novo = (Cliente)obj;
         String sql = "UPDATE CLIENTE "
-                + "SET NOME ="+ novo.getNome() + ", "
-                + "TIPO_CLIENTE="+ novo.getTipoCliente() + ", "
+                + "SET NOME ="+ novo.getTipo_cliente()+ ", "
                 + "CNPJ="+ novo.getCnpj() + ","
                 + "CPF="+ novo.getCpf() + ","
-                + "DATA_CADASTRO="+ novo.getDataCadastro() + " "
+                + "DATA_CADASTRO="+ novo.getDataAtual()+ " "
                 + "WHERE id ="+ novo.getId_cliente() + ";";
         stmt.executeUpdate(sql);
         stmt.close();

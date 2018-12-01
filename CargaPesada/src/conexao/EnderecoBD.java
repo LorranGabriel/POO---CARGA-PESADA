@@ -33,7 +33,7 @@ public class EnderecoBD implements InterfaceBD{
             endereco.setEndereco(rs.getString("ENDERECO"));
             endereco.setLogradouro(rs.getString("LOGRADOURO"));
             endereco.setNumero(rs.getInt("NUMERO"));
-            endereco.setCep(rs.getInt("CEP"));
+            endereco.setCep(rs.getString("CEP"));
             endereco.setComplemento(rs.getString("COMPLEMENTO"));
             endereco.setCidade(rs.getString("CIDADE"));
             endereco.setEstado(rs.getString("ESTADO"));
@@ -58,8 +58,11 @@ public class EnderecoBD implements InterfaceBD{
         ResultSet rs;
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO ENDERECO(ENDERECO, LOGRADOURO, NUMERO, CEP, COMPLEMENTO, CIDADE, ESTADO) values('"
-                +"'"+ novo.getEndereco()+"','" + novo.getLogradouro()+ "'," + novo.getNumero()+ ",'"
-                + novo.getCep()+ "','" + novo.getCidade() +"','"+novo.getEstado()+"')");
+                + novo.getEndereco()+"','" + novo.getLogradouro()+ "'," + novo.getNumero()+ ",'"
+                + novo.getCep()+ "','" + novo.getCidade() +"','"+novo.getEstado()+"') RETURNING id");
+        if(rs.next()){
+            novo.setId_endereco(rs.getInt(1));
+        }
         rs.close();
         stmt.close();
         c.close();

@@ -31,9 +31,9 @@ public class ContatoBD implements InterfaceBD{
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
             Contato contato = new Contato();
             contato.setId_contato(rs.getInt("id"));
-            contato.setTelefone1(rs.getInt("TELEFONE_01"));
-            contato.setTelefone2(rs.getInt("TELEFONE_02"));
-            contato.setTelefone3(rs.getInt("TELEFONE_03"));
+            contato.setTelefone1(rs.getString("TELEFONE_01"));
+            contato.setTelefone2(rs.getString("TELEFONE_02"));
+            contato.setTelefone3(rs.getString("TELEFONE_03"));
             contato.setEmail(rs.getString("EMAIL"));
 
 
@@ -57,7 +57,10 @@ public class ContatoBD implements InterfaceBD{
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO CONTATO(TELEFONE_01, TELEFONE_02, TELEFONE_03, EMAIL) values('"
                 + ""+ novo.getTelefone1() +"','" + novo.getTelefone2() + "','" + novo.getTelefone3()+ "','"
-                + novo.getEmail() + "')");
+                + novo.getEmail() + "') RETURNING id");
+        if(rs.next()){
+            novo.setId_contato(rs.getInt(1));
+        }
         rs.close();
         stmt.close();
         c.close();
