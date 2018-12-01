@@ -306,8 +306,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         novoCont.setEmail(email.getText());
         novoCont.setTelefone1(telefone1.getText());
         novoCont.setTelefone2(telefone2.getText());
-        novoCont.setTelefone3(telefone3.getText());
-        
+        novoCont.setTelefone3(telefone3.getText());     
         novoC.setIdContato(novoCont.getId_contato());
         ContatoBD contato = new ContatoBD();
         try {

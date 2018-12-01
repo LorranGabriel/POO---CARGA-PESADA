@@ -59,7 +59,7 @@ public class EnderecoBD implements InterfaceBD{
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO ENDERECO(ENDERECO, LOGRADOURO, NUMERO, CEP, COMPLEMENTO, CIDADE, ESTADO) values('"
                 + novo.getEndereco()+"','" + novo.getLogradouro()+ "'," + novo.getNumero()+ ",'"
-                + novo.getCep()+ "','" + novo.getCidade() +"','"+novo.getEstado()+"') RETURNING id");
+                + novo.getCep()+ "','"+ novo.getComplemento() + "','" + novo.getCidade() +"','"+novo.getEstado()+"') RETURNING id");
         if(rs.next()){
             novo.setIdEndereco(rs.getInt(1));
         }

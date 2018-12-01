@@ -59,6 +59,7 @@ public class ContatoBD implements InterfaceBD{
         rs = stmt.executeQuery("INSERT INTO CONTATO(TELEFONE_01, TELEFONE_02, TELEFONE_03, EMAIL) values('"
                 + ""+ novo.getTelefone1() +"','" + novo.getTelefone2() + "','" + novo.getTelefone3()+ "','"
                 + novo.getEmail() + "') RETURNING id");
+        
         if(rs.next()){
             novo.setId_contato(rs.getInt(1));
         }
