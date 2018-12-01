@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import modelo.Contato;
 
 /**
@@ -60,6 +61,8 @@ public class ContatoBD implements InterfaceBD{
                 + ""+ novo.getTelefone1() +"','" + novo.getTelefone2() + "','" + novo.getTelefone3()+ "','"
                 + novo.getEmail() + "') RETURNING id");
         
+        
+         
         if(rs.next()){
             novo.setId_contato(rs.getInt(1));
         }
