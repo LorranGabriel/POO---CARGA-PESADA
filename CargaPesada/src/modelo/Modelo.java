@@ -11,7 +11,7 @@ package modelo;
  */
 public class Modelo 
 {
-    private int id_modelo;
+    private int idModelo;
     private String marca;
     private String ano;
     private String nome;
@@ -23,96 +23,93 @@ public class Modelo
     private float comprimento;
     private float volume;
 
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-        
-    
-    public int getId_modelo() {
-        return id_modelo;
-    }
-
-    public void setId_modelo(int id_modelo) {
-        this.id_modelo = id_modelo;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public float getAltura() {
+        return this.altura;
     }
 
     public String getAno() {
-        return ano;
+        return this.ano;
     }
 
-    public void setAno(String ano) {
-        this.ano = ano;
+    public float getComprimento() {
+        return this.comprimento;
+    }
+
+    public String getCor() {
+        return this.cor;
+    }
+
+    public int getIdModelo() {
+        return this.idModelo;
+    }
+
+    public float getLargura() {
+        return this.largura;
+    }
+
+    public String getMarca() {
+        return this.marca;
     }
 
     public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getQuantEixos() {
-        return quantEixos;
-    }
-
-    public void setQuantEixos(int quantEixos) {
-        this.quantEixos = quantEixos;
+        return this.nome;
     }
 
     public float getPeso() {
-        return peso;
+        return this.peso;
     }
 
-    public void setPeso(float peso) {
-        this.peso = peso;
+    public int getQuantEixos() {
+        return this.quantEixos;
     }
 
-    public float getAltura() {
-        return altura;
+    public float getVolume() {
+        return this.volume;
     }
 
     public void setAltura(float altura) {
         this.altura = altura;
     }
 
-    public float getLargura() {
-        return largura;
-    }
-
-    public void setLargura(float largura) {
-        this.largura = largura;
-    }
-
-    public float getComprimento() {
-        return comprimento;
+    public void setAno(String ano) {
+        this.ano = ano;
     }
 
     public void setComprimento(float comprimento) {
         this.comprimento = comprimento;
     }
 
-    public float getVolume() {
-        return volume;
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public void setIdModelo(int idModelo) {
+        this.idModelo = idModelo;
+    }
+
+    public void setLargura(float largura) {
+        this.largura = largura;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+
+    public void setQuantEixos(int quantEixos) {
+        this.quantEixos = quantEixos;
     }
 
     public void setVolume(float volume) {
         this.volume = volume;
     }
 
-    
-    
     
 }

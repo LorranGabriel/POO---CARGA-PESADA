@@ -11,58 +11,78 @@ package modelo;
  */
 public class Motorista {
     
-    private int id_motorista;
+    private int idMotorista;
+    private int idFuncionario;
     private String nome;
+    private String dataVencimento;
+    private String categoriaCnh;
     private long cpf;
     private long cnh;
     private float salario;
-    
-    public Motorista(String nome, long cpf, long cnh, float salario) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.cnh = cnh;
-        this.salario = salario;
-    }
-    public int getId_motorista() {
-        return id_motorista;
-    }
 
-    public void setId_motorista(int id_motorista) {
-        this.id_motorista = id_motorista;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public long getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(long cpf) {
-        this.cpf = cpf;
+    public String getCategoriaCnh() {
+        return this.categoriaCnh;
     }
 
     public long getCnh() {
-        return cnh;
+        return this.cnh;
+    }
+
+    public long getCpf() {
+        return this.cpf;
+    }
+
+    public String getDataVencimento() {
+        return this.dataVencimento;
+    }
+
+    public int getIdFuncionario() {
+        return this.idFuncionario;
+    }
+
+    public int getIdMotorista() {
+        return this.idMotorista;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public float getSalario() {
+        return this.salario;
+    }
+
+    public void setCategoriaCnh(String categoriaCnh) {
+        this.categoriaCnh = categoriaCnh;
     }
 
     public void setCnh(long cnh) {
         this.cnh = cnh;
     }
 
-    public float getSalario() {
-        return salario;
+    public void setCpf(long cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setDataVencimento(String dataVencimento) {
+        this.dataVencimento = dataVencimento;
+    }
+
+    public void setIdFuncionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
+    }
+
+    public void setIdMotorista(int idMotorista) {
+        this.idMotorista = idMotorista;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public void setSalario(float salario) {
         this.salario = salario;
     }
-
-   
+    
     
 }

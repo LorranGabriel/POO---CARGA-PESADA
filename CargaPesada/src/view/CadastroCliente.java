@@ -293,14 +293,14 @@ public class CadastroCliente extends javax.swing.JFrame {
         novoC.setNome(nomeCliente.getText());
         
         if ((tipo_cliente.getText().length()) == 11){
-            novoC.setTipo_cliente("F");
+            novoC.setTipoCliente("F");
             novoC.setCpf((tipo_cliente.getText()));            
         }else{
             novoC.setCnpj((tipo_cliente.getText()));            
-            novoC.setTipo_cliente("J");
+            novoC.setTipoCliente("J");
         }
         novoC.setData_atual();
-        novoC.setId_endereco(endereco.getNovo_end().getId_endereco());
+        novoC.setId_endereco(endereco.getNovo_end().getIdEndereco());
         
         Contato novoCont = new Contato();
         novoCont.setEmail(email.getText());
@@ -308,7 +308,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         novoCont.setTelefone2(telefone2.getText());
         novoCont.setTelefone3(telefone3.getText());
         
-        novoC.setId_contato(novoCont.getId_contato());
+        novoC.setIdContato(novoCont.getId_contato());
         ContatoBD contato = new ContatoBD();
         try {
             contato.insert(novoC);

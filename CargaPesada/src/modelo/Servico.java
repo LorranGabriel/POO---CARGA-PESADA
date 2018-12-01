@@ -11,97 +11,97 @@ package modelo;
  */
 public class Servico 
 {
-    private int id_servico;
+    private int idServico;
     private String status;
-    private String destino;
-    private String origem;
-    private float valor_contrato;
-    private String data_inicio;
-    private String data_fim;
-    private int id_cliente;
-    private int id_funcionario;
-    private int id_veiculo;
+    private int idDestino;
+    private int idOrigem;
+    private float valorContrato;
+    private String dataInicio;
+    private String dataFim;
+    private int idCliente;
+    private int idFuncionario;
+    private int idVeiculo;
 
- 
-    public int getId_servico() {
-        return id_servico;
+    public int getIdServico() {
+        return this.idServico;
     }
 
-    public void setId_servico(int id_servico) {
-        this.id_servico = id_servico;
-    }
-
-    public int getId_cliente() {
-        return id_cliente;
-    }
-
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
-    }
-
-    public int getId_funcionario() {
-        return id_funcionario;
-    }
-
-    public void setId_funcionario(int id_funcionario) {
-        this.id_funcionario = id_funcionario;
-    }
-
-    public int getId_veiculo() {
-        return id_veiculo;
-    }
-
-    public void setId_veiculo(int id_veiculo) {
-        this.id_veiculo = id_veiculo;
-    }
 
     public String getStatus() {
-        return status;
+        return this.status;
+    }
+
+
+    public int getIdDestino() {
+        return this.idDestino;
+    }
+
+
+    public int getIdOrigem() {
+        return this.idOrigem;
+    }
+
+    public float getValorContrato() {
+        return this.valorContrato;
+    }
+
+    public String getDataInicio() {
+        return this.dataInicio;
+    }
+
+    public String getDataFim() {
+        return this.dataFim;
+    }
+
+    public int getIdCliente() {
+        return this.idCliente;
+    }
+
+    public int getIdFuncionario() {
+        return this.idFuncionario;
+    }
+
+    public int getIdVeiculo() {
+        return this.idVeiculo;
+    }
+
+    public void setIdServico(int idServico) {
+        this.idServico = idServico;
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public String getDestino() {
-        return destino;
+    public void setIdDestino(int idDestino) {
+        this.idDestino = idDestino;
     }
 
-    public void setDestino(String destino) {
-        this.destino = destino;
+    public void setIdOrigem(int idOrigem) {
+        this.idOrigem = idOrigem;
     }
 
-    public String getOrigem() {
-        return origem;
+    public void setValorContrato(float valorContrato) {
+        this.valorContrato = valorContrato;
     }
 
-    public void setOrigem(String origem) {
-        this.origem = origem;
+    public void setDataInicio(String dataInicio) {
+        this.dataInicio = dataInicio;
     }
 
-    public float getValor_contrato() {
-        return valor_contrato;
+    public void setDataFim(String dataFim) {
+        this.dataFim = dataFim;
     }
 
-    public void setValor_contrato(float valor_contrato) {
-        this.valor_contrato = valor_contrato;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public String getData_inicio() {
-        return data_inicio;
+    public void setIdFuncionario(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
-    public void setData_inicio(String data_inicio) {
-        this.data_inicio = data_inicio;
+    public void setIdVeiculo(int idVeiculo) {
+        this.idVeiculo = idVeiculo;
     }
-
-    public String getData_fim() {
-        return data_fim;
-    }
-
-    public void setData_fim(String data_fim) {
-        this.data_fim = data_fim;
-    }
-
-    
 }

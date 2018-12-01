@@ -6,7 +6,6 @@
 package conexao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,7 +19,38 @@ public class ServicoBD implements InterfaceBD{
 
     @Override
     public ArrayList select() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         ArrayList listServico = new ArrayList();
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM SERVICO;");
+        while (rs.next()) {
+
+            //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
+
+            Servico servico = new Servico();
+            servico.setDataFim(rs.getNString("DATA_FIM"));
+            servico.setDataInicio(rs.getNString("DATA_INICIO"));
+            servico.setIdDestino(rs.getInt("ID_ENDERECO_DESTINO"));
+            servico.setIdOrigem(rs.getInt("ID_ENDERECO_ORIGEM"));
+            servico.setIdFuncionario(rs.getInt(rs.getInt("ID_FUNCIONARIO")));
+            servico.setIdServico(rs.getInt("ID"));
+            servico.setIdVeiculo(rs.getInt("ID_VEICULO"));
+            servico.setStatus(rs.getNString("STATUS"));
+            servico.setValorContrato(rs.getFloat("VALOR_CONTRATO"));
+            //Classes que compõe um funcionario
+
+            //funcionario.setContato(rs.getString("CONTATO"));
+            //funcionario.setEndereco(rs.getString("MOTORISTA"));
+
+            listServico.add(servico);
+        }
+        rs.close();
+        stmt.close();
+        c.close();
+
+        return listServico;    
     }
 
     @Override
@@ -34,14 +64,14 @@ public class ServicoBD implements InterfaceBD{
         rs = stmt.executeQuery("INSERT INTO SERVICO(STATUS, VALOR_CONTRATO, DATA_INICIO, DATA_FIM, "
                 + "ID_CLIENTE, ID_FUNCIONARIO, ID_VEICULO, ID_ENDERECO_DESTINO, ID_ENDERECO_ORIGEM) values("
                 +"'"+ novo.getStatus()+
-                "',"+ novo.getValor_contrato()+ 
-                ",'"+ novo.getData_inicio()+ 
-                "','"+ novo.getData_fim()+ 
-                "',"+ novo.getId_cliente()+
-                ","+ novo.getId_funcionario()+
-                ","+ novo.getId_veiculo()+
-                ","+ novo.getDestino()+
-                ","+ novo.getOrigem() +")");
+                "',"+ novo.getValorContrato()+ 
+                ",'"+ novo.getDataInicio()+ 
+                "','"+ novo.getDataFim()+ 
+                "',"+ novo.getIdCliente()+
+                ","+ novo.getIdFuncionario()+
+                ","+ novo.getIdVeiculo()+
+                ","+ novo.getIdDestino()+
+                ","+ novo.getIdOrigem() +")");
         rs.close();
         stmt.close();
         c.close();  
@@ -68,15 +98,15 @@ public class ServicoBD implements InterfaceBD{
         Servico novo = (Servico)obj;
         String sql = "UPDATE SERVICO "
                 + "SET STATUS ="+ novo.getStatus() + ", "
-                + "VALOR_CONTRATO="+ novo.getValor_contrato() + ", "
-                + "DATA_INICIO="+ novo.getData_inicio() + ", "
-                + "DATA_FIM="+ novo.getData_fim() + ", "
-                + "ID_CLIENTE="+ novo.getId_cliente() + ", "
-                + "ID_FUNCIONARIO="+ novo.getId_funcionario() + ", "
-                + "ID_VEICULO="+ novo.getId_veiculo() + ", "
-                + "ID_ENDERECO_DESTINO="+ novo.getDestino() + ", "
-                + "ID_ENDERECO_ORIGEM="+ novo.getOrigem() + " "
-                + "WHERE id ="+ novo.getId_servico() + ";";
+                + "VALOR_CONTRATO="+ novo.getValorContrato() + ", "
+                + "DATA_INICIO="+ novo.getDataInicio() + ", "
+                + "DATA_FIM="+ novo.getDataFim() + ", "
+                + "ID_CLIENTE="+ novo.getIdCliente() + ", "
+                + "ID_FUNCIONARIO="+ novo.getIdFuncionario() + ", "
+                + "ID_VEICULO="+ novo.getIdVeiculo() + ", "
+                + "ID_ENDERECO_DESTINO="+ novo.getIdDestino() + ", "
+                + "ID_ENDERECO_ORIGEM="+ novo.getIdOrigem() + " "
+                + "WHERE id ="+ novo.getIdServico() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();   

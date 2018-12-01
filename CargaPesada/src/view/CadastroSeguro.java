@@ -223,9 +223,9 @@ public class CadastroSeguro extends javax.swing.JFrame {
 
     private void cadastraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastraMouseClicked
           
-            novo.setData_vencimento(Data_Vencimento.getText());
+            novo.setDataVencimento(Data_Vencimento.getText());
             novo.setStatus(Status.getSelectedItem().toString());
-            novo.setFim_contrato(Data_Fim.getText());
+            novo.setFimContrato(Data_Fim.getText());
             novo.setValor(Integer.parseInt(valor.getText()));           
             
         try {

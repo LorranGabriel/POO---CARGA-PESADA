@@ -19,7 +19,38 @@ public class MotoristaDB implements InterfaceBD{
 
     @Override
     public ArrayList select() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        ArrayList listMotorista = new ArrayList();
+        Connection c;
+        Statement stmt;
+        c = ConexaoBD.getInstance();
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM MOTORISTA;");
+        while (rs.next()) {
+
+            //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
+
+            Motorista motorista = new Motorista();
+            motorista.setIdMotorista(rs.getInt("ID"));
+            motorista.setCategoriaCnh(rs.getNString("CATEGORIA_CNH"));
+            motorista.setCnh(rs.getLong("CNH"));
+            motorista.setCpf(rs.getLong("CPF"));
+            motorista.setDataVencimento(rs.getNString("DATA_VENCIMENTO"));
+            motorista.setIdFuncionario(rs.getInt("ID_FUNCIONARIO"));
+
+
+            //Classes que compõe um funcionario
+
+            //funcionario.setContato(rs.getString("CONTATO"));
+            //funcionario.setEndereco(rs.getString("MOTORISTA"));
+
+            listMotorista.add(motorista);
+        }
+        rs.close();
+        stmt.close();
+        c.close();
+
+        return listMotorista;    
     }
 
     @Override
@@ -60,7 +91,7 @@ public class MotoristaDB implements InterfaceBD{
                 + "DATA_VENCIMENTO="+ novo.getDataVencimento() + ", "
                 + "CATEGORIA_CNH="+ novo.getCategoriaCnh() + ", "
                 + "ID_FUNCIONARIO="+ novo.getIdFuncionario() + " "
-                + "WHERE id ="+ novo.getId_motorista() + ";";
+                + "WHERE id ="+ novo.getIdMotorista() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();  

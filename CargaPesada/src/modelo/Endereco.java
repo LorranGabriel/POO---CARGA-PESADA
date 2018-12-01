@@ -12,7 +12,7 @@ package modelo;
 public class Endereco 
 {
 
-    private int id_endereco;
+    private int idEndereco;
     private String endereco;
     private String estado;
     private String cidade;
@@ -28,83 +28,76 @@ public class Endereco
         return complemento;
     }
 
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public String getCep() {
+        return this.cep;
     }
 
     public String getCidade() {
-        return cidade;
+        return this.cidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public String getEndereco() {
+        return this.endereco;
     }
 
-    public String getBairro() {
-        return bairro;
+    public String getEstado() {
+        return this.estado;
+    }
+
+    public int getIdEndereco() {
+        return this.idEndereco;
+    }
+
+    public String getLogradouro() {
+        return this.logradouro;
+    }
+
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public String getReferencia() {
+        return this.referencia;
     }
 
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
-
-    public String getReferencia() {
-        return referencia;
-    }
-
-    public void setReferencia(String referencia) {
+    
+    public void setReferencia(String referencia){
         this.referencia = referencia;
-    }
-
-        public int getId_endereco() {
-        return id_endereco;
-    }
-
-    public void setId_endereco(int id_endereco) {
-        this.id_endereco = id_endereco;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public String getCep() {
-        return cep;
     }
 
     public void setCep(String cep) {
         this.cep = cep;
     }
 
-    
-    
-    
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void setIdEndereco(int idEndereco) {
+        this.idEndereco = idEndereco;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
 }
+

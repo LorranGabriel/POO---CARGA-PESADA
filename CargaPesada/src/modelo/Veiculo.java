@@ -11,93 +11,92 @@ package modelo;
  */
 public class Veiculo {
 
-    private int id_veiculo;
-   
+    private int idVeiculo;
     private String chassi;
     private String placa;
     private String status;
     private String tipoCombustivel;
-    private int id_categoria = 1;
-    private int id_seguro;
-    private int id_modelo;   //referente ao ID
-    private int id_motorista;
-    private int id_financiamento;
-    private String nome_veiculo;
-
-    public String getNome_veiculo() {
-        return nome_veiculo;
-    }
-
-    public void setNome_veiculo(String nome_veiculo) {
-        this.nome_veiculo = nome_veiculo;
-    }
-    
-    public int getId_veiculo() {
-        return id_veiculo;
-    }
+    private int idCategoria;
+    private int idSeguro;
+    private int idModelo;   //referente ao ID
+    private int idMotorista;
+    private int idFinanciamento;
+    private String nomeVeiculo;
 
     public String getChassi() {
-        return chassi;
+        return this.chassi;
+    }
+
+    public int getIdCategoria() {
+        return this.idCategoria;
+    }
+
+    public int getIdFinanciamento() {
+        return this.idFinanciamento;
+    }
+
+    public int getIdModelo() {
+        return this.idModelo;
+    }
+
+    public int getIdMotorista() {
+        return this.idMotorista;
+    }
+
+    public int getIdSeguro() {
+        return this.idSeguro;
+    }
+
+    public int getIdVeiculo() {
+        return this.idVeiculo;
+    }
+
+    public String getNomeVeiculo() {
+        return this.nomeVeiculo;
     }
 
     public String getPlaca() {
-        return placa;
+        return this.placa;
     }
 
     public String getStatus() {
-        return status;
+        return this.status;
     }
 
     public String getTipoCombustivel() {
-        return tipoCombustivel;
-    }
-
-    public int getId_categoria() {
-        return id_categoria;
-    }
-
-    public int getId_seguro() {
-        return id_seguro;
-    }
-
-    public void setId_seguro(int id_seguro) {
-        this.id_seguro = id_seguro;
-    }
-
-    public int getId_modelo() {
-        return id_modelo;
-    }
-
-    public void setId_modelo(int id_modelo) {
-        this.id_modelo = id_modelo;
-    }
-
-    public int getId_motorista() {
-        return id_motorista;
-    }
-
-    public void setId_motorista(int id_motorista) {
-        this.id_motorista = id_motorista;
-    }
-
-    public int getId_financiamento() {
-        return id_financiamento;
-    }
-
-    public void setId_financiamento(int id_financiamento) {
-        this.id_financiamento = id_financiamento;
-    }
-
-    public void setId_categoria(int categoria) {
-        this.id_categoria = categoria;
-    }
-
-    public void setId_veiculo(int id_veiculo) {
-        this.id_veiculo = id_veiculo;
+        return this.tipoCombustivel;
     }
 
     public void setChassi(String chassi) {
         this.chassi = chassi;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public void setIdFinanciamento(int idFinanciamento) {
+        this.idFinanciamento = idFinanciamento;
+    }
+
+    public void setIdModelo(int idModelo) {
+        this.idModelo = idModelo;
+    }
+
+    public void setIdMotorista(int idMotorista) {
+        this.idMotorista = idMotorista;
+    }
+
+    public void setIdSeguro(int idSeguro) {
+        this.idSeguro = idSeguro;
+    }
+
+    public void setIdVeiculo(int idVeiculo) {
+        this.idVeiculo = idVeiculo;
+    }
+
+    public void setNomeVeiculo(String nomeVeiculo) {
+        this.nomeVeiculo = nomeVeiculo;
     }
 
     public void setPlaca(String placa) {

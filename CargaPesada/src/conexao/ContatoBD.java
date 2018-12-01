@@ -34,6 +34,7 @@ public class ContatoBD implements InterfaceBD{
             contato.setTelefone1(rs.getString("TELEFONE_01"));
             contato.setTelefone2(rs.getString("TELEFONE_02"));
             contato.setTelefone3(rs.getString("TELEFONE_03"));
+
             contato.setEmail(rs.getString("EMAIL"));
 
 

@@ -11,52 +11,52 @@ package modelo;
  */
 public class Financiamento 
 {
-    private int id_financiamento;
+    private int idFinanciamento;
     private float valorParcela;
     private int parcelasTotais;
     private int parcelasPagas;
     private String bancoFinanciador;
-    
-    public int getId_financiamento() {
-        return id_financiamento;
+
+    public String getBancoFinanciador() {
+        return this.bancoFinanciador;
     }
 
-    public void setId_financiamento(int id_financiamento) {
-        this.id_financiamento = id_financiamento;
-    }
-
-    public float getValorParcela() {
-        return valorParcela;
-    }
-
-    public void setValorParcela(float valorParcela) {
-        this.valorParcela = valorParcela;
-    }
-
-    public int getParcelasTotais() {
-        return parcelasTotais;
-    }
-
-    public void setParcelasTotais(int parcelasTotais) {
-        this.parcelasTotais = parcelasTotais;
+    public int getIdFinanciamento() {
+        return this.idFinanciamento;
     }
 
     public int getParcelasPagas() {
-        return parcelasPagas;
+        return this.parcelasPagas;
+    }
+
+    public int getParcelasTotais() {
+        return this.parcelasTotais;
+    }
+
+    public float getValorParcela() {
+        return this.valorParcela;
+    }
+
+    public void setBancoFinanciador(String bancoFinanciador) {
+        this.bancoFinanciador = bancoFinanciador;
+    }
+
+    public void setIdFinanciamento(int idFinanciamento) {
+        this.idFinanciamento = idFinanciamento;
     }
 
     public void setParcelasPagas(int parcelasPagas) {
         this.parcelasPagas = parcelasPagas;
     }
 
-    public String getBancoFinanciador() {
-        return bancoFinanciador;
+    public void setParcelasTotais(int parcelasTotais) {
+        this.parcelasTotais = parcelasTotais;
     }
 
-    public void setBancoFinanciador(String bancoFinanciador) {
-        this.bancoFinanciador = bancoFinanciador;
+    public void setValorParcela(float valorParcela) {
+        this.valorParcela = valorParcela;
     }
-    
+ 
     
     
 }

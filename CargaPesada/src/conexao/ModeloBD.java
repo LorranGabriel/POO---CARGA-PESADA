@@ -29,7 +29,7 @@ public class ModeloBD implements InterfaceBD{
 
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
             Modelo modelo = new Modelo();
-            modelo.setId_modelo(rs.getInt("id"));
+            modelo.setIdModelo(rs.getInt("id"));
             modelo.setNome(rs.getString("MODELO"));
             modelo.setMarca(rs.getString("MARCA"));
             modelo.setAno(rs.getString("ANO"));
@@ -69,7 +69,7 @@ public class ModeloBD implements InterfaceBD{
                 ","+ novo.getComprimento() +
                 ",'"+ novo.getCor() +"') RETURNING id");
          if(rs.next()){
-            novo.setId_modelo(rs.getInt(1));
+            novo.setIdModelo(rs.getInt(1));
             
         }
         rs.close();
@@ -106,7 +106,7 @@ public class ModeloBD implements InterfaceBD{
                 + "LARGURA="+ novo.getLargura() + ", "
                 + "COMPRIMENTO="+ novo.getComprimento() + ", "
                 + "COR="+ novo.getCor() + " "
-                + "WHERE id ="+ novo.getId_modelo() + ";";
+                + "WHERE id ="+ novo.getIdModelo() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();    

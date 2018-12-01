@@ -28,12 +28,12 @@ public class VeiculoBD implements InterfaceBD{
         ResultSet rs = stmt.executeQuery("SELECT * FROM VEICULO;");
         while (rs.next()) {
             Veiculo veiculo = new Veiculo();
-            veiculo.setId_veiculo(rs.getInt("id"));
+            veiculo.setIdVeiculo(rs.getInt("id"));
             veiculo.setPlaca(rs.getString("PLACA"));
             veiculo.setChassi(rs.getString("CHASSI"));
             veiculo.setStatus(rs.getString("STATUS"));
             veiculo.setTipoCombustivel(rs.getString("TIPO_COMBUSTIVEL"));
-            veiculo.setId_categoria(rs.getInt("ID_CATEGORIA"));
+            veiculo.setIdCategoria(rs.getInt("ID_CATEGORIA"));
             
 
             //Classes que compõe um motorista
@@ -60,15 +60,15 @@ public class VeiculoBD implements InterfaceBD{
         stmt = c.createStatement();
         stmt.executeQuery("INSERT INTO VEICULO(NOME, CHASSI, PLACA, STATUS, "
                 + "COMBUSTIVEL, ID_CATEGORIA, ID_FINANCIAMENTO, ID_SEGURO, ID_MODELO, ID_MOTORISTA) values("
-                +"'"+ novo.getNome_veiculo()+
+                +"'"+ novo.getNomeVeiculo()+
                 "','"+ novo.getChassi()+ 
                 "','"+ novo.getPlaca()+ 
                 "','"+ novo.getStatus()+ 
                 "','"+ novo.getTipoCombustivel()+
-                "','"+ novo.getId_categoria()+
-                "','"+ novo.getId_financiamento()+
-                "','"+ novo.getId_seguro()+
-                "',"+ novo.getId_modelo()+
+                "','"+ novo.getIdCategoria()+
+                "','"+ novo.getIdFinanciamento()+
+                "','"+ novo.getIdSeguro()+
+                "',"+ novo.getIdModelo()+
                 ",NULL) RETURNING id");
         
         stmt.close();
@@ -95,14 +95,14 @@ public class VeiculoBD implements InterfaceBD{
         stmt = c.createStatement();
         Veiculo novo = (Veiculo)obj;
         String sql = "UPDATE VEICULO "
-                + "SET NOME ="+ novo.getNome_veiculo() + ", "
+                + "SET NOME ="+ novo.getNomeVeiculo() + ", "
                 + "CHASSI="+ novo.getChassi() + ", "
                 + "PLACA="+ novo.getPlaca() + ", "
                 + "COMBUSTIVEL="+ novo.getTipoCombustivel() + ", "
-                + "ID_CATEGORIA="+ novo.getId_categoria() + ", "
-                + "ID_MODELO="+ novo.getId_modelo() + ", "
-                + "ID_MOTORISTA="+ novo.getId_motorista() + " "
-                + "WHERE id ="+ novo.getId_modelo() + ";";
+                + "ID_CATEGORIA="+ novo.getIdCategoria() + ", "
+                + "ID_MODELO="+ novo.getIdModelo() + ", "
+                + "ID_MOTORISTA="+ novo.getIdMotorista() + " "
+                + "WHERE id ="+ novo.getIdModelo() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();    

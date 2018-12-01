@@ -576,11 +576,11 @@ public class CadastroVeiculo extends javax.swing.JFrame  {
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         // TODO add your handling code here:
         
-        int id_seguro = telaSeguro.getNovo().getId_seguro();
+        int id_seguro = telaSeguro.getNovo().getIdSeguro();
         
 
        Veiculo novoV = new Veiculo();      
-        novoV.setNome_veiculo(nomeVeiculo.getText());
+        novoV.setNomeVeiculo(nomeVeiculo.getText());
         novoV.setPlaca(placa.getText());
         novoV.setTipoCombustivel(tipoCombustivel.getText());     
         novoV.setChassi(chassi.getText());
@@ -619,9 +619,9 @@ public class CadastroVeiculo extends javax.swing.JFrame  {
             Logger.getLogger(CadastroVeiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        novoV.setId_seguro(id_seguro);
-        novoV.setId_modelo(novoM.getId_modelo());
-        novoV.setId_financiamento(novoF.getId_financiamento());
+        novoV.setIdSeguro(id_seguro);
+        novoV.setIdModelo(novoM.getIdModelo());
+        novoV.setIdFinanciamento(novoF.getIdFinanciamento());
         
         VeiculoBD v = new VeiculoBD();
         try {
