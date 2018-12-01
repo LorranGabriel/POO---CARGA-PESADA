@@ -13,18 +13,18 @@ public class Contato
 {
     
     private int id_contato;
-    private int telefone1;
-    private int telefone2;
-    private int telefone3;
+    private String telefone1;
+    private String telefone2;
+    private String telefone3;
     private String email;
 
 
 
-    public int getTelefone3() {
+    public String getTelefone3() {
         return telefone3;
     }
 
-    public void setTelefone3(int telefone3) {
+    public void setTelefone3(String telefone3) {
         this.telefone3 = telefone3;
     }
     
@@ -36,19 +36,19 @@ public class Contato
         this.id_contato = id_contato;
     }
 
-    public int getTelefone1() {
+    public String getTelefone1() {
         return telefone1;
     }
 
-    public void setTelefone1(int telefone1) {
+    public void setTelefone1(String telefone1) {
         this.telefone1 = telefone1;
     }
 
-    public int getTelefone2() {
+    public String getTelefone2() {
         return telefone2;
     }
 
-    public void setTelefone2(int telefone2) {
+    public void setTelefone2(String telefone2) {
         this.telefone2 = telefone2;
     }
 

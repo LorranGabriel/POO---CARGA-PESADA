@@ -6,6 +6,10 @@
 
 package view;
 
+import conexao.EnderecoBD;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Endereco;
 
 /**
@@ -13,7 +17,12 @@ import modelo.Endereco;
  * @author walla
  */
 public class CadastroEndereco extends javax.swing.JFrame {
+    Endereco novo_end = new Endereco();
 
+    public Endereco getNovo_end() {
+        return novo_end;
+    }
+    
     /** Creates new form CadastroEndereco */
     public CadastroEndereco() {
         initComponents();
@@ -295,7 +304,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
     }//GEN-LAST:event_enderecoActionPerformed
 
     private void cadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroMouseClicked
-        Endereco novo_end = new Endereco();
         novo_end.setEndereco(endereco.getText());
         novo_end.setEstado(estado.getSelectedItem().toString());
         novo_end.setCidade(cidade.getText());
@@ -304,7 +312,15 @@ public class CadastroEndereco extends javax.swing.JFrame {
         novo_end.setLogradouro(logradouro.getText());
         novo_end.setComplemento(pontoReferencia.getText());
         novo_end.setNumero(Integer.parseInt(numero.getText()));
-        novo_end.setCep(Integer.parseInt(cep.getText()));
+        novo_end.setCep(cep.getText());
+        
+        EnderecoBD novoEnd = new EnderecoBD();
+        try {
+            novoEnd.insert(novo_end);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroEndereco.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         dispose();        // TODO add your handling code here:
         
         // FALTA VINCULAR ENDEREÇO AO CLIENTE

@@ -18,8 +18,8 @@ public class Cliente
     {
         private int id_cliente;
         private String nome;
-        private long cnpj;
-        private long cpf;
+        private String cnpj;
+        private String cpf;
         private int id_endereco;
         private String data_atual;
         private String tipo_cliente;
@@ -37,7 +37,7 @@ public class Cliente
     }
 
 
-    public void setData_atual(String data_atual) {
+    public void setData_atual() {
         Date dataHoraAtual = new Date();
         this.data_atual = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);        
     }
@@ -85,19 +85,19 @@ public class Cliente
         this.nome = nome;
     }
 
-    public long getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(long cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
     

@@ -5,6 +5,11 @@
  */
 package view;
 
+import conexao.*;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modelo.*;
 
 /**
@@ -12,7 +17,7 @@ import modelo.*;
  * @author walla
  */
 public class CadastroCliente extends javax.swing.JFrame {
-
+    CadastroEndereco endereco = new CadastroEndereco();
     /**
      * Creates new form NewJFrame
      */
@@ -283,26 +288,44 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_nomeClienteActionPerformed
 
     private void cadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroMouseClicked
-        Cliente novoV = new Cliente();
+        Cliente novoC = new Cliente();
         // novo.setData_vencimento(Data_Vencimento.getText());
-        String tipo=  "";
-        novoV.setNome(nomeCliente.getText());
-        novoV.setTipo_cliente((tipo_cliente.getText()));
-        if (((novoV.getTipo_cliente()).length()) == 11){
-            tipo=  "CPF";
-            novoV.setCpf((novoV.getTipo_cliente()));
-            novoV.setTipo_cliente(tipo);
+        novoC.setNome(nomeCliente.getText());
+        
+        if ((tipo_cliente.getText().length()) == 11){
+            novoC.setTipo_cliente("F");
+            novoC.setCpf((tipo_cliente.getText()));            
         }else{
-            novoV.setCnpj((novoV.getTipo_cliente()));
-            tipo=  "CNPJ";
-            novoV.setTipo_cliente(tipo);
+            novoC.setCnpj((tipo_cliente.getText()));            
+            novoC.setTipo_cliente("J");
         }
-
-        Contato novoC = new Contato();
-        novoC.setEmail(email.getText());
-        novoC.setTelefone1(Integer.parseInt(telefone1.getText()));
-        novoC.setTelefone2(Integer.parseInt(telefone2.getText()));
-        novoC.setTelefone3(Integer.parseInt(telefone3.getText()));
+        novoC.setData_atual();
+        novoC.setId_endereco(endereco.getNovo_end().getId_endereco());
+        
+        Contato novoCont = new Contato();
+        novoCont.setEmail(email.getText());
+        novoCont.setTelefone1(telefone1.getText());
+        novoCont.setTelefone2(telefone2.getText());
+        novoCont.setTelefone3(telefone3.getText());
+        
+        novoC.setId_contato(novoCont.getId_contato());
+        ContatoBD contato = new ContatoBD();
+        try {
+            contato.insert(novoC);
+        } catch (SQLException ex) {
+            
+            Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ClienteBD clienteBD = new ClienteBD();
+        
+        try {
+            clienteBD.insert(novoC);
+            JOptionPane.showMessageDialog(null,"CLIENTE CADASTRADO!");
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroMouseClicked
 
@@ -311,9 +334,9 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroActionPerformed
 
     private void cadastro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastro1MouseClicked
-        CadastroEndereco novo = new CadastroEndereco();
-        novo.setVisible(true);
-        Endereco endereco_cliente = new Endereco();
+        
+        endereco.setVisible(true);
+        //Endereco endereco_cliente = new Endereco();
         //endereco_cliente = getNovoEndereco();
         // TODO add your handling code here:
     }//GEN-LAST:event_cadastro1MouseClicked
