@@ -343,6 +343,9 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void cadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastro1ActionPerformed
         // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_cadastro1ActionPerformed
 
     private void telefone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefone1ActionPerformed
