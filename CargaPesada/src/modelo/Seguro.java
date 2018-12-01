@@ -13,55 +13,50 @@ import javax.swing.JComboBox;
  */
 public class Seguro {
     
-    private int id_seguro; //test
+    private int idSeguro; //test
     private String status;
-    private String data_vencimento;
-    private String fim_contrato;
-    private float Valor;
+    private String dataVencimento;
+    private String fimContrato;
+    private float valor;
     //String status, String data_vencimento, String fim_contrato
-    public Seguro() {
+
+    public String getDataVencimento() {
+        return this.dataVencimento;
     }
 
-    public float getValor() {
-        return Valor;
+    public String getFimContrato() {
+        return this.fimContrato;
     }
 
-    public void setValor(float Valor) {
-        this.Valor = Valor;
-    }
-
-    
-    public int getId_seguro() {
-        return id_seguro;
-    }
-
-    public void setId_seguro(int id_seguro) {
-        this.id_seguro = id_seguro;
+    public int getIdSeguro() {
+        return this.idSeguro;
     }
 
     public String getStatus() {
-        return status;
+        return this.status;
+    }
+
+    public float getValor() {
+        return this.valor;
+    }
+
+    public void setDataVencimento(String dataVencimento) {
+        this.dataVencimento = dataVencimento;
+    }
+
+    public void setFimContrato(String fimContrato) {
+        this.fimContrato = fimContrato;
+    }
+
+    public void setIdSeguro(int idSeguro) {
+        this.idSeguro = idSeguro;
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public String getData_vencimento() {
-        return data_vencimento;
-    }
-
-    public void setData_vencimento(String data_vencimento) {
-        this.data_vencimento = data_vencimento;
-    }
-
-    public String getFim_contrato() {
-        return fim_contrato;
-    }
-
-    public void setFim_contrato(String fim_contrato) {
-        this.fim_contrato = fim_contrato;
-    }
-    
-    
+    public void setValor(float valor) {
+        this.valor = valor;
+    } 
 }

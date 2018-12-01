@@ -29,7 +29,7 @@ public class EnderecoBD implements InterfaceBD{
 
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
             Endereco endereco = new Endereco();
-            endereco.setId_endereco(rs.getInt("id"));
+            endereco.setIdEndereco(rs.getInt("id"));
             endereco.setEndereco(rs.getString("ENDERECO"));
             endereco.setLogradouro(rs.getString("LOGRADOURO"));
             endereco.setNumero(rs.getInt("NUMERO"));
@@ -93,7 +93,7 @@ public class EnderecoBD implements InterfaceBD{
                 + "COMPLEMENTO="+ novo.getComplemento() + ", "
                 + "CIDADE="+ novo.getCidade() + ", "
                 + "ESTADO="+ novo.getEstado() + " "
-                + "WHERE id ="+ novo.getId_endereco() + ";";
+                + "WHERE id ="+ novo.getIdEndereco() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();

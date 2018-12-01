@@ -32,7 +32,7 @@ public class CategoriaBD implements InterfaceBD{
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
 
             Categoria categoria = new Categoria();
-            categoria.setId_categoria(rs.getInt("id"));
+            categoria.setIdCategoria(rs.getInt("id"));
             categoria.setNome(rs.getString("NOME"));
 
 
@@ -84,7 +84,7 @@ public class CategoriaBD implements InterfaceBD{
         c = ConexaoBD.getInstance();
         stmt = c.createStatement();
         Categoria novo = (Categoria)obj;
-        String sql = "UPDATE CATEGORIA SET NOME ="+ novo.getNome() +" WHERE id ="+ novo.getId_categoria() + ";";
+        String sql = "UPDATE CATEGORIA SET NOME ="+ novo.getNome() +" WHERE id ="+ novo.getIdCategoria() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();

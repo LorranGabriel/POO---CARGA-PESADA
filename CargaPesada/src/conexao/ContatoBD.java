@@ -30,7 +30,7 @@ public class ContatoBD implements InterfaceBD{
 
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
             Contato contato = new Contato();
-            contato.setId_contato(rs.getInt("id"));
+            contato.setIdContato(rs.getInt("id"));
             contato.setTelefone1(rs.getInt("TELEFONE_01"));
             contato.setTelefone2(rs.getInt("TELEFONE_02"));
             contato.setTelefone3(rs.getInt("TELEFONE_03"));
@@ -89,7 +89,7 @@ public class ContatoBD implements InterfaceBD{
                 + "TELEFONE_02="+ novo.getTelefone2()+ ", "
                 + "TELEFONE_03="+ novo.getTelefone3()+ ", "
                 + "EMAIL="+ novo.getEmail()+ " "
-                + "WHERE id ="+ novo.getId_contato()+ ";";
+                + "WHERE id ="+ novo.getIdContato()+ ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();

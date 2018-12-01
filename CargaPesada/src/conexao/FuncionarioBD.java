@@ -31,7 +31,7 @@ public class FuncionarioBD implements InterfaceBD{
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
 
             Funcionario funcionario = new Funcionario();
-            funcionario.setId_funcionario(rs.getInt("id"));
+            funcionario.setIdFuncionario(rs.getInt("id"));
             funcionario.setNome(rs.getString("NOME"));
             funcionario.setSalario(rs.getFloat("SALARIO"));
             funcionario.setCargo(rs.getString("CARGO"));
@@ -96,7 +96,7 @@ public class FuncionarioBD implements InterfaceBD{
                 + "SEXO="+ novo.getSexo()+ ", "
                 + "DATA_CADASTRO="+ novo.getDataCadastro()+ ", "
                 + "DATA_NASCIMENTO="+ novo.getDataNascimento()+ " "
-                + "WHERE id ="+ novo.getId_funcionario()+ ";";
+                + "WHERE id ="+ novo.getIdFuncionario()+ ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();

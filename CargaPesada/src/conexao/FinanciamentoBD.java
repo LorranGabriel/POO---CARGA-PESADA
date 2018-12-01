@@ -29,11 +29,11 @@ public class FinanciamentoBD implements InterfaceBD{
 
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
             Financiamento financiamento = new Financiamento();
-            financiamento.setId_financiamento(rs.getInt("id"));
+            financiamento.setIdFinanciamento(rs.getInt("id"));
             financiamento.setValorParcela(rs.getFloat("VALOR_PARCELA"));
             financiamento.setParcelasTotais(rs.getInt("PARCELAS_TOTAIS"));
             financiamento.setParcelasPagas(rs.getInt("PARCELAS_PAGAS"));
-            financiamento.setId_financiamento(rs.getInt("FINANCIADOR"));     
+            financiamento.setIdFinanciamento(rs.getInt("FINANCIADOR"));     
         
 
 
@@ -61,7 +61,7 @@ public class FinanciamentoBD implements InterfaceBD{
                 + novo.getBancoFinanciador()+ "') RETURNING id");
         
         if(rs.next()){
-            novo.setId_financiamento(rs.getInt(1));
+            novo.setIdFinanciamento(rs.getInt(1));
             
         }
         rs.close();
@@ -93,7 +93,7 @@ public class FinanciamentoBD implements InterfaceBD{
                 + "SET VALOR_PARCELA ="+ novo.getValorParcela() + ", "
                 + "PARCELAS_TOTAIS="+ novo.getParcelasTotais() + ", "
                 + "FINANCIADOR="+ novo.getBancoFinanciador() + " "             
-                + "WHERE id ="+ novo.getId_financiamento() + ";";
+                + "WHERE id ="+ novo.getIdFinanciamento() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();

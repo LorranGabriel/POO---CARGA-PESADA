@@ -10,9 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -32,7 +30,7 @@ public class ClienteBD implements InterfaceBD{
 
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
             Cliente cliente = new Cliente();
-            cliente.setId_cliente(rs.getInt("id"));
+            cliente.setIdCliente(rs.getInt("id"));
             cliente.setNome(rs.getString("nome"));
             cliente.setCnpj(rs.getLong("CNPJ"));
             cliente.setCpf(rs.getLong("CPF"));
@@ -57,7 +55,7 @@ public class ClienteBD implements InterfaceBD{
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO CLIENTE(NOME, TIPO_CLIENTE, CNPJ, CPF, DATA_CADASTRO) values('"
                 + ""+ novo.getNome() +"','" + novo.getTipoCliente() + "','" + novo.getCnpj()+ "','"
-                + novo.getCpf() + "','"+ novo.getDataAtual() + "')");
+                + novo.getCpf() + "','"+ novo.getDataCadastro()+ "')");
         rs.close();
         stmt.close();
         c.close();
@@ -89,7 +87,7 @@ public class ClienteBD implements InterfaceBD{
                 + "CNPJ="+ novo.getCnpj() + ","
                 + "CPF="+ novo.getCpf() + ","
                 + "DATA_CADASTRO="+ novo.getDataCadastro() + " "
-                + "WHERE id ="+ novo.getId_cliente() + ";";
+                + "WHERE id ="+ novo.getIdCliente() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();

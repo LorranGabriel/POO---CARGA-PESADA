@@ -16,90 +16,87 @@ import java.util.Date;
  */
 public class Cliente
     {
-        private int id_cliente;
+        private int idCliente;
         private String nome;
         private long cnpj;
         private long cpf;
-        private int id_endereco;
-        private String data_atual;
-        private String tipo_cliente;
+        private int idEndereco;
+        private int idContato;
+        private String dataCadastro;
+        private String tipoCliente;
         private String email;
-    public String getDataAtual(){
-        return data_atual;
+
+    public long getCnpj() {
+        return this.cnpj;
+    }
+
+    public long getCpf() {
+        return this.cpf;
+    }
+
+    public String getDataCadastro() {
+        return this.dataCadastro;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public int getIdCliente() {
+        return this.idCliente;
     }
 
-
-    public void setData_atual(String data_atual) {
-        Date dataHoraAtual = new Date();
-        this.data_atual = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);        
+    public int getIdContato() {
+        return this.idContato;
     }
 
-    public String getTipo_cliente() {
-        return tipo_cliente;
-    }
-
-    public void setTipo_cliente(String tipo_cliente) {
-        this.tipo_cliente = tipo_cliente;
-    }
-    
-    
-           
-    public int getId_endereco() {
-        return id_endereco;
-    }
-
-    public void setId_endereco(int id_endereco) {
-        this.id_endereco = id_endereco;
-    }
-
-    public int getId_contato() {
-        return id_contato;
-    }
-
-    public void setId_contato(int id_contato) {
-        this.id_contato = id_contato;
-    }
-        private int id_contato;
-    
-    public int getId_cliente() {
-        return id_cliente;
-    }
-
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
+    public int getIdEndereco() {
+        return this.idEndereco;
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public long getCnpj() {
-        return cnpj;
+    public String getTipoCliente() {
+        return this.tipoCliente;
     }
 
     public void setCnpj(long cnpj) {
         this.cnpj = cnpj;
     }
 
-    public long getCpf() {
-        return cpf;
-    }
-
     public void setCpf(long cpf) {
         this.cpf = cpf;
     }
-    
 
+    public void setDataCadastro(String dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public void setIdContato(int idContato) {
+        this.idContato = idContato;
+    }
+
+    public void setIdEndereco(int idEndereco) {
+        this.idEndereco = idEndereco;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setTipoCliente(String tipoCliente) {
+        this.tipoCliente = tipoCliente;
+    }
+ 
+        
 }
