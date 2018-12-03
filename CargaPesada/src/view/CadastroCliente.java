@@ -311,14 +311,12 @@ public class CadastroCliente extends javax.swing.JFrame {
         ContatoBD contato = new ContatoBD();
         try {
             contato.insert(novoCont);
-        } catch (SQLException ex) {
-            
-            
-            Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) { 
+           Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
         novoC.setIdContato(novoCont.getId_contato());
         ClienteBD clienteBD = new ClienteBD();
-        
         try {
             clienteBD.insert(novoC);
             JOptionPane.showMessageDialog(null,"CLIENTE CADASTRADO!");

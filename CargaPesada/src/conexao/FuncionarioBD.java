@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class FuncionarioBD implements InterfaceBD{
     
     @Override
-    public ArrayList select() throws SQLException {
+    public ArrayList select(String condicao) throws SQLException {
         ArrayList listFuncionarios = new ArrayList();
         Connection c;
         Statement stmt;
@@ -35,7 +35,7 @@ public class FuncionarioBD implements InterfaceBD{
             funcionario.setNome(rs.getString("NOME"));
             funcionario.setSalario(rs.getFloat("SALARIO"));
             funcionario.setCargo(rs.getString("CARGO"));
-            funcionario.setCpf(rs.getLong("CPF"));
+            funcionario.setCpf(rs.getString("CPF"));
 
 
             //Classes que compõe um funcionario

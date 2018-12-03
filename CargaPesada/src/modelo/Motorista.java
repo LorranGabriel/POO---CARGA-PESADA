@@ -16,19 +16,19 @@ public class Motorista {
     private String nome;
     private String dataVencimento;
     private String categoriaCnh;
-    private long cpf;
-    private long cnh;
+    private String cpf;
+    private String cnh;
     private float salario;
 
     public String getCategoriaCnh() {
         return this.categoriaCnh;
     }
 
-    public long getCnh() {
+    public String getCnh() {
         return this.cnh;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return this.cpf;
     }
 
@@ -56,11 +56,11 @@ public class Motorista {
         this.categoriaCnh = categoriaCnh;
     }
 
-    public void setCnh(long cnh) {
+    public void setCnh(String cnh) {
         this.cnh = cnh;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

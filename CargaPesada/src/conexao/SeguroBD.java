@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class SeguroBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() throws SQLException{
+    public ArrayList select(String condicao) throws SQLException{
                 
         ArrayList listSeguro = new ArrayList();
         Connection c;

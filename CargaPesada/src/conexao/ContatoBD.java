@@ -20,7 +20,7 @@ import modelo.Contato;
 public class ContatoBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() throws SQLException {
+    public ArrayList select(String condicao) throws SQLException {
         ArrayList listContato = new ArrayList();
         Connection c;
         Statement stmt;

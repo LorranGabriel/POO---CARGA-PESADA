@@ -18,7 +18,7 @@ import modelo.Servico;
 public class ServicoBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() throws SQLException {
+    public ArrayList select(String condicao) throws SQLException {
          ArrayList listServico = new ArrayList();
         Connection c;
         Statement stmt;

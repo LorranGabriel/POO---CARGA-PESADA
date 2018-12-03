@@ -13,7 +13,7 @@ public class Funcionario {
 
     private int idFuncionario;
     private String nome;
-    private long cpf;
+    private String cpf;
     private float salario;
     private String cargo;
     private String sexo;
@@ -29,7 +29,7 @@ public class Funcionario {
         return this.cargo;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return this.cpf;
     }
 
@@ -69,7 +69,7 @@ public class Funcionario {
         this.cargo = cargo;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

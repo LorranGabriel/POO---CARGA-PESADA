@@ -18,7 +18,7 @@ import modelo.Financiamento;
 public class FinanciamentoBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() throws SQLException {
+    public ArrayList select(String condicao) throws SQLException {
                 ArrayList listFinanciamento = new ArrayList();
         Connection c;
         Statement stmt;

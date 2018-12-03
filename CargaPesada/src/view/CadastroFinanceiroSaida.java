@@ -61,6 +61,11 @@ public class CadastroFinanceiroSaida extends javax.swing.JFrame {
         jLabel5.setText("Status:");
 
         comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manutenção", "Serviço", "Salário", "Financiamento" }));
+        comboTipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comboTipoMouseClicked(evt);
+            }
+        });
         comboTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboTipoActionPerformed(evt);
@@ -183,6 +188,10 @@ public class CadastroFinanceiroSaida extends javax.swing.JFrame {
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_voltarActionPerformed
+
+    private void comboTipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboTipoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboTipoMouseClicked
 
     /**
      * @param args the command line arguments

@@ -15,10 +15,10 @@ import modelo.Motorista;
  *
  * @author 20181bsi0172
  */
-public class MotoristaDB implements InterfaceBD{
+public class MotoristaBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() throws SQLException {
+    public ArrayList select(String condicao) throws SQLException {
         
         ArrayList listMotorista = new ArrayList();
         Connection c;
@@ -33,8 +33,8 @@ public class MotoristaDB implements InterfaceBD{
             Motorista motorista = new Motorista();
             motorista.setIdMotorista(rs.getInt("ID"));
             motorista.setCategoriaCnh(rs.getNString("CATEGORIA_CNH"));
-            motorista.setCnh(rs.getLong("CNH"));
-            motorista.setCpf(rs.getLong("CPF"));
+            motorista.setCnh(rs.getString("CNH"));
+            motorista.setCpf(rs.getString("CPF"));
             motorista.setDataVencimento(rs.getNString("DATA_VENCIMENTO"));
             motorista.setIdFuncionario(rs.getInt("ID_FUNCIONARIO"));
 

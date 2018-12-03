@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ClienteBD implements InterfaceBD{
 
     @Override
-    public ArrayList select() throws SQLException{
+    public ArrayList select(String condicao) throws SQLException{
         ArrayList listCliente = new ArrayList();
         Connection c;
         Statement stmt;
