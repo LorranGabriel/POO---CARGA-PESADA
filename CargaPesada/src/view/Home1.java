@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.Image;
 import java.net.URL;
 
 import java.text.SimpleDateFormat;
@@ -28,7 +29,8 @@ public class Home1 extends javax.swing.JFrame {
         String hora1 = new SimpleDateFormat("EEEE, HH:mm zzzz").format(dataHoraAtual);
         data.setText(data1);
         hora.setText(hora1);
-        
+        setBackgroundImage(new Image("./images/seupng.png"));
+
     }
 
     /**
@@ -121,29 +123,29 @@ public class Home1 extends javax.swing.JFrame {
         HomeLayout.setHorizontalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(Label_Home, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(589, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(553, Short.MAX_VALUE)
                 .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(data)
                     .addComponent(jLabel1)
                     .addComponent(hora))
-                .addGap(59, 59, 59))
+                .addGap(121, 121, 121))
+            .addGroup(HomeLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(Label_Home, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         HomeLayout.setVerticalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomeLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(56, 56, 56)
                 .addComponent(Label_Home)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 325, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
                 .addComponent(data, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hora)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(21, 21, 21))
+                .addGap(44, 44, 44))
         );
 
         Servico.setBackground(new java.awt.Color(255, 255, 255));
@@ -245,6 +247,8 @@ public class Home1 extends javax.swing.JFrame {
                 .addContainerGap(199, Short.MAX_VALUE))
         );
 
+        Veiculos.setBackground(new java.awt.Color(255, 255, 255));
+
         Label_Veiculo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Veiculo.setText("Veiculos");
 
@@ -323,6 +327,8 @@ public class Home1 extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(153, 153, 153))
         );
+
+        Financeiro.setBackground(new java.awt.Color(255, 255, 255));
 
         Label_Financeiro.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Financeiro.setText("Financeiro");
@@ -485,6 +491,8 @@ public class Home1 extends javax.swing.JFrame {
                 .addGap(59, 59, 59))
         );
 
+        Funcionarios.setBackground(new java.awt.Color(255, 255, 255));
+
         Label_Funcionarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Label_Funcionarios.setText("Funcionarios");
 
@@ -588,28 +596,27 @@ public class Home1 extends javax.swing.JFrame {
                 .addComponent(pesquisarFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoPesquisarFuncionarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addComponent(botaoCadastrarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72))
+            .addGroup(FuncionariosLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(Label_Principal3)
+                .addGap(99, 99, 99)
+                .addComponent(pesquisarMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botaopesquisarMotorista)
+                .addGap(53, 53, 53)
+                .addComponent(botaoCadastroMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FuncionariosLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jScrollPane3)
                 .addContainerGap())
             .addGroup(FuncionariosLayout.createSequentialGroup()
-                .addGroup(FuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FuncionariosLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(FuncionariosLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(Label_Principal3)
-                        .addGap(99, 99, 99)
-                        .addComponent(pesquisarMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botaopesquisarMotorista)
-                        .addGap(53, 53, 53)
-                        .addComponent(botaoCadastroMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane4)
+                .addContainerGap())
         );
         FuncionariosLayout.setVerticalGroup(
             FuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -629,9 +636,9 @@ public class Home1 extends javax.swing.JFrame {
                     .addComponent(botaopesquisarMotorista)
                     .addComponent(botaoCadastroMotorista)
                     .addComponent(Label_Principal3))
-                .addGap(40, 40, 40)
+                .addGap(43, 43, 43)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
+                .addGap(54, 54, 54))
         );
 
         Clientes.setBackground(new java.awt.Color(255, 255, 255));
@@ -718,6 +725,7 @@ public class Home1 extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        homeMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/home.png"))); // NOI18N
         homeMenu.setText("Home");
         homeMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -726,7 +734,9 @@ public class Home1 extends javax.swing.JFrame {
         });
         jMenuBar1.add(homeMenu);
 
+        servicosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/support.png"))); // NOI18N
         servicosMenu.setText("Serviços");
+        servicosMenu.setIconTextGap(2);
         servicosMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 servicosMenuMouseClicked(evt);
@@ -734,6 +744,7 @@ public class Home1 extends javax.swing.JFrame {
         });
         jMenuBar1.add(servicosMenu);
 
+        veiculosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/truck.png"))); // NOI18N
         veiculosMenu.setText("Veiculos");
         veiculosMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -742,6 +753,7 @@ public class Home1 extends javax.swing.JFrame {
         });
         jMenuBar1.add(veiculosMenu);
 
+        financeiroMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/debt.png"))); // NOI18N
         financeiroMenu.setText("Financeiro");
         financeiroMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -750,6 +762,7 @@ public class Home1 extends javax.swing.JFrame {
         });
         jMenuBar1.add(financeiroMenu);
 
+        funcionariosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/employee.png"))); // NOI18N
         funcionariosMenu.setText("Funcionarios");
         funcionariosMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -758,6 +771,7 @@ public class Home1 extends javax.swing.JFrame {
         });
         jMenuBar1.add(funcionariosMenu);
 
+        clientesMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/avatar.png"))); // NOI18N
         clientesMenu.setText("Clientes");
         clientesMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
