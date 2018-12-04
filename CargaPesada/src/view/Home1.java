@@ -29,8 +29,6 @@ public class Home1 extends javax.swing.JFrame {
         String hora1 = new SimpleDateFormat("EEEE, HH:mm zzzz").format(dataHoraAtual);
         data.setText(data1);
         hora.setText(hora1);
-        setBackgroundImage(new Image("./images/seupng.png"));
-
     }
 
     /**
