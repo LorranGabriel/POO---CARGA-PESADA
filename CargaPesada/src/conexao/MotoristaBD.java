@@ -73,7 +73,7 @@ public class MotoristaBD implements InterfaceBD{
         Statement stmt;
         c = ConexaoBD.getInstance();
         stmt = c.createStatement();
-        String sql = "DELETE from MOTORISTA where ID=" + id + ";";
+        String sql = "DELETE from MOTORISTA where ID_funcionario=" + id + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();

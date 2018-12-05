@@ -2,6 +2,10 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+    </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -176,7 +180,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   <Component id="Label_Home" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="292" max="32767" attributes="0"/>
+                  <EmptySpace pref="313" max="32767" attributes="0"/>
                   <Component id="data" min="-2" pref="24" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="hora" min="-2" max="-2" attributes="0"/>
@@ -637,7 +641,10 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="botaoPesquisaEntradaFinanceiro" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="botaoCadastrarEntradaFinanceiro" min="-2" pref="128" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="botaoCadastrarEntradaFinanceiro" min="-2" pref="128" max="-2" attributes="0"/>
+                      <Component id="listarFinanças" min="-2" pref="59" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -662,14 +669,14 @@
                           <Component id="Scroll_Saida" min="-2" pref="676" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
+                  <EmptySpace pref="51" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Label_Financeiro" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -679,8 +686,11 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="Label_Entrada" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="Label_Entrada" min="-2" max="-2" attributes="0"/>
+                      <Component id="listarFinanças" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="Scroll_Entrada" min="-2" pref="115" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -900,6 +910,14 @@
             <Property name="text" type="java.lang.String" value="Tabela de Entrada"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JButton" name="listarFinan&#xe7;as">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Listar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listarFinan&#xe7;asActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="Funcionarios">
@@ -934,12 +952,20 @@
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="Label_Funcionarios" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                  <Component id="pesquisarFuncionarios" min="-2" pref="113" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="botaoPesquisarFuncionarios" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="Label_Funcionarios" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          <Component id="pesquisarFuncionarios" min="-2" pref="113" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="botaoPesquisarFuncionarios" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace pref="95" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -965,10 +991,13 @@
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="listarFuncionarios" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="listarFuncionarios" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane3" min="-2" pref="115" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="pesquisarMotorista" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="botaopesquisarMotorista" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1067,6 +1096,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tabelaFuncionariosMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1172,6 +1204,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tabelaMotoristaMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1183,6 +1218,11 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listarFuncionariosMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listarFuncionariosActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Clique no codigo da linha que deseja excluir ou alterar"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -1196,33 +1236,41 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="Label_Clientes" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                  <Component id="pesquisarCliente" min="-2" pref="113" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="botaoPesquisarCliente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="123" max="32767" attributes="0"/>
-                  <Component id="botaoCadastrarCliente" min="-2" pref="125" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="listarClientes" min="-2" pref="75" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="677" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="listarClientes" min="-2" pref="75" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="Label_Clientes" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                          <Component id="pesquisarCliente" min="-2" pref="113" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="botaoPesquisarCliente" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="123" max="32767" attributes="0"/>
+                          <Component id="botaoCadastrarCliente" min="-2" pref="125" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="83" max="32767" attributes="0"/>
+                  <EmptySpace pref="77" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Label_Clientes" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="pesquisarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1231,9 +1279,11 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="listarClientes" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="251" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="210" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1257,17 +1307,29 @@
             <Component class="javax.swing.JTable" name="tabelaClientes">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="6" rowCount="14">
+                  <Table columnCount="8" rowCount="14">
                     <Column editable="true" title="n&#xb0;" type="java.lang.Object"/>
                     <Column editable="true" title="Nome" type="java.lang.Object"/>
                     <Column editable="true" title="CPF" type="java.lang.Object"/>
                     <Column editable="true" title="CNPJ" type="java.lang.Object"/>
                     <Column editable="true" title="Contato" type="java.lang.Object"/>
                     <Column editable="true" title="Endere&#xe7;o" type="java.lang.Object"/>
+                    <Column editable="true" title="T&#xed;tulo 7" type="java.lang.Object"/>
+                    <Column editable="true" title="T&#xed;tulo 8" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
@@ -1304,6 +1366,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tabelaClientesMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1333,6 +1398,11 @@
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listarClientesMouseClicked"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Clique no codigo da linha que deseja excluir ou alterar"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
