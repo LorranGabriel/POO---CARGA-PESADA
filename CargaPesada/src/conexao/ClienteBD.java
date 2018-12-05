@@ -53,12 +53,14 @@ public class ClienteBD implements InterfaceBD{
         Cliente novo = (Cliente)obj;
         ResultSet rs;
         stmt = c.createStatement();
-        rs = stmt.executeQuery("INSERT INTO CLIENTE(NOME, TIPO_CLIENTE, CNPJ, CPF, DATA_CADASTRO) values('"
-                + ""+ novo.getNome() +"','" + novo.getTipo_cliente()+ "','" + novo.getCnpj()+ "','"
-                + novo.getCpf() + "','"+ novo.getData_atual() + ") return id;");
-        
+        rs = stmt.executeQuery("INSERT INTO CLIENTE(NOME, TIPO_CLIENTE, CNPJ, CPF, DATA_CADASTRO) values('"+ novo.getNome() +
+									"','"+ novo.getTipo_cliente()+ 
+									"','" + novo.getCnpj() +
+									"','"+novo.getCpf() +
+									"','" +novo.getData_atual() + "')");
+       
+        rs = stmt.getGeneratedKeys();
         if(rs.next()){
-            
             novo.setIdCliente(rs.getInt(1));
         }
 //        stmt.executeQuery("INSERT INTO ENDERECO_CLIENTE(ID_CLIENTE, ID_ENDERECO) values('"

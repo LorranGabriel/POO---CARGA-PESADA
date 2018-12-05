@@ -33,7 +33,6 @@ public class TabelaSet {
         modelo.addColumn("Codigo");
         modelo.addColumn("Nome");
         modelo.addColumn("Status");
-
         modelo.addColumn("Chassi");
         modelo.addColumn("Placa");
         modelo.addColumn("Status");

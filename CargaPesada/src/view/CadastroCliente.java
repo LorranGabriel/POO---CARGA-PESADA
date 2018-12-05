@@ -354,7 +354,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        aviso.setText("fim"); 
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_cadastroMouseClicked
 

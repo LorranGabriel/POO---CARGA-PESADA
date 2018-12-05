@@ -64,7 +64,7 @@ public class FuncionarioBD implements InterfaceBD{
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO FUNCIONARIO(NOME, CPF, CARGO, SALARIO, SEXO, DATA_CADASTRO, DATA_NASCIMENTO) values('"
                 + novo.getNome()+"','" + novo.getCpf()+ "','" + novo.getCargo()+ "',"
-                + novo.getSalario()+ ",'" + novo.getSexo() +"','" + novo.getDataCadastro() +"','"+ novo.getDataNascimento() +"')");
+                + novo.getSalario()+ ",'"+ novo.getSexo()+"','" + novo.getDataCadastro() +"','"+ novo.getDataNascimento() +"')");
         rs.close();
         stmt.close();
         c.close();  
