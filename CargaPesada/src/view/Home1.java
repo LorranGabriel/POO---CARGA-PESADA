@@ -1127,13 +1127,14 @@ public class Home1 extends javax.swing.JFrame {
 
     private void listarClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listarClientesMouseClicked
         // TODO add your handling code here:
-                ClienteBD clienteBD = new ClienteBD();
+        ClienteBD clienteBD = new ClienteBD();
         ArrayList clientes = null;
         try {
             clientes = clienteBD.select("");
         } catch (SQLException ex) {
             Logger.getLogger(Home1.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.err.println(clientes);
         TabelaSet aux = new TabelaSet();
         aux.setDadosTabelaCliente(clientes,tabelaClientes);
     }//GEN-LAST:event_listarClientesMouseClicked

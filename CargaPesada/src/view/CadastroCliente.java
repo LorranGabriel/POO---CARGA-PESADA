@@ -350,6 +350,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         
         try {
             clienteBD.insert(novoC);
+            System.err.println("CLIENTE CADASTRADO!");
             JOptionPane.showMessageDialog(null,"CLIENTE CADASTRADO!");
         } catch (SQLException ex) {
             Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);

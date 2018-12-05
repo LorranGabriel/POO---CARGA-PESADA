@@ -39,7 +39,7 @@ public class VeiculoBD implements InterfaceBD{
             //Classes que compõe um motorista
 
             //veiculo.setModelo(rs.getString("MODELO"));
-            //veiculo.setMotorista(rs.getString("MOTORISTA"));
+            //veiculo.setMotorista(rs.getString("MOTORISTA"))*/;
             //veiculo.setSeguro(rs.getInt("SEGURO"));
             //veiculo.setFinanciamento(rs.getInt("FIANCIAMENTO"));
             listVeiculos.add(veiculo);
