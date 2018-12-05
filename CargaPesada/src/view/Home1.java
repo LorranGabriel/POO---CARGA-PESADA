@@ -75,8 +75,6 @@ public class Home1 extends javax.swing.JFrame {
         botaoCadastrarVeiculos = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         tabelaVeiculos = new javax.swing.JTable();
-        salario = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         listarVeiculos = new javax.swing.JButton();
         Financeiro = new javax.swing.JPanel();
         Label_Financeiro = new javax.swing.JLabel();
@@ -331,15 +329,6 @@ public class Home1 extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(tabelaVeiculos);
 
-        salario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salarioActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setText("Salario");
-
         listarVeiculos.setText("Listar");
         listarVeiculos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -374,13 +363,6 @@ public class Home1 extends javax.swing.JFrame {
                         .addComponent(listarVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(botaoCadastrarVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48))
-            .addGroup(VeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(VeiculosLayout.createSequentialGroup()
-                    .addGap(253, 253, 253)
-                    .addComponent(jLabel6)
-                    .addGap(18, 18, 18)
-                    .addComponent(salario, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(254, Short.MAX_VALUE)))
         );
         VeiculosLayout.setVerticalGroup(
             VeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,13 +378,6 @@ public class Home1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(153, 153, 153))
-            .addGroup(VeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(VeiculosLayout.createSequentialGroup()
-                    .addGap(250, 250, 250)
-                    .addGroup(VeiculosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6))
-                    .addContainerGap(250, Short.MAX_VALUE)))
         );
 
         Financeiro.setBackground(new java.awt.Color(255, 255, 255));
@@ -1126,10 +1101,6 @@ public class Home1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_listarServicoActionPerformed
 
-    private void salarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_salarioActionPerformed
-
     private void listarVeiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listarVeiculosMouseClicked
         // TODO add your handling code here:
         VeiculoBD veiculoBD = new VeiculoBD();
@@ -1139,7 +1110,7 @@ public class Home1 extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Home1.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        System.err.println(veiculos);
         TabelaSet aux = new TabelaSet();
         aux.setDadosTabelaVeiculos(veiculos,tabelaVeiculos); 
     }//GEN-LAST:event_listarVeiculosMouseClicked
@@ -1367,7 +1338,6 @@ public class Home1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1386,7 +1356,6 @@ public class Home1 extends javax.swing.JFrame {
     private javax.swing.JTextField pesquisarMotorista;
     private javax.swing.JTextField pesquisarSaidaFinanceiro;
     private javax.swing.JTextField pesquisarVeiculos;
-    private javax.swing.JTextField salario;
     private javax.swing.JMenu servicosMenu;
     private javax.swing.JTable tabelaClientes;
     private javax.swing.JTable tabelaEntradaFinanceiro;

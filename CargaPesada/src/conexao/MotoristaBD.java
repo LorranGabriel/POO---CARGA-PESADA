@@ -62,7 +62,9 @@ public class MotoristaBD implements InterfaceBD{
         ResultSet rs;
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO MOTORISTA(CNH, DATA_VENCIMENTO, CATEGORIA_CNH, ID_FUNCIONARIO) values('"
-                + novo.getCnh()+"','" + novo.getDataVencimento()+ "','" + novo.getCategoriaCnh()+"',"+ novo.getIdFuncionario() +")");
+                + novo.getCnh()+"','" + novo.getDataVencimento()+ "','" + novo.getCategoriaCnh()+"',"+ novo.getIdFuncionario() +")RETURNING id;");
+
+        
         rs.close();
         stmt.close();
         c.close();      }

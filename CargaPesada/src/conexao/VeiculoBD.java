@@ -34,7 +34,9 @@ public class VeiculoBD implements InterfaceBD{
             veiculo.setStatus(rs.getString("STATUS"));
             veiculo.setTipoCombustivel(rs.getString("TIPO_COMBUSTIVEL"));
             veiculo.setIdCategoria(rs.getInt("ID_CATEGORIA"));
-            
+            veiculo.setIdModelo(rs.getInt("ID_MODELO"));
+            veiculo.setIdSeguro(rs.getInt("ID_SEGURO"));
+            veiculo.setIdFinanciamento(rs.getInt("ID_FIANCIAMENTO"));
 
             //Classes que compõe um motorista
 
@@ -65,10 +67,10 @@ public class VeiculoBD implements InterfaceBD{
                 "','"+ novo.getPlaca()+ 
                 "','"+ novo.getStatus()+ 
                 "','"+ novo.getTipoCombustivel()+
-                "','"+ novo.getIdCategoria()+
-                "','"+ novo.getIdFinanciamento()+
-                "','"+ novo.getIdSeguro()+
-                "',"+ novo.getIdModelo()+
+                "',"+ novo.getIdCategoria()+
+                ","+ novo.getIdFinanciamento()+
+                ","+ novo.getIdSeguro()+
+                ","+ novo.getIdModelo()+
                 ",NULL) RETURNING id");
         
         stmt.close();

@@ -16,7 +16,7 @@ public class CadastroServico extends javax.swing.JFrame {
      */
      CadastroEndereco endereco1 = new CadastroEndereco();
      
-      CadastroEndereco endereco2 = new CadastroEndereco();
+     CadastroEndereco endereco2 = new CadastroEndereco();
     public CadastroServico() {
         initComponents();
     }

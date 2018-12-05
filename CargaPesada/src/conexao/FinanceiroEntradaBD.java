@@ -17,7 +17,7 @@ import modelo.Motorista;
  *
  * @author lorran
  */
-public class FinanceiroBD implements InterfaceBD {
+public class FinanceiroEntradaBD implements InterfaceBD {
     
     @Override
     public ArrayList select(String condicao) throws SQLException {

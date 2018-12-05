@@ -71,7 +71,7 @@ public class ServicoBD implements InterfaceBD{
                 ","+ novo.getIdFuncionario()+
                 ","+ novo.getIdVeiculo()+
                 ","+ novo.getIdDestino()+
-                ","+ novo.getIdOrigem() +")");
+                ","+ novo.getIdOrigem() +");");
         rs.close();
         stmt.close();
         c.close();  
