@@ -17,17 +17,18 @@ import java.util.Date;
 public class Cliente
     {
         private int idCliente;
-        private String nome;
+        private String nome= "";
 
-        private String cnpj;
-        private String cpf;
+        private String cnpj = "";
+        private String cpf= "";
         private int id_endereco;
-        private String data_atual;
-        private String tipo_cliente;
+        private String data_atual= "";
+        private String tipo_cliente= "";
 
         private String email;
         private int idContato;
 
+       
     public String getCnpj() {
         return this.cnpj;
     }

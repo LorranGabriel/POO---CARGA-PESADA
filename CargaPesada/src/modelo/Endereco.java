@@ -12,16 +12,16 @@ package modelo;
 public class Endereco 
 {
 
-    private int idEndereco;
-    private String endereco;
-    private String estado;
-    private String cidade;
-    private String bairro ;
-    private String referencia;
-    private String logradouro;
-    private String complemento;
-    private int numero;
-    private String cep;
+    private int idEndereco = 0;
+    private String endereco = "";
+    private String estado= "";
+    private String cidade= "";
+    private String bairro= "";
+    private String referencia= "";
+    private String logradouro= "";
+    private String complemento= "";
+    private int numero= 0;
+    private String cep= "";
    
     
     public String getComplemento() {

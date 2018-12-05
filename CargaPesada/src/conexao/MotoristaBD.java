@@ -31,12 +31,12 @@ public class MotoristaBD implements InterfaceBD{
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
 
             Motorista motorista = new Motorista();
-            motorista.setIdMotorista(rs.getInt("ID"));
-            motorista.setCategoriaCnh(rs.getNString("CATEGORIA_CNH"));
-            motorista.setCnh(rs.getString("CNH"));
-            motorista.setCpf(rs.getString("CPF"));
-            motorista.setDataVencimento(rs.getNString("DATA_VENCIMENTO"));
+            motorista.setIdFuncionario(rs.getInt("id"));
+            motorista.setCnh(rs.getString("cnh"));
+            motorista.setDataVencimento(rs.getString("DATA_VENCIMENTO"));
+            motorista.setCategoriaCnh(rs.getString("categoria_cnh"));
             motorista.setIdFuncionario(rs.getInt("ID_FUNCIONARIO"));
+
 
 
             //Classes que compõe um funcionario

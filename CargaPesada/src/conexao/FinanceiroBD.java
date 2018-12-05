@@ -5,53 +5,52 @@
  */
 package conexao;
 
-import modelo.Funcionario;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import modelo.Funcionario;
 import modelo.Motorista;
 
 /**
  *
- * @author 20181bsi0172
+ * @author lorran
  */
-public class FuncionarioBD implements InterfaceBD{
+public class FinanceiroBD implements InterfaceBD {
     
     @Override
     public ArrayList select(String condicao) throws SQLException {
-        ArrayList listFuncionarios = new ArrayList();
+        ArrayList listFinanceiro = new ArrayList();
         Connection c;
         Statement stmt;
         c = ConexaoBD.getInstance();
         stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM funcionario;");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Financeiro;");
         while (rs.next()) {
 
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO
 
-            Funcionario funcionario = new Funcionario();
-            funcionario.setIdFuncionario(rs.getInt("id"));
-            funcionario.setNome(rs.getString("nome"));
-            funcionario.setCpf(rs.getString("cpf"));
-            funcionario.setCargo(rs.getString("cargo"));
-            funcionario.setSalario(rs.getFloat("salario"));
-            funcionario.setCargo(rs.getString("sexo"));
-            funcionario.setCpf(rs.getString("data_cadastro"));
-            funcionario.setCpf(rs.getString("data_nascimento"));
+            Motorista Motorista = new Motorista();
+            Motorista.setIdFuncionario(rs.getInt("id"));
+            Motorista.setCnh(rs.getString("cnh"));
+            Motorista.setDataVencimento(rs.getString("DATA_VENCIMENTO"));
+            Motorista.setCategoriaCnh(rs.getString("categoria_cnh"));
+            Motorista.setIdFuncionario(rs.getInt("ID_FUNCIONARIO"));
+
+
             //Classes que compõe um funcionario
 
             //funcionario.setContato(rs.getString("CONTATO"));
             //funcionario.setEndereco(rs.getString("MOTORISTA"));
 
-            listFuncionarios.add(funcionario);
+            listFinanceiro.add(Motorista);
         }
         rs.close();
         stmt.close();
         c.close();
 
-        return listFuncionarios;
+        return listFinanceiro;
     }
 
     @Override
@@ -103,5 +102,4 @@ public class FuncionarioBD implements InterfaceBD{
         stmt.close();
         c.close();
     }
-
 }

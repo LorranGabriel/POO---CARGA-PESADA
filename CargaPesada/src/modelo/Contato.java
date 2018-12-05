@@ -14,10 +14,10 @@ public class Contato
     
 
     private int id_contato;
-    private String telefone1;
-    private String telefone2;
-    private String telefone3;
-    private String email;
+    private String telefone1 = "";
+    private String telefone2 = "";
+    private String telefone3 = "";
+    private String email = "";
 
     public int getId_contato() {
         return id_contato;

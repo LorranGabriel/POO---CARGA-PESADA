@@ -304,15 +304,6 @@ public class CadastroEndereco extends javax.swing.JFrame {
     }//GEN-LAST:event_enderecoActionPerformed
 
     private void cadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastroMouseClicked
-        novo_end.setEndereco(endereco.getText());
-        novo_end.setEstado(estado.getSelectedItem().toString());
-        novo_end.setCidade(cidade.getText());
-        novo_end.setBairro(bairro.getText());
-        novo_end.setReferencia(pontoReferencia.getText());
-        novo_end.setLogradouro(logradouro.getText());
-        novo_end.setComplemento(pontoReferencia.getText());
-        novo_end.setNumero(Integer.parseInt(numero.getText()));
-        novo_end.setCep(cep.getText());
         
         EnderecoBD novoEnd = new EnderecoBD();
         try {

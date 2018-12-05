@@ -151,27 +151,27 @@ public class TabelaSet {
     }
 
     public void setDadosTabelaMotorista(List<Motorista> motoristas, JTable tabela) {
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Codigo");
-        modelo.addColumn("CNH");
-        modelo.addColumn("Data de Vencimento");
-        modelo.addColumn("Categoria da CNH");
-        modelo.addColumn("Funcionario");
+        DefaultTableModel modelo1 = new DefaultTableModel();
+        modelo1.addColumn("Codigo");
+        modelo1.addColumn("CNH");
+        modelo1.addColumn("Data de Vencimento");
+        modelo1.addColumn("Categoria da CNH");
+        modelo1.addColumn("Funcionario");
 
         Motorista gen;
         if (motoristas.isEmpty()) {
-            modelo.addRow(new String[]{"NADA", "NADA"});
+            modelo1.addRow(new String[]{"NADA", "NADA"});
 
         } else {
             for (int i = 0; i < motoristas.size(); i++) {
                 gen = motoristas.get(i);
-                modelo.addRow(new String[]{Integer.toString(gen.getIdMotorista()),
+                modelo1.addRow(new String[]{Integer.toString(gen.getIdMotorista()),
                     gen.getCnh(),
                     gen.getDataVencimento(),
                     gen.getCategoriaCnh(),
                     Integer.toString(gen.getIdFuncionario())});
             }
         }
-        tabela.setModel(modelo);
+        tabela.setModel(modelo1);
     }
 }

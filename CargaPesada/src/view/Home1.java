@@ -5,30 +5,40 @@
  */
 package view;
 
+import conexao.*;
+import java.awt.BorderLayout;
 import java.awt.Image;
 import java.net.URL;
+import java.sql.SQLException;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import modelo.Contato;
+import modelo.TabelaSet;
 
 /**
  *
  * @author 20162bsi0325
  */
 public class Home1 extends javax.swing.JFrame {
-
+    boolean flag = true;
     /**
      * Creates new form Home
      */
     public Home1() {
         initComponents();
+        this.setLocationRelativeTo(null);
         setContentPane(Home); 
         Date dataHoraAtual = new Date();
         String data1 = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
         String hora1 = new SimpleDateFormat("EEEE, HH:mm zzzz").format(dataHoraAtual);
         data.setText(data1);
         hora.setText(hora1);
+        
     }
 
     /**
@@ -216,20 +226,21 @@ public class Home1 extends javax.swing.JFrame {
         Servico.setLayout(ServicoLayout);
         ServicoLayout.setHorizontalGroup(
             ServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ServicoLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(Label_Servico)
-                .addGap(18, 18, 18)
-                .addComponent(buscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoBuscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(botaoCadastrarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ServicoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(ServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(ServicoLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ServicoLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(Label_Servico)
+                        .addGap(18, 18, 18)
+                        .addComponent(buscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoBuscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                        .addComponent(botaoCadastrarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30))
         );
         ServicoLayout.setVerticalGroup(
             ServicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,9 +251,9 @@ public class Home1 extends javax.swing.JFrame {
                     .addComponent(buscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoBuscarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoCadastrarServico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
 
         Veiculos.setBackground(new java.awt.Color(255, 255, 255));
@@ -816,6 +827,17 @@ public class Home1 extends javax.swing.JFrame {
 
     private void servicosMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicosMenuMouseClicked
         setContentPane(Servico); 
+        
+        ServicoBD servicoBD = new ServicoBD();
+        ArrayList servicos = null;
+        try {
+            servicos = servicoBD.select("");
+        } catch (SQLException ex) {
+            Logger.getLogger(Home1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Servico.setLayout(new BorderLayout());
+        TabelaSet aux = new TabelaSet();
+        aux.setDadosTabelaServico(servicos,tabelaServico); 
         // TODO add your handling code here:
     }//GEN-LAST:event_servicosMenuMouseClicked
 
@@ -885,7 +907,18 @@ public class Home1 extends javax.swing.JFrame {
 
     private void veiculosMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_veiculosMenuMouseClicked
         // TODO add your handling code here:
-        setContentPane(Veiculos);         
+        setContentPane(Veiculos);   
+        VeiculoBD veiculoBD = new VeiculoBD();
+        ArrayList veiculos = null;
+        try {
+            veiculos = veiculoBD.select("");
+        } catch (SQLException ex) {
+            Logger.getLogger(Home1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Veiculos.setLayout(new BorderLayout());
+        TabelaSet aux = new TabelaSet();
+        aux.setDadosTabelaVeiculos(veiculos,tabelaVeiculos);   
+
     }//GEN-LAST:event_veiculosMenuMouseClicked
 
     private void financeiroMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_financeiroMenuMouseClicked
@@ -895,12 +928,47 @@ public class Home1 extends javax.swing.JFrame {
 
     private void funcionariosMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_funcionariosMenuMouseClicked
         // TODO add your handling code here:
+         
         setContentPane(Funcionarios); 
+        Funcionarios.setLayout(new BorderLayout());
+        FuncionarioBD funcionarioBD = new FuncionarioBD();
+        ArrayList funcionarios = null;
+        try {
+            funcionarios = funcionarioBD.select("");
+        } catch (SQLException ex) {
+            Logger.getLogger(Home1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        TabelaSet aux = new TabelaSet();
+        aux.setDadosTabelaFuncionario(funcionarios,tabelaFuncionarios); 
+//        
+        MotoristaBD motoristaBD = new MotoristaBD();
+        ArrayList motoristas = null;
+        try {
+            motoristas = motoristaBD.select("");
+        } catch (SQLException ex) {
+            Logger.getLogger(Home1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        TabelaSet aux2 = new TabelaSet();
+        aux2.setDadosTabelaMotorista(motoristas,tabelaMotorista); 
+        
+        
     }//GEN-LAST:event_funcionariosMenuMouseClicked
 
     private void clientesMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientesMenuMouseClicked
         // TODO add your handling code here:
-        setContentPane(Clientes); 
+        setContentPane(Clientes);  
+        
+        ClienteBD clienteBD = new ClienteBD();
+        ArrayList clientes = null;
+        try {
+            clientes = clienteBD.select("");
+        } catch (SQLException ex) {
+            Logger.getLogger(Home1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Clientes.setLayout(new BorderLayout());
+        TabelaSet aux = new TabelaSet();
+        aux.setDadosTabelaCliente(clientes,tabelaClientes);  
     }//GEN-LAST:event_clientesMenuMouseClicked
 
     private void botaoCadastrarServicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarServicoMouseClicked
@@ -911,7 +979,8 @@ public class Home1 extends javax.swing.JFrame {
 
     private void botaoCadastrarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botaoCadastrarClienteMouseClicked
         // TODO add your handling code here:
-         CadastroCliente Cadastro_Cliente = new CadastroCliente();
+        CadastroCliente Cadastro_Cliente = new CadastroCliente();
+        
         Cadastro_Cliente.setVisible(true);
     }//GEN-LAST:event_botaoCadastrarClienteMouseClicked
 
@@ -984,6 +1053,7 @@ public class Home1 extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Clientes;
