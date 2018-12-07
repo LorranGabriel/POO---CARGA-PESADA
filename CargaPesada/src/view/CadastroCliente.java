@@ -7,6 +7,8 @@ package view;
 
 import conexao.*;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -322,7 +324,11 @@ public class CadastroCliente extends javax.swing.JFrame {
             novoC.setCnpj((tipo_cliente.getText()));            
             novoC.setTipoCliente("J");
         }
-        novoC.setData_atual();
+        
+        
+        Date dataHoraAtual = new Date();
+        String data1 = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);
+        novoC.setData_atual(data1);
         novoC.setId_endereco(endereco.getNovo_end().getIdEndereco());
         
         Contato novoCont = new Contato();
@@ -330,6 +336,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             aviso.setText("Preencha todos os campos por favor"); 
             return;
         }
+        
         //aviso.setText();                 
         novoCont.setEmail(email.getText());
         novoCont.setTelefone1(telefone1.getText());
@@ -351,7 +358,6 @@ public class CadastroCliente extends javax.swing.JFrame {
         try {
             clienteBD.insert(novoC);
             System.err.println("CLIENTE CADASTRADO!");
-            JOptionPane.showMessageDialog(null,"CLIENTE CADASTRADO!");
         } catch (SQLException ex) {
             Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
         }

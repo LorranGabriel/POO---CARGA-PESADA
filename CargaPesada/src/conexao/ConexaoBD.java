@@ -25,15 +25,13 @@ public class ConexaoBD {
                  String SENHA = "Mr6i5_qmB1mEiJRKTbiQPDB1qXaHGqZ1";
                  //String URL = "jdbc:postgresql://localhost:5432/CARGAPESADA_4";
                  String URL = "jdbc:postgresql://stampy.db.elephantsql.com:5432/nqygzcvg";
-                
-                 /*
-
-*/
+                */
+                 
                  String USUARIO = "postgres";
                  String SENHA = "bd2018";
                  //String URL = "jdbc:postgresql://localhost:5432/CARGAPESADA_4";
-                 String URL = "jdbc:postgresql://localhost:5432/BD_cargapesada";
-                
+                 String URL = "jdbc:postgresql://localhost:5432/CargaPesada_novo";
+               
              
                 c =  DriverManager.getConnection(URL, USUARIO, SENHA);
                 c.setAutoCommit(true);

@@ -91,10 +91,10 @@ public class ClienteBD implements InterfaceBD{
         stmt = c.createStatement();
         Cliente novo = (Cliente)obj;
         String sql = "UPDATE CLIENTE "
-                + "SET NOME ="+ novo.getTipo_cliente()+ ", "
-                + "CNPJ="+ novo.getCnpj() + ","
-                + "CPF="+ novo.getCpf() + ","
-                + "DATA_CADASTRO="+ novo.getData_atual() + " "
+                + "SET NOME = '"+ novo.getTipo_cliente()+ "', "
+                + "CNPJ = '"+ novo.getCnpj() + "',"
+                + "CPF= '"+ novo.getCpf() + "',"
+                + "DATA_CADASTRO = '"+ novo.getData_atual() + "' "
                 + "WHERE id ="+ novo.getIdCliente() + ";";
         stmt.executeUpdate(sql);
         stmt.close();

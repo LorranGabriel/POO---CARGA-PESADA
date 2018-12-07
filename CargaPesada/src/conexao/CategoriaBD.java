@@ -26,7 +26,7 @@ public class CategoriaBD implements InterfaceBD{
         Statement stmt;
         c = ConexaoBD.getInstance();
         stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT ID FROM CATEGORIA WHERE (NOME == "+(condicao.toUpperCase())+");");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM CATEGORIA;");
         while (rs.next()) {
 
             //OS DOIS CAMPOS PREENCHIDOS NAO ACEITAM NULL, PROCURAR SOLUÇÃO

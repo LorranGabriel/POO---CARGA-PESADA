@@ -26,8 +26,8 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         // TODO code application logic here
         // Cria funcionario
-        //CriacaoBanco b1 = new CriacaoBanco();
-        //b1.createTable();
+//        CriacaoBanco b1 = new CriacaoBanco();
+//        b1.createTable();
        //CategoriaBDtest b2 = new CategoriaBDtest();
         
         Home1 seg = new Home1();

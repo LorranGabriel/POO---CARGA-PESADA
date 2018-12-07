@@ -130,28 +130,7 @@ public class CriacaoBanco
                             "  PRIMARY KEY (ID)\n" +
                             ");\n" +
                             "\n" +
-                             "CREATE TABLE SEGURO (\n" +
-                            "  ID SERIAL,\n" +
-                            "  STATUS VARCHAR(20),\n" +
-                            "  DATA_VENCIMENTO DATE,\n" +
-                            "  FIM_CONTRATO DATE,\n" +                           
-                            "  VALOR FLOAT,\n" +
-                            "  PRIMARY KEY (ID)\n" +
-                            ");\n" +
                             "\n" +
-                            "\n" +
-                    
-                            "CREATE TABLE FINANCIAMENTO (\n" +
-                            "  ID SERIAL,\n" +
-                            "  VALOR_PARCELA FLOAT,\n" +
-                            "  PARCELAS_TOTAIS INT,\n" +
-                            "  PARCELAS_PAGAS INT,\n" +
-                            "  FINANCIADOR VARCHAR(45),\n" +
-                            //"  ID_VEICULO INT NOT NULL,\n" +
-                            "  PRIMARY KEY (ID)\n" +
-                            //"  FOREIGN KEY (ID_VEICULO)\n" +
-                            //"  REFERENCES VEICULO (ID)\n" +
-                            ");\n" +
                             "\n" +
                             "\n" +
                     
@@ -163,17 +142,11 @@ public class CriacaoBanco
                             "  STATUS VARCHAR(20),\n" +
                             "  COMBUSTIVEL VARCHAR(15),\n" +
                             "  ID_CATEGORIA INT NOT NULL,\n" +
-                            "  ID_FINANCIAMENTO INT NOT NULL,\n" +
-                            "  ID_SEGURO INT NOT NULL,\n" +
                             "  ID_MODELO INT NOT NULL,\n" +
                             "  ID_MOTORISTA INT,\n" +
                             "  PRIMARY KEY (ID),\n" +
                             "  FOREIGN KEY (ID_CATEGORIA)\n" +
                             "  REFERENCES CATEGORIA (ID),\n" +
-                            "  FOREIGN KEY (ID_SEGURO)\n" +
-                            "  REFERENCES SEGURO(ID),\n" +
-                            "  FOREIGN KEY (ID_FINANCIAMENTO)\n" +
-                            "  REFERENCES FINANCIAMENTO(ID),\n" + 
                             "  FOREIGN KEY (ID_MODELO)\n" +
                             "  REFERENCES MODELO (ID),\n" +
                             "  FOREIGN KEY (ID_MOTORISTA)\n" +

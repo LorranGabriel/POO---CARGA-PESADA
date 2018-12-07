@@ -25,18 +25,18 @@ public class VeiculoBD implements InterfaceBD{
         Statement stmt;
         c = ConexaoBD.getInstance();
         stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM VEICULO;");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM VEICULO "+condicao+";");
         while (rs.next()) {
             Veiculo veiculo = new Veiculo();
             veiculo.setIdVeiculo(rs.getInt("id"));
-            veiculo.setPlaca(rs.getString("PLACA"));
+            veiculo.setNomeVeiculo("NOME");
             veiculo.setChassi(rs.getString("CHASSI"));
+            veiculo.setPlaca(rs.getString("PLACA"));
             veiculo.setStatus(rs.getString("STATUS"));
-            veiculo.setTipoCombustivel(rs.getString("TIPO_COMBUSTIVEL"));
-            veiculo.setIdCategoria(rs.getInt("ID_CATEGORIA"));
+            veiculo.setTipoCombustivel(rs.getString("COMBUSTIVEL"));
             veiculo.setIdModelo(rs.getInt("ID_MODELO"));
-            veiculo.setIdSeguro(rs.getInt("ID_SEGURO"));
-            veiculo.setIdFinanciamento(rs.getInt("ID_FIANCIAMENTO"));
+            veiculo.setIdCategoria(rs.getInt("ID_CATEGORIA"));
+            
 
             //Classes que compõe um motorista
 
@@ -61,15 +61,13 @@ public class VeiculoBD implements InterfaceBD{
         Veiculo novo = (Veiculo)obj;
         stmt = c.createStatement();
         stmt.executeQuery("INSERT INTO VEICULO(NOME, CHASSI, PLACA, STATUS, "
-                + "COMBUSTIVEL, ID_CATEGORIA, ID_FINANCIAMENTO, ID_SEGURO, ID_MODELO, ID_MOTORISTA) values("
+                + "COMBUSTIVEL, ID_CATEGORIA, ID_MODELO, ID_MOTORISTA) values("
                 +"'"+ novo.getNomeVeiculo()+
                 "','"+ novo.getChassi()+ 
                 "','"+ novo.getPlaca()+ 
                 "','"+ novo.getStatus()+ 
                 "','"+ novo.getTipoCombustivel()+
                 "',"+ novo.getIdCategoria()+
-                ","+ novo.getIdFinanciamento()+
-                ","+ novo.getIdSeguro()+
                 ","+ novo.getIdModelo()+
                 ",NULL) RETURNING id");
         
@@ -104,7 +102,7 @@ public class VeiculoBD implements InterfaceBD{
                 + "ID_CATEGORIA="+ novo.getIdCategoria() + ", "
                 + "ID_MODELO="+ novo.getIdModelo() + ", "
                 + "ID_MOTORISTA="+ novo.getIdMotorista() + " "
-                + "WHERE id ="+ novo.getIdModelo() + ";";
+                + "WHERE id ="+ novo.getIdVeiculo() + ";";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();    

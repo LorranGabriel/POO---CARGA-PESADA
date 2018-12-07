@@ -62,9 +62,7 @@ public class MotoristaBD implements InterfaceBD{
         ResultSet rs;
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO MOTORISTA(CNH, DATA_VENCIMENTO, CATEGORIA_CNH, ID_FUNCIONARIO) values('"
-                + novo.getCnh()+"','" + novo.getDataVencimento()+ "','" + novo.getCategoriaCnh()+"',"+ novo.getIdFuncionario() +")RETURNING id;");
-
-        
+                + novo.getCnh()+"','" + novo.getDataVencimento()+ "','" + novo.getCategoriaCnh()+"',"+ novo.getIdFuncionario() +")");
         rs.close();
         stmt.close();
         c.close();      }
@@ -89,11 +87,11 @@ public class MotoristaBD implements InterfaceBD{
         stmt = c.createStatement();
         Motorista novo = (Motorista)obj;
         String sql = "UPDATE MOTORISTA "
-                + "SET CNH ="+ novo.getCnh() + ", "
-                + "DATA_VENCIMENTO="+ novo.getDataVencimento() + ", "
-                + "CATEGORIA_CNH="+ novo.getCategoriaCnh() + ", "
-                + "ID_FUNCIONARIO="+ novo.getIdFuncionario() + " "
-                + "WHERE id ="+ novo.getIdMotorista() + ";";
+                + "SET CNH ='"+ novo.getCnh() + "', "
+                + "DATA_VENCIMENTO ='"+ novo.getDataVencimento() + "', "
+                + "CATEGORIA_CNH='"+ novo.getCategoriaCnh() + "', "
+                + "ID_FUNCIONARIO='"+ novo.getIdFuncionario() + "' "
+                + "WHERE(id = "+ (novo.getIdMotorista()+1) + ");";
         stmt.executeUpdate(sql);
         stmt.close();
         c.close();  

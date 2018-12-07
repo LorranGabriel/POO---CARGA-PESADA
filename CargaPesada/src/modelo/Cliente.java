@@ -52,9 +52,8 @@ public class Cliente
 
 
 
-    public void setData_atual() {
-        Date dataHoraAtual = new Date();
-        this.data_atual = new SimpleDateFormat("dd/MM/yyyy").format(dataHoraAtual);    
+    public void setData_atual(String data) {
+        this.data_atual = data;    
     }
     
     public int getIdContato() {

@@ -32,14 +32,12 @@ public class TabelaSet {
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Codigo");
         modelo.addColumn("Nome");
-        modelo.addColumn("Status");
         modelo.addColumn("Chassi");
         modelo.addColumn("Placa");
         modelo.addColumn("Status");
         modelo.addColumn("Combustivel");
-        modelo.addColumn("Categoria");
         modelo.addColumn("Modelo");
-        modelo.addColumn("Motorista");
+        modelo.addColumn("Categoria");
 
         if (veiculo.isEmpty()) {
             modelo.addRow(new String[]{"NADA", "NADA"});
@@ -51,9 +49,8 @@ public class TabelaSet {
                     (gen.getNomeVeiculo()),
                     (gen.getChassi()),
                     (gen.getPlaca()),
+                    gen.getTipoCombustivel(),
                     Integer.toString(gen.getIdModelo()),
-                    Integer.toString(gen.getIdMotorista()),
-                    Integer.toString(gen.getIdSeguro()),
                     Integer.toString(gen.getIdCategoria()),});
 
             }
@@ -65,10 +62,8 @@ public class TabelaSet {
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Codigo");
         modelo.addColumn("Nome");
-        modelo.addColumn("Tipo");
         modelo.addColumn("Cnpj");
         modelo.addColumn("CPF");
-        modelo.addColumn("Data de Cadatro");
 
         Cliente gen;
         if (clientes.isEmpty()) {
@@ -79,10 +74,8 @@ public class TabelaSet {
                 gen = clientes.get(i);
                 modelo.addRow(new String[]{Integer.toString(gen.getIdCliente()),
                     gen.getNome(),
-                    gen.getTipo_cliente(),
                     gen.getCnpj(),
-                    gen.getCpf(),
-                    gen.getData_atual()});
+                    gen.getCpf()});
             }
         }
         tabela.setModel(modelo);
@@ -125,9 +118,7 @@ public class TabelaSet {
         modelo.addColumn("CPF");
         modelo.addColumn("Cargo");
         modelo.addColumn("Salario");
-        modelo.addColumn("Sexo");
-        modelo.addColumn("Data de Cadatro");
-        modelo.addColumn("Data de Nascimento");
+
 
         Funcionario gen;
         if (funcionarios.isEmpty()) {
@@ -140,10 +131,7 @@ public class TabelaSet {
                     gen.getNome(),
                     gen.getCpf(),
                     gen.getCargo(),
-                    Float.toString(gen.getSalario()),
-                    gen.getSexo(),
-                    gen.getDataCadastro(),
-                    gen.getDataNascimento()});
+                    Float.toString(gen.getSalario())});
             }
         }
         tabela.setModel(modelo);

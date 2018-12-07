@@ -62,16 +62,15 @@ public class ServicoBD implements InterfaceBD{
         ResultSet rs;
         stmt = c.createStatement();
         rs = stmt.executeQuery("INSERT INTO SERVICO(STATUS, VALOR_CONTRATO, DATA_INICIO, DATA_FIM, "
-                + "ID_CLIENTE, ID_FUNCIONARIO, ID_VEICULO, ID_ENDERECO_DESTINO, ID_ENDERECO_ORIGEM) values("
+                + "ID_CLIENTE, ID_VEICULO, ID_ENDERECO_DESTINO, ID_ENDERECO_ORIGEM) values("
                 +"'"+ novo.getStatus()+
                 "',"+ novo.getValorContrato()+ 
                 ",'"+ novo.getDataInicio()+ 
                 "','"+ novo.getDataFim()+ 
                 "',"+ novo.getIdCliente()+
-                ","+ novo.getIdFuncionario()+
                 ","+ novo.getIdVeiculo()+
                 ","+ novo.getIdDestino()+
-                ","+ novo.getIdOrigem() +");");
+                ","+ novo.getIdOrigem() +")");
         rs.close();
         stmt.close();
         c.close();  
@@ -91,7 +90,7 @@ public class ServicoBD implements InterfaceBD{
 
     @Override
     public void update(Object obj) throws SQLException {
-                Connection c;
+        Connection c;
         Statement stmt;
         c = ConexaoBD.getInstance();
         stmt = c.createStatement();
