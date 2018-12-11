@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Motorista;
-import modelo.Veiculo;
 
 /**
  *
@@ -22,8 +21,7 @@ public class AlteracaoMotorista extends javax.swing.JFrame {
      * Creates new form AlteracaoVeiculo
      */
     public AlteracaoMotorista(Motorista motorista) {
-        initComponents();
-        Veiculo novoM = new Veiculo();      
+        initComponents();    
         cnh.setText(motorista.getCnh());
         categoria.setText(motorista.getCategoriaCnh());     
         datadeVencimento.setText(motorista.getDataVencimento());

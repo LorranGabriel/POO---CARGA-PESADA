@@ -7,8 +7,6 @@ package view;
 
 import conexao.*;
 import java.awt.BorderLayout;
-import java.awt.Image;
-import java.net.URL;
 import java.sql.SQLException;
 
 import java.text.SimpleDateFormat;

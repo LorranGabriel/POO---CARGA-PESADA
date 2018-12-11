@@ -1,7 +1,5 @@
 package modelo;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

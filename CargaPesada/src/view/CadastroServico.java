@@ -5,9 +5,7 @@
  */
 package view;
 
-import conexao.CategoriaBD;
 import conexao.ClienteBD;
-import conexao.ModeloBD;
 import conexao.ServicoBD;
 import conexao.VeiculoBD;
 import java.sql.SQLException;
@@ -16,11 +14,8 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import modelo.Categoria;
 import modelo.Cliente;
-import modelo.Modelo;
 import modelo.Servico;
-import modelo.TabelaSet;
 import modelo.Veiculo;
 
 /**

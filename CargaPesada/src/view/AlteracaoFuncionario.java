@@ -6,15 +6,12 @@
 package view;
 
 import conexao.FuncionarioBD;
-import conexao.MotoristaBD;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Funcionario;
-import modelo.Motorista;
-import modelo.Veiculo;
 
 /**
  *

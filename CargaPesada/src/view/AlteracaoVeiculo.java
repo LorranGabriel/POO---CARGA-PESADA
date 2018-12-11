@@ -18,7 +18,6 @@ public class AlteracaoVeiculo extends javax.swing.JFrame {
      */
     public AlteracaoVeiculo(Veiculo veiculo) {
         initComponents();
-        Veiculo novoV = new Veiculo();      
         nomeVeiculo.setText(veiculo.getNomeVeiculo());
         placa.setText(veiculo.getPlaca());
         tipoCombustivel.setText(veiculo.getTipoCombustivel());     
