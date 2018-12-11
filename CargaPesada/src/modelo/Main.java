@@ -1,7 +1,6 @@
     package modelo;
 
 import conexao.*;
-import view.CadastroSeguro;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import view.Home1;

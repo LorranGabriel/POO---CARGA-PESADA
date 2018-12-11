@@ -6,7 +6,6 @@
 package view;
 
 import conexao.CategoriaBD;
-import conexao.FinanciamentoBD;
 import conexao.ModeloBD;
 import conexao.VeiculoBD;
 import java.sql.SQLException;
@@ -26,8 +25,7 @@ public class CadastroVeiculo extends javax.swing.JFrame  {
     /**
      * Creates new form CadastroVeiculo
      */
-    CadastroSeguro telaSeguro = new CadastroSeguro();
-    
+   
     public CadastroVeiculo()  {
         initComponents();
     }
